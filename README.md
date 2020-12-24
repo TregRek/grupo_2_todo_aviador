@@ -1,6 +1,7 @@
 # grupo_2_todo_aviador
 
-
+Espacio aeronáutico desarrollado con mucha pasión, en conjunto con decenas de marcas y tiendas aeronáuticas para conectar a todos los que amamos la aviación.
+Ecommerce de productos netamente aeronáuticos.
 
 
 
