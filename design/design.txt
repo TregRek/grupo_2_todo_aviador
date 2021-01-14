@@ -1,1 +1,13 @@
-1234
+Fuentes
+
+Logo -> The Shift
+
+Contenido -> Trebuchet MS
+
+Colores
+
+Gris claro: #808080
+
+Azul: #1b2535
+
+Negro: #000000
