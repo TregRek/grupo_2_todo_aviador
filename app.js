@@ -1,9 +1,9 @@
 const express = require('express');
 const app = express();
 const path = require('path');
-const publicPath = path.resolve(__dirname, './public');
+// const publicPath = path.resolve(__dirname, './public');
 
-app.use(express.static(publicPath));
+app.use( '/static', express.static(__dirname + '/public'));
 
 app.listen(3000, console.log("Escuchando en el puerto 3000"));
 
@@ -14,3 +14,7 @@ app.get("/", (req, res) =>{
 app.get("/login", (req, res) =>{
     res.sendFile(path.resolve(__dirname, './views/login.html'));
 })
+
+app.get("/productCart", (req, res) =>{
+    res.sendFile(path.resolve(__dirname, './views/productCart.html'));
+});
