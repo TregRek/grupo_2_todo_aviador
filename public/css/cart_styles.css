@@ -1,0 +1,97 @@
+body{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    width: 90%;
+    margin: auto;
+}
+
+header .header-top{
+    padding: 16px 0 16px 0;
+    border-bottom: 1px solid #f1f1f1;
+}
+
+header .header-top .top-icon-redes{
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+header .header-top .top-icon-redes li{
+    padding: 4px 0;
+}
+
+header .header-top .top-icon-redes li a{
+    display: flex;
+    text-decoration: none;
+    padding: 0 6px;
+}
+
+header .header-top .top-icon-redes li a i{
+    font-size: 14px;
+    color: #bbbbbb;
+}
+
+header .header-top .top-cont-pers{
+    display: none;
+}
+
+header .main-desktop{
+    display: none;
+}
+
+header .main-mobile .main-nav-mob-tab{
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+}
+
+header .main-mobile .main-nav-mob-tab li a{
+    text-decoration: none;
+}
+
+header .main-mobile .main-nav-mob-tab .carrito{
+    display: flex;
+    width: 20%;
+}
+
+header .main-mobile .main-nav-mob-tab .carrito a i{
+    color: #1b2535;
+    font-size: 12px;
+}
+
+header .main-mobile .main-nav-mob-tab .logo{
+    display: flex;
+    width: 60%;
+    padding: 25px 0;
+}
+
+header .main-mobile .main-nav-mob-tab .logo a{
+    margin: auto;
+}
+
+header .main-mobile .main-nav-mob-tab .logo a img{
+    width: 180px;
+}
+
+header .main-mobile .main-nav-mob-tab .hamburger{
+    display: flex;
+    flex-direction: row-reverse;
+    width: 20%;
+}
+
+header .main-mobile .main-nav-mob-tab .hamburger a .fa-bars{
+    color: #000000;
+    font-size: 22px;
+}
+
+
+
