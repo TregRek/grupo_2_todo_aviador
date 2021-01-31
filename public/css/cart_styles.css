@@ -1,7 +1,12 @@
+/* @import url('https://fonts.googleapis.com/css2?family=Lato&display=swap'); */
+
 body{
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+}
+
+header{
     width: 90%;
     margin: auto;
 }
@@ -92,6 +97,64 @@ header .main-mobile .main-nav-mob-tab .hamburger a .fa-bars{
     color: #000000;
     font-size: 22px;
 }
+main header{
+    width: 100%;
+    padding: 34px 0;
+    background-color: #322b2b;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
 
+main header .ancho{
+    width: 90%;
+    margin: auto;
+}
 
+main header .ancho h1{
+    margin: 0 ;
+    color: #ffffff;
+    font-size: 24px;
+    font-weight: 400;
+    width: 100%;
+    display: block;
+}
 
+main header .ancho nav ul{
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    width: 100%;
+}
+
+main header .ancho nav ul li a{
+    text-decoration: none;
+}
+
+main header .ancho nav ul .home{
+    width: 35px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    align-self: center;
+}
+
+main header .ancho nav ul .home a i{
+    color: #ffffff;
+    font-size: 13px;
+}
+
+main header .ancho nav ul .home span{
+    color: #ffffff;
+    margin: 0 5px;
+}
+
+main header .ancho nav ul .carrito{
+    width: 12%;
+    display: flex;
+    font-size: 16px;
+    line-height: 32px;
+    color: #ffffff;
+    font-weight: 10;
+}

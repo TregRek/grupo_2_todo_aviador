@@ -3,7 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/normalize.css">
     <link rel="stylesheet" href="static/css/cart_styles.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Lato&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>    
     <link rel="shortcut icon" href="static/images/Icon_todo_aviador.png" />
     <title>Todo aviador Perú | Carrito</title>
@@ -109,11 +112,307 @@
     </header>
 
     <main>
+        <header>
+            <div class="ancho">
+                <h1>Carrito</h1>
+                <nav>
+                    <ul>
+                        <li class="home">
+                            <a href="">
+                                <i class="fas fa-home"></i>
+                            </a>
+                            <span>></span>
+                        </li>
+                        <li class="carrito">
+                            <a href="">
+                            </a>
+                            <span>Carrito</span>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+        </header>
+        <div class="contenedor-contenido">
+            <article> 
+                <table>
+                    <thead>
+                        <tr>
+                            <th></th>
+                            <th></th>
+                            <th>producto</th>
+                            <th>precio</th>
+                            <th>cantidad</th>
+                            <th>subtotal</th>
+                        </tr>
+                    </thead>
+                    <tfoot>
+                        <tr>
+                            <td>
+                                <div class="cupon">
+                                    <form action="/productCart" method="GET">
+                                        <input type="text" name="" id="">
+                                        <input type="submit" value="Aplicar cupón">
+                                    </form>
+                                </div>
+                                <div class="actualizar">
+                                    <form action="/productCart" method="GET">
+                                        <input type="submit" value="Actualizar">
+                                    </form>
+                                </div>
+                            </td>
+                        </tr>
+                    </tfoot>
+                    <tbody>
+                        <tr>
+                            <td>
+                                <a href="">X</a>
+                            </td>
+                            <td>
+                                <img src="" alt="">
+                            </td>
+                            <td>
+                                <a href=""></a>
+                            </td>
+                            <td>
+                                <span></span>
+                            </td>
+                            <td>
+                                <a href=""></a>
+                                <input type="number" name="" id="">
+                                <a href=""></a>
+                            </td>
+                            <td>
+                                <span></span>
+                            </td>
+                        </tr>
+                    </tbody>
+                    
+                </table>
+            </article>
+
+            <div class="contenedor-subcontenido">
+                <article class="prod-interes">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Te podria interesar</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>
+                                    <div class="main-img-producto">
+                                        <img src="" alt="">
+                                    </div>
+                                    <span>
+                                        <a href=""></a>
+                                    </span>
+                                    <h2>Nombre del producto</h2>
+                                    <span>Precio porducto</span>
+                                    <a href="">
+                                        <button></button>
+                                    </a>
+                                    <a href="">
+                                        <button></button>
+                                    </a>
+                                </td>
+                                <td>
+                                    <div class="main-img-producto">
+                                        <img src="" alt="">
+                                    </div>
+                                    <span>
+                                        <a href=""></a>
+                                    </span>
+                                    <h2>Nombre del producto</h2>
+                                    <span>Precio porducto</span>
+                                    <a href="">
+                                        <button></button>
+                                    </a>
+                                    <a href="">
+                                        <button></button>
+                                    </a>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </article>
+
+                <article class="total-carro">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Total del carrito</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>subtotal</td>
+                                <td>Precio producto</td>
+                            </tr>
+                            <tr>
+                                <td>Gastos de envio</td>
+                                <td>
+                                    <span> Ingresa tu dirección para ver las opciones de envio.</span>
+                                    <u>Calcular costo de envio</u>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </article>
+            </div>
+            
+        </div>
         
     </main>
 
     <footer>
+        <div class="info-contacto">
+            <h4>Información de contacto</h4>
+            <ol>
+                <li>De Lunes a Domingo de 09:00 a 21:00hs.</li>
+                <li>
+                    <i class="fas fa-map-marker-alt"></i>
+                    <div class="info">
+                        <span>Ubicación:</span>
+                        <a href="">Calle Ciro Alegría 275, Urb. Amauta. SJM</a>
+                    </div>
+                </li>
+                <li>
+                    <i class="fab fa-whatsapp"></i>
+                    <div class="info">
+                        <span>WhatsApp:</span>
+                        <a href="">(+51) 947 432 205</a>
+                    </div>
+                </li>
+                <li>
+                    <i class="far fa-envelope"></i>
+                    <div class="info">
+                        <span>E-mail:</span>
+                        <a href="">info@todoaviador.com</a>
+                    </div>
+                </li>
+            </ol>
 
+        </div>
+        <div class="public-recientes">
+            
+            <h4>Publicaciones recientes</h4>
+
+            <ol>
+                <li>
+                    <div class="footer-img-product">
+                        <img src="" alt="">
+                    </div>
+                    <div class="descr-producto">
+                        <div class="nom-producto">
+                            <a href=""></a>
+                        </div>
+                        <div class="info-producto">
+                            <span>Feecha del producto con /</span>
+                            <a href=""></a>
+                        </div>
+                    </div>
+                </li>
+                <li>
+                    <div class="footer-img-product">
+                        <img src="" alt="">
+                    </div>
+                    <div class="descr-producto">
+                        <div class="nom-producto">
+                            <a href=""></a>
+                        </div>
+                        <div class="info-producto">
+                            <span>Feecha del producto con /</span>
+                            <a href=""></a>
+                        </div>
+                    </div>
+                </li>
+                <li>
+                    <div class="footer-img-product">
+                        <img src="" alt="">
+                    </div>
+                    <div class="descr-producto">
+                        <div class="nom-producto">
+                            <a href=""></a>
+                        </div>
+                        <div class="info-producto">
+                            <span>Feecha del producto con /</span>
+                            <a href=""></a>
+                        </div>
+                    </div>
+                </li>
+            </ol>
+        </div>
+
+        <div class="enlaces-internos">
+            <div class="tienda">
+                <h4>Tienda</h4>
+                <span>
+                    <input type="radio" name="" id="">
+                    <a href="">Mujer</a>
+                </span>
+                <span>
+                    <input type="radio" name="" id="">
+                    <a href="">Hombre</a>
+                </span>
+                <span>
+                    <input type="radio" name="" id="">
+                    <a href="">Marcas A - Z</a>
+                </span>
+                <span>
+                    <input type="radio" name="" id="">
+                    <a href="">Lo último en tendencias</a>
+                </span>
+                
+
+            </div>
+            <div class="enlaces-utiles">
+                <h4>Enlaces útiles</h4>
+                <span>
+                    <input type="radio" name="" id="">
+                    <a href="">Acerca de la compañia</a>
+                </span>
+                <span>
+                    <input type="radio" name="" id="">
+                    <a href="">Contactenos</a>
+                </span>
+                <span>
+                    <input type="radio" name="" id="">
+                    <a href="">Terminos & condiciones</a>
+                </span>
+                <span>
+                    <input type="radio" name="" id="">
+                    <a href="">Preguntas frecuentes</a>
+                </span>
+            </div>
+        </div>
+        
+        <div class="hipervinculos">
+            <div class="etiquetas">
+                <h4>Etiquetas</h4>
+                <a href="">Biblioteca aeronáutica HDIW</a>
+                <a href="">Camisas</a>
+                <a href="">Chrisitan Yong</a>
+                <a href="">Chaquetas</a>
+                <a href="">Pantalones</a>
+                <a href="">Libros</a>
+                <a href="">Jeans</a>
+                <a href="">Deportivos</a>
+                <a href="">Uniformes</a>
+                <a href="">Wingstores</a>
+            </div>
+            <div class="redes">
+                <h4>Síguenos</h4>
+                <ul>
+                    <li><a href="https://twitter.com/"><i class="fab fa-twitter"></i></a></li>
+                    <li><a href="https://www.facebook.com/"><i class="fab fa-facebook"></i></a></li>
+                    <li><a href="https://www.instagram.com/"><i class="fab fa-instagram"></i></a></li>
+                    <li><a href="https://www.linkedin.com/"><i class="fab fa-linkedin"></i></a></li>
+                    <li><a href="https://www.youtube.com/"><i class="fab fa-youtube"></i></a></li>
+                </ul>
+            </div>
+        </div>
+        
     </footer>
 
 </body>
