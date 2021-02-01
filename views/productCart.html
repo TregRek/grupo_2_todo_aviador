@@ -133,68 +133,100 @@
             </div>
         </header>
         <div class="contenedor-contenido">
-            <article> 
-                <table>
-                    <thead>
-                        <tr>
-                            <th></th>
-                            <th></th>
-                            <th>producto</th>
-                            <th>precio</th>
-                            <th>cantidad</th>
-                            <th>subtotal</th>
-                        </tr>
-                    </thead>
-                    <tfoot>
-                        <tr>
-                            <td class="producto-footer">
-                                <div class="cupon">
-                                    <form action="/productCart" method="GET">
-                                        <input type="text" name="" id="" placeholder="Código de cupón">
-                                        <input type="submit" value="Aplicar cupón">
-                                    </form>
-                                </div>
-                                <div class="actualizar">
-                                    <form action="/productCart" method="GET">
-                                        <input type="submit" value="Actualizar">
-                                    </form>
-                                </div>
-                            </td>
-                        </tr>
-                    </tfoot>
-                    <tbody>
-                        <tr>
-                            <td class="producto-remover">
-                                <a href="">x</a>
-                            </td>
-                            <td class="producto-imagen">
-                                <img src="/static/images/defecto.jpg" alt="">
-                            </td>
-                            <td class="producto-nombre" data-title="Producto">
-                                
-                                <a href="">Producto</a>
-                            </td>
-                            <td class="producto-precio" data-title="Precio">
-                                
-                                <span>S/79.99</span>
-                            </td>
-                            <td class="producto-cantidad" data-title="Cantidad">
-                                
-                                <a href="">+</a>
-                                <input type="number" name="" id="">
-                                <a href="">-</a>
-                            </td>
-                            <td class="producto-subtotal" data-title="Sub-total">
-                                
-                                <span>S/79.99</span>
-                            </td>
-                        </tr>
-                    </tbody>
-                    
-                </table>
-            </article>
+            <div class="contenido-compra">
+                <article> 
+                    <table>
+                        <thead>
+                            <tr>
+                                <th class="producto-remover">  x </th>
+                                <th class="producto-imagen">  img  </th>
+                                <th class="producto-nombre">producto</th>
+                                <th class="producto-precio">precio</th>
+                                <th class="producto-cantidad">cantidad</th>
+                                <th class="producto-subtotal">subtotal</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td class="producto-remover"cellspacing="0" cellpadding="0">
+                                    <a href="">x</a>
+                                </td>
+                                <td class="producto-imagen">
+                                    <img src="/static/images/defecto.jpg" alt="">
+                                </td>
+                                <td class="producto-nombre" data-title="Producto">
+                                    
+                                    <a href="">Producsdasdasdasdasdasdasdasdasdasdasdto</a>
+                                </td>
+                                <td class="producto-precio" data-title="Precio">
+                                    
+                                    <span>S/79.99</span>
+                                </td>
+                                <td class="producto-cantidad" data-title="Cantidad">
+                                    <div class="contador">
+                                        <a href="">-</a>
+                                        <input type="number" name="" id="">
+                                        <a href="">+</a>
+                                    </div>
+                                    
+                                </td>
+                                <td class="producto-subtotal" data-title="Sub-total">
+                                    
+                                    <span>S/79.99</span>
+                                </td>
+                            </tr>
+                        
+                            <tr>
+                                <td class="producto-remover">
+                                    <a href="">x</a>
+                                </td>
+                                <td class="producto-imagen">
+                                    <img src="/static/images/defecto.jpg" alt="">
+                                </td>
+                                <td class="producto-nombre" data-title="Producto">
+                                    
+                                    <a href="">Producto</a>
+                                </td>
+                                <td class="producto-precio" data-title="Precio">
+                                    
+                                    <span>S/79.99</span>
+                                </td>
+                                <td class="producto-cantidad" data-title="Cantidad">
+                                    
+                                    <div class="contador">
+                                        <a href="">-</a>
+                                        <input type="number" name="" id="">
+                                        <a href="">+</a>
+                                    </div>
+                                </td>
+                                <td class="producto-subtotal" data-title="Sub-total">
+                                    
+                                    <span>S/79.99</span>
+                                </td>
+                            </tr>
+                        
+                            <tr>
+                                <td class="producto-footer">
+                                    <div class="cupon">
+                                        <form action="/productCart" method="GET">
+                                            <input type="text" name="" id="" placeholder="Código de cupón">
+                                            <input type="submit" value="Aplicar cupón">
+                                        </form>
+                                    </div>
+                                    <div class="actualizar">
+                                        <form action="/productCart" method="GET">
+                                            <input type="submit" value="Actualizar">
+                                        </form>
+                                    </div>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </article>
+            </div>
+            
 
-            <div class="contenedor-subcontenido">
+            <div class="contenido-extra">
                 <article class="prod-interes">
                     <table>
                         <thead>

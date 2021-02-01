@@ -66,7 +66,6 @@ header .main-mobile .main-nav-mob-tab{
 }
 
 header .main-mobile .main-nav-mob-tab li a{
-    display: contents;
     text-decoration: none;
 }
 
@@ -105,13 +104,11 @@ header .main-mobile .main-nav-mob-tab .hamburger a .fa-bars{
     font-size: 22px;
 }
 
-/*!---------------FOOTER---------------¡*/
-
 
 main header{
     width: 100%;
     padding: 34px 0;
-    background-color: #322b2b;
+    background-color: #1f1e1e;
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
 }
 
@@ -175,9 +172,35 @@ main .contenedor-contenido{
     margin: auto;
     padding: 50px 0;
     font-size: 14px;
+    display: block;
 }
 
+/* main .contenido-compra table{
+    display: block;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+main .contenido-compra table tbody{
+    display: block;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+main .contenido-compra table tbody tr{
+    display: block;
+    width: 100%;
+    box-sizing: border-box;
+
+}
+main .contenido-compra table tbody tr td{
+    display: block;
+    width: 100%;
+    box-sizing: border-box;
+} */
+
 main table{
+    display: block;
     width: 100%;
     border: 1px solid #e9e9e9;
     margin-bottom: 24px;
@@ -186,9 +209,19 @@ main table thead{
     display: none;
 }
 
-main table tr{
+main table tbody{
+    display: inline-block;
     width: 100%;
 }
+main table tfoot{
+    display: inline-block;
+    width: 100%;
+}
+main table tr{
+    display: inline-block;
+    width: 100%;
+}
+
 
 main table tr td, th{
     width: 100%;
@@ -205,17 +238,19 @@ main table tr td::before{
     font-size: 17px;
     letter-spacing: 0.8px;
     color: #525252;
+    width: 50%;
+    text-align: left;
 }
 
 main table tr td a{
     text-decoration: none;
     background-color: transparent;
 }
-main .producto-remover{
+main .contenido-compra .producto-remover{
     text-align: center;
 }
 
-main .producto-remover a{
+main .contenido-compra .producto-remover a{
     display: inline-block;
     width: 25px;
     height: 25px;
@@ -245,7 +280,11 @@ main .producto-nombre,
 
 main .producto-nombre a,
      .producto-envio span{
+    display: inline-block;
+    width: 50%;
     color: #333333;
+    word-wrap: break-word;
+
 }
 
 main .producto-precio,
@@ -253,11 +292,16 @@ main .producto-precio,
     color: #57bf6d;
 }
 
+main .producto-cantidad .contador{
+    float: right;
+    width: auto;
+}
+
 main .producto-cantidad a, input[type="number"]{
     display: block;
     width: 30px;
     height: 30px;
-    float: right;
+    float: left;
     color: #777777;
     border: 1px solid  #e4e4e4;
     line-height: 30px;
@@ -373,6 +417,8 @@ footer{
     box-sizing: border-box;
 }
 footer .footer-contenido{
+    width: 90%;
+    margin: auto;
     padding: 30px 0;
 }
 
@@ -387,12 +433,12 @@ footer .info-contacto,
        .public-recientes,
        .enlaces-internos,
        .hipervinculos{
-    width: 90%;
-    margin: auto;
+    width: 100%;
     margin-bottom: 30px;
 }
 footer .tienda,
        .etiquetas{    
+    width: 100%;
     margin-bottom: 30px;
 }
 footer ol{
@@ -412,6 +458,7 @@ footer .info-contacto h4,
        .public-recientes h4,
        .enlaces-internos h4,
        .hipervinculos h4{
+    width: 100%;
     margin: 0 0 20px 0;
     font-weight: 550;
 }
@@ -616,3 +663,172 @@ footer .footer-bottom p{
     margin: 0;
 }
 
+@media(min-width: 769px){
+    
+
+    main .contenido-compra{
+        display: flex;
+        align-items: center;
+    }
+
+    main .contenido-compra article{
+        width: 100%;
+    }
+
+    main .contenido-compra table thead{
+        display: flex;
+        width: 100%;
+        outline: none;
+        box-sizing: border-box;
+    }
+
+    main .contenido-compra table thead tr,
+     .contenido-compra table tbody tr{
+        display: flex;
+        width: 100%;
+        border-bottom: 1px solid #e9e9e9;
+
+    }
+    main .contenido-compra{
+        box-sizing: border-box;
+    }
+
+    main .contenido-compra table thead tr th{
+        font-weight: 600;
+        font-size: 1em !important;
+        letter-spacing: 0.8px;
+        color: #444444;
+        text-transform: uppercase;
+        padding: 12px;
+    }
+    main .contenido-compra table tbody tr td{
+        height: 100%;
+        padding: 12px;
+        border: none;
+        float: left;
+        align-self: center;
+    }
+    main .contenido-compra table tbody tr td::before{
+        display: none;
+    }
+    main .contenido-compra .producto-remover{
+        width: calc(8% - 12px);
+        width: 8%;
+    }
+    main .contenido-compra .producto-imagen{
+        width: calc(12% - 12px);
+        width: 12%;
+        height: auto;
+    }
+    main .contenido-compra .producto-nombre{
+        width: calc(20% - 12px) ;
+        width: 20%;
+        box-sizing: border-box;
+        height: auto;
+        word-wrap: break-word;
+        font-size: 1.2em;
+    }
+
+    main .contenido-compra .producto-nombre a{
+        width: 100%;
+    }
+
+    main .contenido-compra .producto-precio{
+        width: calc(18% - 12px);
+        width: 18%;
+        height: auto;
+    }
+    main .contenido-compra .producto-cantidad{
+        width: calc(22% - 12px);
+        width: 23%;
+        height: auto;
+        text-align: left;
+    }
+     main .contenido-compra .producto-cantidad .contador{
+        float: left;
+    } 
+
+    main .contenido-compra .producto-subtotal{
+        width: calc(20% - 12px);
+        width: 19%;
+        height: auto;
+        text-align: left;
+    }
+
+    main .contenido-compra .producto-footer{
+        display: flex;
+        flex-wrap: wrap;
+        justify-self: center;
+        align-self: center;
+        width: 100%;
+    }
+
+    main .contenido-compra .producto-footer .cupon{
+        width: 43%;
+    }
+    main .producto-footer .cupon form input[type="text"]{
+        /* display: flex; */
+        width: 50%;
+        margin: 0 12px 0 0;
+        float: left;
+        /* align-self: center; */
+    }
+    main .producto-footer .cupon form input[type="submit"]{
+        /* display: flex;
+        align-self: center; */
+        width: 45%;
+        font-size: 12px;
+        float: left;
+    }
+    main .contenido-compra .producto-footer .actualizar{
+        width: 57%;
+    }
+    
+    main .contenido-compra .producto-footer .actualizar form input[type="submit"]{
+        width: 45%;
+        font-size: 12px;
+        float: right;
+    }
+    
+    main .contenido-extra{
+        width: 100%;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+    }
+
+    main .contenido-extra .prod-interes,
+         .contenido-extra .total-carro{
+             display: flex;
+             width: calc(50% - 10px);
+         }
+
+    
+
+/*!-------------------FOOTER---------------------*/
+
+footer .footer-contenido{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+footer .info-contacto,
+    .public-recientes,
+    .enlaces-internos,
+    .hipervinculos{
+    width: calc(50% - 10px);
+}
+
+    
+
+}
+@media(min-width: 1024px){
+
+    footer .info-contacto,
+    .public-recientes,
+    .enlaces-internos,
+    .hipervinculos{
+    width: calc(25% - 12px);
+}
+}
