@@ -205,7 +205,7 @@ main table{
     border: 1px solid #e9e9e9;
     margin-bottom: 24px;
 }
-main table thead{
+main .contenido-compra table thead{
     display: none;
 }
 
@@ -679,16 +679,24 @@ footer .footer-bottom p{
         display: flex;
         width: 100%;
         outline: none;
+        background-color: #f7f7f7;
         box-sizing: border-box;
+        border-bottom: 1px solid #e9e9e9;
     }
 
     main .contenido-compra table thead tr,
      .contenido-compra table tbody tr{
         display: flex;
         width: 100%;
-        border-bottom: 1px solid #e9e9e9;
+        border: none;
 
     }
+    
+    main .contenido-compra table tbody tr{
+        border-bottom: 1px solid #e9e9e9;
+        
+    }
+
     main .contenido-compra{
         box-sizing: border-box;
     }
@@ -800,10 +808,140 @@ footer .footer-bottom p{
     main .contenido-extra .prod-interes,
          .contenido-extra .total-carro{
              display: flex;
-             width: calc(50% - 10px);
-         }
+             width: calc(50% - 23px);
+    }
 
+    main .contenido-extra .prod-interes table thead{
+        display: block;
+        text-align: center;
+        background-color: #f7f7f7;
+        padding: 0;
+        margin: 0;
+        color: #444444;
+        text-transform: uppercase;
+    }
     
+    main .contenido-extra .prod-interes table tbody tr {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        align-items: flex-start;
+        width: 90%;
+        margin: auto;
+    }
+
+    main .contenido-extra .prod-interes table tbody tr td {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        width: calc(50% - 5px);
+        padding: 0.8em 0;
+    } 
+
+    main .prod-interes .prod-int-img-producto,
+         .prod-interes .prod-int-categorias,
+         .prod-interes .prod-int-titulo,
+         .prod-interes .prod-int-precio,
+         .prod-interes .prod-int-rating{
+            width: 100%;
+    }
+
+    main .prod-interes .prod-int-img-producto,
+         .prod-interes .prod-int-categorias,
+         .prod-interes .prod-int-precio,
+         .prod-interes .prod-int-rating{
+        margin-bottom: 20px;
+    }
+
+    main .prod-interes .prod-int-img-producto{
+        display: block;
+        position: relative;
+        
+        transition: all 1s;
+    }
+
+    main .prod-interes .prod-int-img-producto .img1 {
+        position: relative;
+        z-index: 2;
+        overflow: hidden;
+        opacity: 1;
+        transition: all 1s;
+    }
+    main .prod-interes .prod-int-img-producto .img2 {
+        position: absolute;
+        top: 0;
+        left: 0;
+        overflow: hidden;
+        opacity: 0;
+        z-index: 1;
+        transition: all 1s;
+    }
+
+    main .prod-interes .prod-int-img-producto:hover .img1{
+        opacity: 0;
+        z-index: 2;
+    }
+    main .prod-interes .prod-int-img-producto:hover .img2{
+        opacity: 1;
+        z-index: 1;
+    }
+
+    main .prod-interes .prod-int-categorias{
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: center;
+
+    }
+
+    main .prod-interes .prod-int-categorias a{
+        display: flex;
+        width: auto !important;
+        font-size: 12px;
+        font-weight: 300;
+        color: #4a4a4a;
+        align-self: flex-end;
+        text-align: center;
+        white-space: pre-wrap;
+
+    }
+    
+    main .prod-interes .prod-int-titulo,
+    .prod-interes .prod-int-precio,
+    .prod-interes .prod-int-rating {
+        text-align: center;
+        text-transform: uppercase;
+    }
+    main .prod-interes .prod-int-titulo h2{
+        font-size: 18px;
+        font-weight: 400;
+        margin: 0 0 20px 0;
+    }
+
+    main .prod-interes .prod-int-precio{
+        font-size: 18px ;
+        color: #57bf6d;
+    }
+
+    main .prod-interes .prod-int-btns {
+        width: 80%;
+    }
+
+    main .prod-interes .prod-int-btns a,
+         .prod-interes .prod-int-btns button{
+        width: 100%;
+    }
+
+    main .prod-interes .prod-int-btns button{
+        background-color: transparent;
+        color: #4a4a4a;
+        margin-bottom: 10px;
+        padding: 5px;
+    }
+
+    main .total-carro table{
+        height: max-content;
+    }
 
 /*!-------------------FOOTER---------------------*/
 
@@ -825,10 +963,116 @@ footer .info-contacto,
 }
 @media(min-width: 1024px){
 
+    header ul{
+        list-style: none;
+        margin: 0;
+        padding: 0;
+    }
+    header a{
+        text-decoration: none;
+        color: #555555;
+    }
+
+    header .header-top{
+        display: flex;
+        flex-wrap: wrap;
+        justify-self: start;
+        align-items: flex-start;
+        padding: 5px 0 5px 0;
+    }
+
+    header .header-top .top-icon-redes{
+        width: 50%;
+        justify-content: flex-start;
+    }
+
+    header .header-top .top-cont-pers{
+        display: flex;
+        flex-direction: row;
+        justify-content: end;
+        width: 50%;
+    }
+    
+    header .header-top .top-cont-pers a{
+        font-size: 14px;
+        color: #bbbbbb !important;
+        padding-left: 10px;
+    }
+
+    header .main-mobile{
+        display: none;
+    }
+    header .main-desktop{
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: center;
+        height: 100px;
+    }
+    header .main-desktop .main-desk-logo{
+        display: flex;
+        align-items: center;
+        width: 20%;
+        height: 100px;
+    }
+    header .main-desktop .main-desk-logo a{
+        display: block;
+        width: 180px;
+
+    }
+    header .main-desktop .main-desk-logo a img{
+        width: 100%;
+    }
+    header .main-desktop .main-nav-desk{
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: flex-end;
+        align-items: center;
+        width: 80%;
+        height: 100px;
+        text-transform: uppercase;
+    }
+
+    header .main-desktop .main-nav-desk li{
+        font-size: 15px;
+        padding: 0 15px;
+    }
+
+    header .main-desktop .main-nav-desk li .nav-desk-tienda{
+        padding: 12px 22px;
+        background-color: #000033;
+        color: #ffffff;
+        border-radius: 4px;
+        cursor: pointer;
+        font-weight: 600;
+    }
+
+
+    main .ancho{
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        
+    }
+
+    main .ancho h1,
+         .ancho nav{
+        width: 50% !important;
+    }
+
+    main .ancho nav ul{
+        justify-content: flex-end !important;
+    }
+
+ 
+
+
+/*!-----------FOOTER-------------*/
+
     footer .info-contacto,
-    .public-recientes,
-    .enlaces-internos,
-    .hipervinculos{
-    width: calc(25% - 12px);
-}
+           .public-recientes,
+           .enlaces-internos,
+           .hipervinculos{
+        width: calc(25% - 12px);
+    }
 }

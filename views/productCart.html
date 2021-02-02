@@ -34,23 +34,34 @@
                     <a href="/productCart">Carrito de compras</a>
                 </li>
                 <li>
-                    <a href="#">Contáctanos</a>
+                    <a href="#">Cerrar sesion</a>
                 </li>
             </ul>
         </div>
         <nav class="main-desktop">
-            <a href="/home">
-                <img src="static/images/todoog.png" alt="logo">
-            </a>
+            <div class="main-desk-logo">
+                <a href="/home">
+                    <img src="static/images/todoog.png" alt="logo">
+                </a>
+            </div>
+            
             <ul class="main-nav-desk">
-                <li>
+                <li class="">
                     <a href="#">inicio</a>
                 </li>
                 <li>
-                    <a href="#">para el piloto</a>
+                    <a href="#">
+                        para el piloto
+                        <i class="fas fa-chevron-down"></i>
+                    </a>
+                    
                 </li>
                 <li>
-                    <a href="#">para el avion</a>
+                    <a href="#">
+                        para el avion
+                       <i class="fas fa-chevron-down"></i> 
+                    </a>
+                    
                 </li>
                 <li>
                     <a href="#">faq's</a>
@@ -59,12 +70,12 @@
                     <a href="#">noticias</a>
                 </li>
                 <li>
-                    <a href="/productoDetail">
+                    <a href="/productoDetail" class="nav-desk-tienda">
                         <span>tienda</span>
                     </a>
                 </li>
                 <li>
-                    <a href="#">sign in/join</a>
+                    <a href="#">sign in / join</a>
                 </li>
                 <li>
                     <a href="/productCart">
@@ -78,11 +89,6 @@
                 <li>
                     <a href="#">
                         <i class="fas fa-search"></i>
-                    </a>
-                </li>
-                <li>
-                    <a href="#">
-                        <i class="fas fa-bars"></i>
                     </a>
                 </li>
             </ul>
@@ -148,7 +154,7 @@
                         </thead>
                         <tbody>
                             <tr>
-                                <td class="producto-remover"cellspacing="0" cellpadding="0">
+                                <td class="producto-remover">
                                     <a href="">x</a>
                                 </td>
                                 <td class="producto-imagen">
@@ -237,36 +243,72 @@
                         <tbody>
                             <tr>
                                 <td>
-                                    <div class="main-img-producto">
-                                        <img src="" alt="">
+                                    <div class="prod-int-img-producto">
+                                        
+                                            <img src="static/images/Defecto.jpg" alt="" class="img1">
+                                        
+                                            <img src="static/images/Defecto2.jpg" alt="" class="img2">
+                                        
                                     </div>
-                                    <span>
-                                        <a href=""></a>
-                                    </span>
-                                    <h2>Nombre del producto</h2>
-                                    <span>Precio porducto</span>
-                                    <a href="">
-                                        <button></button>
-                                    </a>
-                                    <a href="">
-                                        <button></button>
-                                    </a>
+                                    <div class="prod-int-categorias">
+                                        <a href="">cat para el avi</a>
+                                        , 
+                                        <a href=""> cat para la ropa</a>
+                                    </div>
+                                    <div class="prod-int-titulo">
+                                        <h2>Nombre del producto</h2>
+                                    </div>
+                                    <div class="prod-int-precio">
+                                        <span>S/20.00</span>
+                                    </div>
+                                    <div class="prod-int-rating">
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                    </div>
+                                    <div class="prod-int-btns">
+                                        <a href="">
+                                            <button>Agregar al carrito</button>
+                                        </a>
+                                        <a href="">
+                                            <button>Vista rapida</button>
+                                        </a>
+                                    </div>
+                                    
                                 </td>
                                 <td>
-                                    <div class="main-img-producto">
-                                        <img src="" alt="">
+                                    <div class="prod-int-img-producto">
+                                        <img src="static/images/Defecto.jpg" alt="" class="img1">    
+                                        <img src="static/images/Defecto2.jpg" alt="" class="img2">
                                     </div>
-                                    <span>
-                                        <a href=""></a>
-                                    </span>
-                                    <h2>Nombre del producto</h2>
-                                    <span>Precio porducto</span>
-                                    <a href="">
-                                        <button></button>
-                                    </a>
-                                    <a href="">
-                                        <button></button>
-                                    </a>
+                                    <div class="prod-int-categorias">
+                                        <a href="">cat para el avi</a>
+                                        , 
+                                        <a href=""> cat para la ropa</a>
+                                    </div>
+                                    <div class="prod-int-titulo">
+                                        <h2>Nombre del producto</h2>
+                                    </div>
+                                    <div class="prod-int-precio">
+                                        <span>S/20.00</span>
+                                    </div>
+                                    <div class="prod-int-rating">
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                    </div>
+                                    <div class="prod-int-btns">
+                                        <a href="">
+                                            <button>Agregar al carrito</button>
+                                        </a>
+                                        <a href="">
+                                            <button>Vista rapida</button>
+                                        </a>
+                                    </div>
                                 </td>
                             </tr>
                         </tbody>
@@ -285,7 +327,7 @@
                                 <td class="producto-subtotal" data-title="Subtotal">
                                     <span>S/79.99</span>
                                 </td>
-                                <td class="producto-envio"data-title="Gastos de envio">
+                                <td class="producto-envio" data-title="Gastos de envio">
                                     <span> Ingresa tu dirección para ver las opciones de envio.</span>
                                     <div class="calc-envio">
                                         <a href="">Calcular costo de envio</a>
