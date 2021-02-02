@@ -337,11 +337,19 @@ main .producto-footer .cupon form input[type="submit"],
     padding: 10px;
     border-radius: 78px;
     border: none;
-    background-color: #000053;/*hover 00033*/
+    background-color: #000063;/*hover 00033*/
     color: #ffffff;
     font-weight: 600;
     text-transform: uppercase;
+    transition: all 0.7s;
 }
+
+main .producto-footer .cupon form input[type="submit"]:hover,
+                      .actualizar form input[type="submit"]:hover{
+    background-color: #000030;/*hover 00033*/
+    color: #ffffffc0;
+}
+
 main .prod-interes{
     display: none;
 }
@@ -398,15 +406,20 @@ main .total-carro .terminar-compra a{
     display: block;
     width: 100%;
     color: #ffffff;
-    background-color: #000053;
+    background-color: #000063;
     text-align: center;
     padding: 12px;
     font-weight: 800;
     text-transform: uppercase;
     border-radius: 76px;
     box-sizing: border-box;
+    transition: all 0.7s;
 }
 
+main .total-carro .terminar-compra a:hover{
+    color: #ffffffc0;
+    background-color: #000030;
+}
 
 /*!---------------FOOTER---------------¡*/
 
