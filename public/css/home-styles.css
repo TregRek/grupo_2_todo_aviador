@@ -253,6 +253,12 @@ header .main-mobile .main-nav-mob-tab .hamburger a .fa-bars{
     padding: 6px 10px 6px 10px;
     
     border-color: white;
+    border-radius: 10px;
+}
+.button-container button:hover{
+    background-color: #02020f;
+    border-color: white;
+    border-radius: 10px;
 }
 /*******************MAIN SECTION***************/
 main{
@@ -329,8 +335,21 @@ main{
 }
 
 
-button{
+ul button{
     text-align: center;
+    background-color: none;
+    border: solid 1px #000000;
+    border-style: double;
+    padding: 5px 3px 5px 3px;
+}
+
+ul button:hover{
+    color: white;
+    background-color: #000033;
+}
+.boton{
+    padding: 10px;
+    
 }
 
 ul{
@@ -644,7 +663,11 @@ section li {
     width: calc(50% - 15px);
 }
 
-
+.caracteristicas{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
 
 
 
@@ -686,7 +709,12 @@ footer .info-contacto,
         width: calc(25% - 15px);
     }
     
-    
+    .noticias ul{
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-around;
+        margin-top: 2rem;
+    }
     
     
 
