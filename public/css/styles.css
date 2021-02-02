@@ -78,8 +78,11 @@ a{
     display: flex;
     flex-direction:column;
     border: 1px solid #f1f1f1;
-    padding: 20px;
     justify-content: center;
+}
+
+.login-top-div{
+    padding:20px;
 }
 
 .formulario-login{
@@ -87,8 +90,41 @@ a{
     flex-direction: column;
 }
 
-.formulario-login input, button{
+.formulario-login input{
     margin: 5px;
+}
+
+
+.formulario-login button{
+    margin: 15px 0px;
+    background-color: #000033;
+    color:#fff;
+    padding: 10px;
+    border:0;
+    transition: all 0.5s;
+}
+
+#usuario, #password, #email, #conf-password{
+    border:0;
+    border-bottom: 1px solid #e0e0e0;
+    height: 30px;
+}
+
+.registrate button{
+    background-color: #fff;
+    border:0;
+    padding: 10px;
+    margin: 5px;
+    transition: all 0.5s;
+}
+
+.formulario-login button:hover{
+    background-color:#545454;
+    box-shadow: 0px 0px 10px rgb(100, 100, 100);
+}
+
+.registrate button:hover{
+    box-shadow: 0px 0px 10px rgb(100, 100, 100);
 }
 
 .registrate{
@@ -96,8 +132,9 @@ a{
     align-items: center;
     justify-content: space-around;
     margin-top: 10px;
-    border-top: 1px solid #f1f1f1;
     width:100%;
+    padding:20px 10px;
+    background-color:#f6f6f6;
 }
 
 /*************** SIDE BAR PRODUCTO ***********/

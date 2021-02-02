@@ -48,9 +48,9 @@
         </header>
         <main class="main-login">
             <section class="cuadro-login">
-                <div class="formulario-login">
+                <div class="login-top-div">
                     <h2>Inicar Sesión</h2>
-                    <h3>Se parte de nuestra comunidad</h3>
+                    <p>Se parte de nuestra comunidad</p>
                     <form action="/login" method="POST" class="formulario-login">
                         <input type="text" name="usuario" id="usuario" placeholder="Usuario">
                         <input type="password" name="password" id="password" placeholder="Contraseña">
@@ -64,7 +64,7 @@
                 </div>
                 <div class="registrate">
                     <p>¿No eres miembro?</p>
-                    <button>Regístrate</button>
+                    <button onclick="location.href='/register';">Regístrate</button>
                 </div>
             </section>
         </main>
