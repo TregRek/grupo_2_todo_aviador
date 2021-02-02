@@ -983,6 +983,7 @@ footer .info-contacto,
 
     header .header-top .top-icon-redes{
         width: 50%;
+        justify-content: flex-start;
     }
 
     header .header-top .top-cont-pers{
