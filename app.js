@@ -7,16 +7,12 @@ app.use( '/static', express.static(__dirname + '/public'));
 
 app.listen(3000, console.log("Server's up! Port 3000"));
 
-app.get("/home", (req, res) =>{
+app.get("/", (req, res) =>{
     res.sendFile(path.resolve(__dirname, './views/index.html'));
 });
 
 app.get("/login", (req, res) =>{
     res.sendFile(path.resolve(__dirname, './views/login.html'));
-});
-
-app.get("/productDetail", (req, res) =>{
-    res.sendFile(path.resolve(__dirname, './views/productDetail.html'));
 });
 
 app.get("/productCart", (req, res) =>{
