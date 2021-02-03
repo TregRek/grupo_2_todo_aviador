@@ -20,4 +20,7 @@ https://www.sportys.com/
 
 - Luis Hernández: Técnico en programación de software, también un amante a los videojuegos aunque tambien a las series, peliculas, musica, tecnología... 🎮🎸🎥🎞 💾📲, estudiante de "FullStack Web Development" 👨‍💻 con muchas ganas de aprender.
 
+# SPRINT 2
+
+https://trello.com/b/8C1gXkYc/todo-aviador
 
