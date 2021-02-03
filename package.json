@@ -15,5 +15,23 @@
   },
   "devDependencies": {
     "nodemon": "^2.0.7"
-  }
+  },
+  "name": "grupo_2_todo_aviador",
+  "description": "Espacio aeronáutico desarrollado con mucha pasión, en conjunto con decenas de marcas y tiendas aeronáuticas para conectar a todos los que amamos la aviación.\r Ecommerce de productos netamente aeronáuticos.\r El público objetivo son aviadores, entusiastas de la aviación y personas que conocen gente aficionada de la aviación.",
+  "version": "1.0.0",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/TregRek/grupo_2_todo_aviador.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/TregRek/grupo_2_todo_aviador/issues"
+  },
+  "homepage": "https://github.com/TregRek/grupo_2_todo_aviador#readme"
 }
