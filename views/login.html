@@ -9,43 +9,114 @@
         <script src="https://kit.fontawesome.com/5b5e7174df.js" crossorigin="anonymous"></script>
         <link rel="stylesheet" href="static/css/normalize.css">
         <link rel="stylesheet" href="static/css/styles.css">
+        <link rel="stylesheet" href="static/css/cart_styles.css">
     </head>
     <body>
         <header>
-            <nav class="header-main-top">
-                <ul class="social-logos">
-                    <li><a href="#"><i class="fab fa-facebook"></i></a></li>
-                    <li><a href="#"><i class="fab fa-instagram"></i></a></li>
+            <div class="header-top">
+                <ul class="top-icon-redes">
+                    <li>
+                        <a href="https://www.facebook.com/todoaviadorperu">
+                            <i class="fab fa-facebook"></i>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://www.instagram.com/todoaviadorperu">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                    </li>
                 </ul>
-                <ul class="right-nav">
-                    <li><a href="#">Mi cuenta</a></li>
-                    <li><a href="#">Shopping cart</a></li>
-                    <li><a href="#">Contáctanos</a></li>
+                <ul class="top-cont-pers">
+                    <li>
+                        <a href="/login">Mi cuenta</a>
+                    </li>
+                    <li>
+                        <a href="/productCart">Carrito de compras</a>
+                    </li>
+                    <li>
+                        <a href="#">Cerrar sesion</a>
+                    </li>
+                </ul>
+            </div>
+            <nav class="main-desktop">
+                <div class="main-desk-logo">
+                    <a href="/">
+                        <img src="static/images/todoog.png" alt="logo">
+                    </a>
+                </div>
+                
+                <ul class="main-nav-desk">
+                    <li class="">
+                        <a href="/">inicio</a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            para el piloto
+                            <i class="fas fa-chevron-down"></i>
+                        </a>
+                        
+                    </li>
+                    <li>
+                        <a href="#">
+                            para el avion
+                           <i class="fas fa-chevron-down"></i> 
+                        </a>
+                        
+                    </li>
+                    <li>
+                        <a href="#">faq's</a>
+                    </li>
+                    <li>
+                        <a href="#">noticias</a>
+                    </li>
+                    <li>
+                        <a href="/productDet" class="nav-desk-tienda">
+                            <span>tienda</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="/login">sign in / join</a>
+                    </li>
+                    <li>
+                        <a href="/productCart">
+                            <span>
+                                <i class="fas fa-shopping-basket"></i>
+                                <span class="contador-carrito"> 0 </span>
+                            </span>
+                        </a>
+                    </li>
+                    
+                    <li>
+                        <a href="#">
+                            <i class="fas fa-search"></i>
+                        </a>
+                    </li>
                 </ul>
             </nav>
-            <nav class="header-main-bottom-desktop">
-                <img src="static/images/todoog.png" alt="logo">
-                <ul class="main-nav-bot-dkt">
-                    <li><a href="#">INICIO</a></li>
-                    <li><a href="#">PARA EL PILOTO</a></li>
-                    <li><a href="#">PARA EL AVION</a></li>
-                    <li><a href="#">FAQ'S</a></li>
-                    <li><a href="#">NOTICIAS</a></li>
-                    <li><button>TIENDA</button></li>
-                    <li><a href="#">SIGN IN/JOIN</a></li>
-                    <li><a href="#"><i class="fas fa-shopping-basket"></i></a></li>
-                    <li><a href="#"><i class="fas fa-search"></i></a></li>
-                    <li><a href="#"><i class="fas fa-bars"></i></a></li>
-                </ul>
-            </nav>
-            <nav class="header-main-bottom-mobile">
-                <ul class="main-nav-bot-mbl">
-                    <li><a href="#"><i class="fas fa-shopping-basket"></i></a></li>
-                    <li><img src="static/images/todoog.png" alt="logo"></li>
-                    <li><a href="#"><i class="fas fa-bars"></i></a></li>
+            <nav class="main-mobile">
+                <ul class="main-nav-mob-tab">
+                    <li class="carrito">
+                        <a href="/productCart">
+                            <span>
+                                <i class="fas fa-shopping-basket"></i>
+                                <span class="contador-carrito"> 0 </span>
+                            </span>
+                        </a>
+                    </li>
+                    <li class="logo">
+                        <a href="/">
+                            <img src="static/images/todoog.png" alt="logo">
+                        </a>
+                    </li>
+                    <li class="hamburger">
+                        <a href="#">
+                            <i class="fas fa-bars"></i>
+                        </a>
+                    </li>
                 </ul>
             </nav>
         </header>
+       
         <main class="main-login">
             <section class="cuadro-login">
                 <div class="login-top-div">
@@ -69,117 +140,231 @@
             </section>
         </main>
         <footer>
-            <section class="footer">
-                <div class="column-footer">
-                    <h4>Información de contacto</h4>
-                    <ul class="contacto">
-                        <li>De Lunes a Domingo de 09:00 a 21:00hs.</li>
+            <div class="footer-contenido">
+                <div class="info-contacto">
+                    <h4>Información De Contacto</h4>
+                    <ol>
                         <li>
-                            <i class="fas fa-map-marker-alt"></i>
-                            <div>
+                            <span>
+                                De Lunes a Domingo de 09:00 a 21:00hs.
+                            </span>
+                        </li>
+                        <li>
+                            <div class="icon">
+                                <i class="fas fa-map-marker-alt"></i>
+                            </div>
+                            
+                            <div class="info">
                                 <span>Ubicación:</span>
-                                <a href=""><span>Calle Ciro Alegría 275, Urb. Amauta. SHM</span></a>
+                                <a href="https://www.google.com/maps/place/Todo+Aviador+Per%C3%BA/@-12.1603688,-76.9837601,17z/data=!3m1!4b1!4m5!3m4!1s0x9105b9d2bfa7ec5d:0x51483f8596cfada7!8m2!3d-12.1603688!4d-76.9815714" 
+                                target="_blank">
+                                Calle Ciro Alegría 275, Urb. Amauta. SJM
+                                </a>
                             </div>
                         </li>
                         <li>
-                            <i class="fas fa-mobile-alt"></i>
-                            <div>
-                                <span>Whatsapp:</span>
-                                <a href="#"><span>(+51) 947 432 205</span></a>
+                            <div class="icon">
+                                <i class="fab fa-whatsapp"></i>
+                            </div>
+                            
+                            <div class="info">
+                                <span>WhatsApp:</span>
+                                <a href="">(+51) 947 432 205</a>
                             </div>
                         </li>
                         <li>
-                            <i class="far fa-envelope"></i>
-                            <div>
-                                <span>Email:</span>
-                                <a href="#"><span>info@todoaviador.com</span></a>
+                            <div class="icon">
+                                <i class="far fa-envelope"></i>
+                            </div>
+                            
+                            <div class="info">
+                                <span>E-mail:</span>
+                                <a href="">info@todoaviador.com</a>
                             </div>
                         </li>
-                    </ul> 
+                    </ol>
+    
                 </div>
-                <div class="column-footer">
-                    <h4>Publicaciones recientes</h4>
-                    <ul class="publicaciones">
+                <div class="public-recientes">
+                    
+                    <h4>Publicaciones Recientes</h4>
+    
+                    <ol>
                         <li>
-                            <a href="#"><img src="#" alt="publ1"></a>
-                            <div>
-                                <a href="#">Lorem ipsum, dolor sit</a>
-                                <div>Abril 8, 2020</div>
-                                <div><a href="#">10 comentarios</a></div>
+                            <div class="footer-img-prod">
+                                <a href="">
+                                    <img src="/static/images/Defecto.jpg" alt="img-producto">
+                                </a>                        
+                            </div>
+                            <div class="descr-producto">
+                                <div class="nom-producto">
+                                    <a href="">Nombre del producto</a>
+                                </div>
+                                <div class="info-producto">
+                                    <span>Diciembre 0, 2999 con /</span>
+                                    <a href="">Comentarios del prod</a>
+                                </div>
                             </div>
                         </li>
-                        <li>
-                            <a href="#"><img src="#" alt="publ2"></a>
-                            <div>
-                                <a href="#">Lorem ipsum, dolor sit</a>
-                                <div>Abril 9, 2020</div>
-                                <div><a href="#">6 comentarios</a></div>
+                        <li class="footer-prod-2">
+                            <div class="footer-img-prod">
+                                <a href="">
+                                    <img src="/static/images/Defecto.jpg" alt="img-producto">
+                                </a>  
+                            </div>
+                            <div class="descr-producto">
+                                <div class="nom-producto">
+                                    <a href="">Nombre del producto</a>
+                                </div>
+                                <div class="info-producto">
+                                    <span>Enero 0, 2999 con /</span>
+                                    <a href="">Comentarios del prod</a>
+                                </div>
                             </div>
                         </li>
-                        <li>
-                            <a href="#"><img src="#" alt="publ3"></a>
-                            <div>
-                                <a href="#">Lorem ipsum, dolor sit</a>
-                                <div>Abril 10, 2020</div>
-                                <div><a href="#">18 comentarios</a></div>
+                        <li class="footer-prod-3">
+                            <div class="footer-img-prod">
+                                <a href="">
+                                    <img src="/static/images/Defecto.jpg" alt="img-producto">
+                                </a>  
+                            </div>
+                            <div class="descr-producto">
+                                <div class="nom-producto">
+                                    <a href="">Nombre del producto</a>
+                                </div>
+                                <div class="info-producto">
+                                    <span>Agosto 0, 2999 con /</span>
+                                    <a href="">Comentarios del prod</a>
+                                </div>
                             </div>
                         </li>
-                    </ul>
+                    </ol>
                 </div>
-                <div class="column-footer">
-                    <h4>Tienda</h4>
-                    <ul>
-                        <li><a href="#">Mujeres</a></li>
-                        <li><a href="#">Hombres</a></li>
-                        <li><a href="#">Marcas</a></li>
-                        <li><a href="#">Últimos</a></li>
-                    </ul>
-                    <h4>Enlaces Útiles</h4>
-                    <ul>
-                        <li><a href="#">Sobre de nosotros</a></li>
-                        <li><a href="#">Contáctanos</a></li>
-                        <li><a href="#">Términos y Condiciones</a></li>
-                        <li><a href="#">FAQs</a></li>
-                    </ul>
-                </div>
-                <div class="column-footer">
-                    <h4>Etiquetas</h4>
-                    <div class="etiquetas">
-                        <a href="#">Biblioteca Aeronáutica HDIW</a>
-                        <a href="#">Camisas</a>
-                        <a href="#">Christian Yong</a>
-                        <a href="#">Jacket</a>
-                        <a href="#">Jeans</a>
-                        <a href="#">Libros</a>
-                        <a href="#">Hombres</a>
-                        <a href="#">Pantalones</a>
-                        <a href="#">Todo Aviador</a>
-                        <a href="#">Uniformes</a>
-                        <a href="#">Wingstore</a>
+    
+                <div class="enlaces-internos">
+                    <div class="tienda">
+                        <h4>Tienda</h4>
+                        <ol>
+                            <li>
+                                <a href="">
+                                    <input type="radio" name="" id="">
+                                    <span>Mujer</span>
+                                    
+                                </a>
+                            </li>
+                            <li>
+                                <a href="">
+                                    <input type="radio" name="" id="">
+                                    <span>Hombre</span>
+                                </a>
+                            </li>
+                            <li>
+                            <a href="">
+                                <input type="radio" name="" id="">
+                                <span>Marcas A - Z</span>
+                                
+                            </a>
+                            </li>
+                            <li>
+                                <a href="">
+                                    <input type="radio" name="" id="">
+                                    <span>Lo último en tendencias</span>
+                                    
+                                </a>
+                            </li>
+                        </ol>
+                        
+                        
+                        
+                        
                     </div>
-                    <h4>Síguenos</h4>
-                    <ul class="socials">
-                        <li><a href="#"><i class="fab fa-twitter"></i></a></li>
-                        <li><a href="#"><i class="fab fa-facebook"></i></a></li>
-                        <li><a href="#"><i class="fab fa-instagram"></i></a></li>
-                        <li><a href="#"><i class="fab fa-linkedin"></i></a></li>
-                        <li><a href="#"><i class="fab fa-youtube"></i></a></li>
-                    </ul>
+                    <div class="enlaces-utiles">
+                        <h4>Enlaces Útiles</h4>
+                        <ol>
+                            <li>
+                                <a href="">
+                                    <input type="radio" name="" id="">
+                                    Acerca de la compañia
+                                </a>
+                            </li>
+                            <li>
+                                <a href="">
+                                    <input type="radio" name="" id="">
+                                    Contactenos
+                                </a> 
+                            </li>
+                            <li>
+                                <a href="">
+                                    <input type="radio" name="" id="">
+                                    Terminos & condiciones
+                                </a>
+                            </li>
+                            <li>
+                                <a href="">
+                                    <input type="radio" name="" id="">
+                                    Preguntas frecuentes
+                                </a>
+                            </li>
+                        </ol>                
+                    </div>
                 </div>
-            </section>
-            <section class="sub-footer">
-                <div>
-                    <ul>
-                        <li><a href="#">Sobre nosotros</a></li>
-                        <li><a href="#">Contáctanos</a></li>
-                        <li><a href="#">Términos y Condiciones</a></li>
-                        <li><a href="#">Política de Privacidad</a></li>
-                    </ul>
+                
+                <div class="hipervinculos">
+                    <div class="etiquetas">
+                        <h4>Etiquetas</h4>
+                        <ol>
+                            <li>
+                                <a href="">Biblioteca aeronáutica HDIW</a>
+                                <a href="">Camisas</a>
+                                <a href="">Chrisitan Yong</a>
+                                <a href="">Chaquetas</a>
+                                <a href="">Pantalones</a>
+                                <a href="">Libros</a>
+                                <a href="">Jeans</a>
+                                <a href="">Deportivos</a>
+                                <a href="">Uniformes</a>
+                                <a href="">Wingstores</a>
+                            </li>
+                        </ol>
+                        
+                    </div>
+                    <div class="redes">
+                        <h4>Síguenos</h4>
+                        <ol>
+                            <li>
+                                <a href="https://twitter.com/" class="red-twit">
+                                    <i class="fab fa-twitter"></i>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="https://www.facebook.com/" class="red-face">
+                                    <i class="fab fa-facebook"></i>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="https://www.instagram.com/" class="red-insta">
+                                    <i class="fab fa-instagram"></i>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="https://www.linkedin.com/" class="red-link">
+                                    <i class="fab fa-linkedin"></i>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="https://www.youtube.com/" class="red-iutu">
+                                    <i class="fab fa-youtube"></i>
+                                </a>
+                            </li>
+                        </ol>
+                    </div>
                 </div>
-                <div>
-                    <h5>© Copyright - 2021</h5>
-                </div>
-            </section>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>Copyright © Todos los derechos reservados | 2021</p>
+            </div>
         </footer>
+        
     </body>
 </html>
