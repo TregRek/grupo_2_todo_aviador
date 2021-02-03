@@ -354,6 +354,8 @@ ul button:hover{
 
 ul{
     list-style: none;
+    display: flex;
+    flex-wrap: wrap;
 }
 
 /*!---------------NEWSLETTER---------------¡*/
@@ -668,8 +670,6 @@ section li {
     flex-wrap: wrap;
     justify-content: space-around;
 }
-
-
 
 
 
