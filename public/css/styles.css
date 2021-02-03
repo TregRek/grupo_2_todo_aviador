@@ -9,6 +9,7 @@ body{
 
 a{
     text-decoration: none; 
+    color: #bbbbbb;
 }
 
 .header-main-top{
@@ -152,7 +153,7 @@ a{
 }
 
 .top-rated li img{
-    min-width: 100px;
+    max-width: 100px;
     height: 100px;
 }
 
