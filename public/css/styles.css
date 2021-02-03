@@ -71,7 +71,8 @@ a{
 .main-login{
     display: flex;
     justify-content: center;
-    margin: 20px
+    padding: 20px;
+    background-color: #e0e0e0;
 }
 
 .cuadro-login{
@@ -79,6 +80,7 @@ a{
     flex-direction:column;
     border: 1px solid #f1f1f1;
     justify-content: center;
+    background-color: #fff;
 }
 
 .login-top-div{
