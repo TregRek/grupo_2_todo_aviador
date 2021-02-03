@@ -1,332 +1,511 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <meta charset="utf-8"/>
-        <title>TodoAviador</title>
-        <meta name="viewport" content="width=device-width" scale="1">
-        <link rel="preconnect" href="https://fonts.gstatic.com">
-        <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500&display=swap" rel="stylesheet">
-        <script src="https://kit.fontawesome.com/5b5e7174df.js" crossorigin="anonymous"></script>
-        <link rel="stylesheet" href="static/css/normalize.css">
-        <link rel="stylesheet" href="static/css/styles.css">
-    </head>
-    <body>
-        <header>
-            <nav class="header-main-top">
-                <ul class="social-logos">
-                    <li><a href="#"><i class="fab fa-facebook"></i></a></li>
-                    <li><a href="#"><i class="fab fa-instagram"></i></a></li>
-                </ul>
-                <ul class="right-nav">
-                    <li><a href="#">Mi cuenta</a></li>
-                    <li><a href="#">Shopping cart</a></li>
-                    <li><a href="#">Contáctanos</a></li>
-                </ul>
-            </nav>
-            <nav class="header-main-bottom-desktop">
-                <img src="static/images/todoog.png" alt="logo">
-                <ul class="main-nav-bot-dkt">
-                    <li><a href="#">INICIO</a></li>
-                    <li><a href="#">PARA EL PILOTO</a></li>
-                    <li><a href="#">PARA EL AVION</a></li>
-                    <li><a href="#">FAQ'S</a></li>
-                    <li><a href="#">NOTICIAS</a></li>
-                    <li><button>TIENDA</button></li>
-                    <li><a href="#">SIGN IN/JOIN</a></li>
-                    <li><a href="#"><i class="fas fa-shopping-basket"></i></a></li>
-                    <li><a href="#"><i class="fas fa-search"></i></a></li>
-                    <li><a href="#"><i class="fas fa-bars"></i></a></li>
-                </ul>
-            </nav>
-            <nav class="header-main-bottom-mobile">
-                <ul class="main-nav-bot-mbl">
-                    <li><a href="#"><i class="fas fa-shopping-basket"></i></a></li>
-                    <li><img src="static/images/todoog.png" alt="logo"></li>
-                    <li><a href="#"><i class="fas fa-bars"></i></a></li>
-                </ul>
-            </nav>
-        </header>
-        <main class="main-product-detail">
-            <div class="sidebar-product">
-                <h3>Síguenos</h3>
-                <ul class="socials">
-                    <li><a href="#"><i class="fab fa-twitter"></i></a></li>
-                    <li><a href="#"><i class="fab fa-facebook"></i></a></li>
-                    <li><a href="#"><i class="fab fa-instagram"></i></a></li>
-                    <li><a href="#"><i class="fab fa-linkedin"></i></a></li>
-                    <li><a href="#"><i class="fab fa-youtube"></i></a></li>
-                </ul>
-                <h3>Categorías</h3>
-                <ul class="sidebar-categorias">
-                    <li><a href="#">Auriculares o Headsets</a></li>
-                    <li><a href="#">Bolsos de vuelo</a></li>
-                    <li><a href="#">Cartografía</a></li>
-                    <li><a href="#">Libros</a></li>
-                    <li><a href="#">Para el avión</a></li>
-                    <li><a href="#">Para el piloto</a></li>
-                    <li><a href="#">Pilot Covers</a></li>
-                    <li><a href="#">Regalos</a></li>
-                    <li><a href="#">Uniformes</a></li>
-                </ul>
-                <h3>Mejor calificados</h3>
-                <ul class="top-rated">
-                    <li>
-                        <img src="static/images/Guardianes-de-nasca.png" alt="libro">
-                        <div>
-                            <p>Libro "Los Guardianes de Nasca"</p>
-                            <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
-                            <h6 class="precio">S/60.00</h6>
-                        </div>
-                    </li>
-                    <li>
-                        <img src="static/images/usher-2.png" alt="sweater">
-                        <div>
-                            <p>Slim Sweater</p>
-                            <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
-                            <h6 class="precio">S/66.98</h6>
-                        </div>
-                    </li>
-                    <li>
-                        <img src="/images/Pilot-lanyard-con-argolla-e1609813811260.jpg" alt="lanyard">
-                        <div>
-                            <p>Pilot Lanyard</p>
-                            <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
-                            <h6 class="precio">S/20.00</h6>
-                        </div>
-                    </li>
-                    <li>
-                        <img src="static/images/Organizational-pack-charts-504x504.jpg" alt="libro">
-                        <div>
-                            <p>Pack de organización"</p>
-                            <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
-                            <h6 class="precio">S/22.00</h6>
-                        </div>
-                    </li>
-                </ul>
+   <head>
+      <meta charset="utf-8"/>
+      <title>TodoAviador</title>
+      <meta name="viewport" content="width=device-width" scale="1">
+      <link rel="preconnect" href="https://fonts.gstatic.com">
+      <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500&display=swap" rel="stylesheet">
+      <script src="https://kit.fontawesome.com/5b5e7174df.js" crossorigin="anonymous"></script>
+      <link rel="stylesheet" href="static/css/normalize.css">
+      <link rel="stylesheet" href="static/css/styles.css">
+   </head>
+   <body>
+      <header>
+         <div class="header-top">
+            <ul class="top-icon-redes">
+               <li>
+                  <a href="https://www.facebook.com/todoaviadorperu">
+                  <i class="fab fa-facebook"></i>
+                  </a>
+               </li>
+               <li>
+                  <a href="https://www.instagram.com/todoaviadorperu">
+                  <i class="fab fa-instagram"></i>
+                  </a>
+               </li>
+            </ul>
+            <ul class="top-cont-pers">
+               <li>
+                  <a href="#">Mi cuenta</a>
+               </li>
+               <li>
+                  <a href="/productCart">Carrito de compras</a>
+               </li>
+               <li>
+                  <a href="#">Cerrar sesion</a>
+               </li>
+            </ul>
+         </div>
+         <nav class="main-desktop">
+            <div class="main-desk-logo">
+               <a href="/">
+               <img src="static/images/todoog.png" alt="logo">
+               </a>
             </div>
-            <section class="product-page">
-                <section class="product-detail">
-                    <div class="img-detail">
-                        <div class="prod-images">
-                            <img src="static/images/Pilots-mapstrap-example.jpg" alt="imagen-principal" class="main-img-prod">
-                            <div class="galery-img">
-                                <ul>
-                                    <li><img src="static/images/Pilots-mapstrap-example-504x504.jpg" alt="img1"></li>
-                                    <li><img src="static/images/Pilot-Mapstrap-2-504x504.jpg" alt="img2"></li>
-                                    <li><img src="static/images/Pilot-Mapstrap-3-504x504.jpg" alt="img3"></li>
-                                    <li><img src="static/images/Pilot-Mapstrap-504x504.jpg" alt="img4"></li>
-                                    <li><img src="static/images/Pilots-mapstrap-example-3-504x504.jpg" alt="img5"></li>
-                                    <li><img src="static/images/Pilots-mapstrap-example-4-504x504.jpg" alt="img6"></li>
-                                    <li><img src="static/images/Pilots-mapstrap-example-5-504x504.jpg" alt="img7"></li>
-                                    <li><img src="static/images/Pilots-mapstrap-example-2-504x504.jpg" alt="img8"></li>
-                                </ul>
-                            </div>
-                        </div>
-                        <div>
-                            <h4>Pilot Strap</h4>
-                            <h3 class="precio">S/16.00</h3>
-                            <p>Accesorio que sirve de complemento para sujetar los mapas, facilitar la observación del piloto en vuelo y la organizacion en la cabina.</p>
-                            <p>Hecho de materiales de fácil transporte y durabilidad</p>
-                            <h6>En stock</h6>
-                            <div class="add-cart">
-                                <button>-</button>
-                                <p>1</p>
-                                <button>+</button>
-                                <button class="add-cart-button">Agregar al carrito</button>
-                            </div>
-                            <div class="prod-desc-cat">
-                                <p>Categoría: Para el piloto</p>
-                                <p>Etiqueta: Wingstore</p>
-                            </div>
-                            <p><i class="far fa-heart"></i></p>
-                            <button class="compare-button">Comparar</button>
-                        </div>
-                    </div>
-                    <section>
-                        <div class="prod-desc-title">
-                            <ul>
-                                <li><a href="#">Descripción</a></li>
-                                <li><a href="#">Comentarios</a></li>
-                            </ul>
-                        </div>
-                        <div>
-                            <h3>Descripción</h3>
-                            <p>Accesorio que sirve de complemento para sujetar los mapas, facilitar la observación del piloto en vuelo y la organizacion en la cabina.</p>
-                            <p>Hecho de materiales de fácil transporte y durabilidad</p>
-                        </div>
-                        <div class="share-product">
-                            <ul>
-                                <li>
-                                    <a href="#">
-                                        <i class="fab fa-twitter"></i>
-                                        <p>Compartir en Twitter</p>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="#">
-                                        <i class="fab fa-facebook"></i>
-                                        <p>Compartir en Facebook</p>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="#">
-                                        <i class="fab fa-pinterest-p"></i>
-                                        <p>Compartir en Pinterest</p>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="#">
-                                        <i class="fas fa-envelope"></i>
-                                        <p>Compartir por correo</p>
-                                    </a>
-                                </li>
-                            </ul>
-                        </div>
-                    </section>
-                </section>
-                <section class="related-prod">
-                    <h3>Productos relacionados</h3>
-                    <div>
+            <ul class="main-nav-desk">
+               <li class="">
+                  <a href="#">inicio</a>
+               </li>
+               <li>
+                  <a href="#">
+                  para el piloto
+                  <i class="fas fa-chevron-down"></i>
+                  </a>
+               </li>
+               <li>
+                  <a href="#">
+                  para el avion
+                  <i class="fas fa-chevron-down"></i> 
+                  </a>
+               </li>
+               <li>
+                  <a href="#">faq's</a>
+               </li>
+               <li>
+                  <a href="#">noticias</a>
+               </li>
+               <li>
+                  <a href="/productoDetail" class="nav-desk-tienda">
+                  <span>tienda</span>
+                  </a>
+               </li>
+               <li>
+                  <a href="#">sign in / join</a>
+               </li>
+               <li>
+                  <a href="/productCart">
+                  <span>
+                  <i class="fas fa-shopping-basket"></i>
+                  <span class="contador-carrito"> 0 </span>
+                  </span>
+                  </a>
+               </li>
+               <li>
+                  <a href="#">
+                  <i class="fas fa-search"></i>
+                  </a>
+               </li>
+            </ul>
+         </nav>
+         <nav class="main-mobile">
+            <ul class="main-nav-mob-tab">
+               <li class="carrito">
+                  <a href="/productCart">
+                  <span>
+                  <i class="fas fa-shopping-basket"></i>
+                  <span class="contador-carrito"> 0 </span>
+                  </span>
+                  </a>
+               </li>
+               <li class="logo">
+                  <a href="/home">
+                  <img src="static/images/todoog.png" alt="logo">
+                  </a>
+               </li>
+               <li class="hamburger">
+                  <a href="#">
+                  <i class="fas fa-bars"></i>
+                  </a>
+               </li>
+            </ul>
+         </nav>
+      </header>
+      <main class="main-product-detail">
+         <div class="sidebar-product">
+            <h3>Síguenos</h3>
+            <ul class="socials">
+               <li><a href="#"><i class="fab fa-twitter"></i></a></li>
+               <li><a href="#"><i class="fab fa-facebook"></i></a></li>
+               <li><a href="#"><i class="fab fa-instagram"></i></a></li>
+               <li><a href="#"><i class="fab fa-linkedin"></i></a></li>
+               <li><a href="#"><i class="fab fa-youtube"></i></a></li>
+            </ul>
+            <h3>Categorías</h3>
+            <ul class="sidebar-categorias">
+               <li><a href="#">Auriculares o Headsets</a></li>
+               <li><a href="#">Bolsos de vuelo</a></li>
+               <li><a href="#">Cartografía</a></li>
+               <li><a href="#">Libros</a></li>
+               <li><a href="#">Para el avión</a></li>
+               <li><a href="#">Para el piloto</a></li>
+               <li><a href="#">Pilot Covers</a></li>
+               <li><a href="#">Regalos</a></li>
+               <li><a href="#">Uniformes</a></li>
+            </ul>
+            <h3>Mejor calificados</h3>
+            <ul class="top-rated">
+               <li>
+                  <img src="static/images/Guardianes-de-nasca.png" alt="libro">
+                  <div>
+                     <p>Libro "Los Guardianes de Nasca"</p>
+                     <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                     <h6 class="precio">S/60.00</h6>
+                  </div>
+               </li>
+               <li>
+                  <img src="static/images/usher-2.png" alt="sweater">
+                  <div>
+                     <p>Slim Sweater</p>
+                     <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                     <h6 class="precio">S/66.98</h6>
+                  </div>
+               </li>
+               <li>
+                  <img src="/images/Pilot-lanyard-con-argolla-e1609813811260.jpg" alt="lanyard">
+                  <div>
+                     <p>Pilot Lanyard</p>
+                     <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                     <h6 class="precio">S/20.00</h6>
+                  </div>
+               </li>
+               <li>
+                  <img src="static/images/Organizational-pack-charts-504x504.jpg" alt="libro">
+                  <div>
+                     <p>Pack de organización"</p>
+                     <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                     <h6 class="precio">S/22.00</h6>
+                  </div>
+               </li>
+            </ul>
+         </div>
+         <section class="product-page">
+            <section class="product-detail">
+               <div class="img-detail">
+                  <div class="prod-images">
+                     <img src="static/images/Pilots-mapstrap-example.jpg" alt="imagen-principal" class="main-img-prod">
+                     <div class="galery-img">
                         <ul>
-                            <li><img src="static/images/PPA-504x638.png" alt="related"></li>
-                            <li><p>Auriculares o Headsets, Para el piloto</p></li>
-                            <li><p>Headset Piloto</p></li>
-                            <li><h6 class="precio">S/139.95</h6></li>
-                            <li><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></li>
-                            <li><button>Comprar</button></li>
+                           <li><img src="static/images/Pilots-mapstrap-example-504x504.jpg" alt="img1"></li>
+                           <li><img src="static/images/Pilot-Mapstrap-2-504x504.jpg" alt="img2"></li>
+                           <li><img src="static/images/Pilot-Mapstrap-3-504x504.jpg" alt="img3"></li>
+                           <li><img src="static/images/Pilot-Mapstrap-504x504.jpg" alt="img4"></li>
+                           <li><img src="static/images/Pilots-mapstrap-example-3-504x504.jpg" alt="img5"></li>
+                           <li><img src="static/images/Pilots-mapstrap-example-4-504x504.jpg" alt="img6"></li>
+                           <li><img src="static/images/Pilots-mapstrap-example-5-504x504.jpg" alt="img7"></li>
+                           <li><img src="static/images/Pilots-mapstrap-example-2-504x504.jpg" alt="img8"></li>
                         </ul>
-                        <ul>
-                            <li><img src="static/images/usher-2.png" alt="related"></li>
-                            <li><p>Para el piloto, Regalos</p></li>
-                            <li><p>Lanyard Cessna</p></li>
-                            <li><h6 class="precio">S/20.00</h6></li>
-                            <li><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></li>
-                            <li><button>Comprar</button></li>
-                        </ul>
-                        <ul>
-                            <li><img src="static/images/camisa-aviador-corbata-galones-y-modelo.jpg" alt="related"></li>
-                            <li><p>Para el piloto, Uniformes</p></li>
-                            <li><p>Camisa Aviador para Pilotos</p></li>
-                            <li><h6 class="precio">S/55.00</h6></li>
-                            <li><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></li>
-                            <li><button>Comprar</button></li>
-                        </ul>
-                    </div>
-                </section>
+                     </div>
+                  </div>
+                  <div>
+                     <h4>Pilot Strap</h4>
+                     <h3 class="precio">S/16.00</h3>
+                     <p>Accesorio que sirve de complemento para sujetar los mapas, facilitar la observación del piloto en vuelo y la organizacion en la cabina.</p>
+                     <p>Hecho de materiales de fácil transporte y durabilidad</p>
+                     <h6>En stock</h6>
+                     <div class="add-cart">
+                        <button>-</button>
+                        <p>1</p>
+                        <button>+</button>
+                        <button class="add-cart-button">Agregar al carrito</button>
+                     </div>
+                     <div class="prod-desc-cat">
+                        <p>Categoría: Para el piloto</p>
+                        <p>Etiqueta: Wingstore</p>
+                     </div>
+                     <p><i class="far fa-heart"></i></p>
+                     <button class="compare-button">Comparar</button>
+                  </div>
+               </div>
+               <section>
+                  <div class="prod-desc-title">
+                     <ul>
+                        <li><a href="#">Descripción</a></li>
+                        <li><a href="#">Comentarios</a></li>
+                     </ul>
+                  </div>
+                  <div>
+                     <h3>Descripción</h3>
+                     <p>Accesorio que sirve de complemento para sujetar los mapas, facilitar la observación del piloto en vuelo y la organizacion en la cabina.</p>
+                     <p>Hecho de materiales de fácil transporte y durabilidad</p>
+                  </div>
+                  <div class="share-product">
+                     <ul>
+                        <li>
+                           <a href="#">
+                              <i class="fab fa-twitter"></i>
+                              <p>Compartir en Twitter</p>
+                           </a>
+                        </li>
+                        <li>
+                           <a href="#">
+                              <i class="fab fa-facebook"></i>
+                              <p>Compartir en Facebook</p>
+                           </a>
+                        </li>
+                        <li>
+                           <a href="#">
+                              <i class="fab fa-pinterest-p"></i>
+                              <p>Compartir en Pinterest</p>
+                           </a>
+                        </li>
+                        <li>
+                           <a href="#">
+                              <i class="fas fa-envelope"></i>
+                              <p>Compartir por correo</p>
+                           </a>
+                        </li>
+                     </ul>
+                  </div>
+               </section>
             </section>
-        </main>
-        <footer>
-            <section class="footer">
-                <div class="column-footer">
-                    <h4>Información de contacto</h4>
-                    <ul class="contacto">
-                        <li>De Lunes a Domingo de 09:00 a 21:00hs.</li>
-                        <li>
-                            <i class="fas fa-map-marker-alt"></i>
-                            <div>
-                                <span>Ubicación:</span>
-                                <a href=""><span>Calle Ciro Alegría 275, Urb. Amauta. SHM</span></a>
-                            </div>
-                        </li>
-                        <li>
-                            <i class="fas fa-mobile-alt"></i>
-                            <div>
-                                <span>Whatsapp:</span>
-                                <a href="#"><span>(+51) 947 432 205</span></a>
-                            </div>
-                        </li>
-                        <li>
-                            <i class="far fa-envelope"></i>
-                            <div>
-                                <span>Email:</span>
-                                <a href="#"><span>info@todoaviador.com</span></a>
-                            </div>
-                        </li>
-                    </ul> 
-                </div>
-                <div class="column-footer">
-                    <h4>Publicaciones recientes</h4>
-                    <ul class="publicaciones">
-                        <li>
-                            <a href="#"><img src="#" alt="publ1"></a>
-                            <div>
-                                <a href="#">Lorem ipsum, dolor sit</a>
-                                <div>Abril 8, 2020</div>
-                                <div><a href="#">10 comentarios</a></div>
-                            </div>
-                        </li>
-                        <li>
-                            <a href="#"><img src="#" alt="publ2"></a>
-                            <div>
-                                <a href="#">Lorem ipsum, dolor sit</a>
-                                <div>Abril 9, 2020</div>
-                                <div><a href="#">6 comentarios</a></div>
-                            </div>
-                        </li>
-                        <li>
-                            <a href="#"><img src="#" alt="publ3"></a>
-                            <div>
-                                <a href="#">Lorem ipsum, dolor sit</a>
-                                <div>Abril 10, 2020</div>
-                                <div><a href="#">18 comentarios</a></div>
-                            </div>
-                        </li>
-                    </ul>
-                </div>
-                <div class="column-footer">
-                    <h4>Tienda</h4>
-                    <ul>
-                        <li><a href="#">Mujeres</a></li>
-                        <li><a href="#">Hombres</a></li>
-                        <li><a href="#">Marcas</a></li>
-                        <li><a href="#">Últimos</a></li>
-                    </ul>
-                    <h4>Enlaces Útiles</h4>
-                    <ul>
-                        <li><a href="#">Sobre de nosotros</a></li>
-                        <li><a href="#">Contáctanos</a></li>
-                        <li><a href="#">Términos y Condiciones</a></li>
-                        <li><a href="#">FAQs</a></li>
-                    </ul>
-                </div>
-                <div class="column-footer">
-                    <h4>Etiquetas</h4>
-                    <div class="etiquetas">
-                        <a href="#">Biblioteca Aeronáutica HDIW</a>
-                        <a href="#">Camisas</a>
-                        <a href="#">Christian Yong</a>
-                        <a href="#">Jacket</a>
-                        <a href="#">Jeans</a>
-                        <a href="#">Libros</a>
-                        <a href="#">Hombres</a>
-                        <a href="#">Pantalones</a>
-                        <a href="#">Todo Aviador</a>
-                        <a href="#">Uniformes</a>
-                        <a href="#">Wingstore</a>
-                    </div>
-                    <h4>Síguenos</h4>
-                    <ul class="socials">
-                        <li><a href="#"><i class="fab fa-twitter"></i></a></li>
-                        <li><a href="#"><i class="fab fa-facebook"></i></a></li>
-                        <li><a href="#"><i class="fab fa-instagram"></i></a></li>
-                        <li><a href="#"><i class="fab fa-linkedin"></i></a></li>
-                        <li><a href="#"><i class="fab fa-youtube"></i></a></li>
-                    </ul>
-                </div>
+            <section class="related-prod">
+               <h3>Productos relacionados</h3>
+               <div>
+                  <ul>
+                     <li><img src="static/images/PPA-504x638.png" alt="related"></li>
+                     <li>
+                        <p>Auriculares o Headsets, Para el piloto</p>
+                     </li>
+                     <li>
+                        <p>Headset Piloto</p>
+                     </li>
+                     <li>
+                        <h6 class="precio">S/139.95</h6>
+                     </li>
+                     <li><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></li>
+                     <li><button>Comprar</button></li>
+                  </ul>
+                  <ul>
+                     <li><img src="static/images/usher-2.png" alt="related"></li>
+                     <li>
+                        <p>Para el piloto, Regalos</p>
+                     </li>
+                     <li>
+                        <p>Lanyard Cessna</p>
+                     </li>
+                     <li>
+                        <h6 class="precio">S/20.00</h6>
+                     </li>
+                     <li><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></li>
+                     <li><button>Comprar</button></li>
+                  </ul>
+                  <ul>
+                     <li><img src="static/images/camisa-aviador-corbata-galones-y-modelo.jpg" alt="related"></li>
+                     <li>
+                        <p>Para el piloto, Uniformes</p>
+                     </li>
+                     <li>
+                        <p>Camisa Aviador para Pilotos</p>
+                     </li>
+                     <li>
+                        <h6 class="precio">S/55.00</h6>
+                     </li>
+                     <li><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></li>
+                     <li><button>Comprar</button></li>
+                  </ul>
+               </div>
             </section>
-            <section class="sub-footer">
-                <div>
-                    <ul>
-                        <li><a href="#">Sobre nosotros</a></li>
-                        <li><a href="#">Contáctanos</a></li>
-                        <li><a href="#">Términos y Condiciones</a></li>
-                        <li><a href="#">Política de Privacidad</a></li>
-                    </ul>
-                </div>
-                <div>
-                    <h5>© Copyright - 2021</h5>
-                </div>
-            </section>
-        </footer>
-    </body>
+         </section>
+      </main>
+      <footer>
+         <div class="footer-contenido">
+            <div class="info-contacto">
+               <h4>Información De Contacto</h4>
+               <ol>
+                  <li>
+                     <span>
+                     De Lunes a Domingo de 09:00 a 21:00hs.
+                     </span>
+                  </li>
+                  <li>
+                     <div class="icon">
+                        <i class="fas fa-map-marker-alt"></i>
+                     </div>
+                     <div class="info">
+                        <span>Ubicación:</span>
+                        <a href="https://www.google.com/maps/place/Todo+Aviador+Per%C3%BA/@-12.1603688,-76.9837601,17z/data=!3m1!4b1!4m5!3m4!1s0x9105b9d2bfa7ec5d:0x51483f8596cfada7!8m2!3d-12.1603688!4d-76.9815714" 
+                           target="_blank">
+                        Calle Ciro Alegría 275, Urb. Amauta. SJM
+                        </a>
+                     </div>
+                  </li>
+                  <li>
+                     <div class="icon">
+                        <i class="fab fa-whatsapp"></i>
+                     </div>
+                     <div class="info">
+                        <span>WhatsApp:</span>
+                        <a href="">(+51) 947 432 205</a>
+                     </div>
+                  </li>
+                  <li>
+                     <div class="icon">
+                        <i class="far fa-envelope"></i>
+                     </div>
+                     <div class="info">
+                        <span>E-mail:</span>
+                        <a href="">info@todoaviador.com</a>
+                     </div>
+                  </li>
+               </ol>
+            </div>
+            <div class="public-recientes">
+               <h4>Publicaciones Recientes</h4>
+               <ol>
+                  <li>
+                     <div class="footer-img-prod">
+                        <a href="">
+                        <img src="/static/images/Defecto.jpg" alt="img-producto">
+                        </a>                        
+                     </div>
+                     <div class="descr-producto">
+                        <div class="nom-producto">
+                           <a href="">Nombre del producto</a>
+                        </div>
+                        <div class="info-producto">
+                           <span>Diciembre 0, 2999 con /</span>
+                           <a href="">Comentarios del prod</a>
+                        </div>
+                     </div>
+                  </li>
+                  <li class="footer-prod-2">
+                     <div class="footer-img-prod">
+                        <a href="">
+                        <img src="/static/images/Defecto.jpg" alt="img-producto">
+                        </a>  
+                     </div>
+                     <div class="descr-producto">
+                        <div class="nom-producto">
+                           <a href="">Nombre del producto</a>
+                        </div>
+                        <div class="info-producto">
+                           <span>Enero 0, 2999 con /</span>
+                           <a href="">Comentarios del prod</a>
+                        </div>
+                     </div>
+                  </li>
+                  <li class="footer-prod-3">
+                     <div class="footer-img-prod">
+                        <a href="">
+                        <img src="/static/images/Defecto.jpg" alt="img-producto">
+                        </a>  
+                     </div>
+                     <div class="descr-producto">
+                        <div class="nom-producto">
+                           <a href="">Nombre del producto</a>
+                        </div>
+                        <div class="info-producto">
+                           <span>Agosto 0, 2999 con /</span>
+                           <a href="">Comentarios del prod</a>
+                        </div>
+                     </div>
+                  </li>
+               </ol>
+            </div>
+            <div class="enlaces-internos">
+               <div class="tienda">
+                  <h4>Tienda</h4>
+                  <ol>
+                     <li>
+                        <a href="">
+                        <input type="radio" name="" id="">
+                        <span>Mujer</span>
+                        </a>
+                     </li>
+                     <li>
+                        <a href="">
+                        <input type="radio" name="" id="">
+                        <span>Hombre</span>
+                        </a>
+                     </li>
+                     <li>
+                        <a href="">
+                        <input type="radio" name="" id="">
+                        <span>Marcas A - Z</span>
+                        </a>
+                     </li>
+                     <li>
+                        <a href="">
+                        <input type="radio" name="" id="">
+                        <span>Lo último en tendencias</span>
+                        </a>
+                     </li>
+                  </ol>
+               </div>
+               <div class="enlaces-utiles">
+                  <h4>Enlaces Útiles</h4>
+                  <ol>
+                     <li>
+                        <a href="">
+                        <input type="radio" name="" id="">
+                        Acerca de la compañia
+                        </a>
+                     </li>
+                     <li>
+                        <a href="">
+                        <input type="radio" name="" id="">
+                        Contactenos
+                        </a> 
+                     </li>
+                     <li>
+                        <a href="">
+                        <input type="radio" name="" id="">
+                        Terminos & condiciones
+                        </a>
+                     </li>
+                     <li>
+                        <a href="">
+                        <input type="radio" name="" id="">
+                        Preguntas frecuentes
+                        </a>
+                     </li>
+                  </ol>
+               </div>
+            </div>
+            <div class="hipervinculos">
+               <div class="etiquetas">
+                  <h4>Etiquetas</h4>
+                  <ol>
+                     <li>
+                        <a href="">Biblioteca aeronáutica HDIW</a>
+                        <a href="">Camisas</a>
+                        <a href="">Chrisitan Yong</a>
+                        <a href="">Chaquetas</a>
+                        <a href="">Pantalones</a>
+                        <a href="">Libros</a>
+                        <a href="">Jeans</a>
+                        <a href="">Deportivos</a>
+                        <a href="">Uniformes</a>
+                        <a href="">Wingstores</a>
+                     </li>
+                  </ol>
+               </div>
+               <div class="redes">
+                  <h4>Síguenos</h4>
+                  <ol>
+                     <li>
+                        <a href="https://twitter.com/" class="red-twit">
+                        <i class="fab fa-twitter"></i>
+                        </a>
+                     </li>
+                     <li>
+                        <a href="https://www.facebook.com/" class="red-face">
+                        <i class="fab fa-facebook"></i>
+                        </a>
+                     </li>
+                     <li>
+                        <a href="https://www.instagram.com/" class="red-insta">
+                        <i class="fab fa-instagram"></i>
+                        </a>
+                     </li>
+                     <li>
+                        <a href="https://www.linkedin.com/" class="red-link">
+                        <i class="fab fa-linkedin"></i>
+                        </a>
+                     </li>
+                     <li>
+                        <a href="https://www.youtube.com/" class="red-iutu">
+                        <i class="fab fa-youtube"></i>
+                        </a>
+                     </li>
+                  </ol>
+               </div>
+            </div>
+         </div>
+         <div class="footer-bottom">
+            <p>Copyright © Todos los derechos reservados | 2021</p>
+         </div>
+      </footer>
+   </body>
 </html>
