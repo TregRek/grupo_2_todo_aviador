@@ -4,7 +4,7 @@ const productController = {
     },
     
     listado: (req, res) =>{
-        res.render('register');
+        res.render('productList');
     }
 };
 
