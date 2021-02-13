@@ -15,3 +15,7 @@ app.set('view engine', 'ejs');
 app.use('/', indexRouter);
 
 app.use('/producto', productRouter);
+
+// carrito
+// app.listen(console.log(productRouter));
+// app.use('/', productRouter);

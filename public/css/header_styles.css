@@ -1,0 +1,202 @@
+/* @import url('https://fonts.googleapis.com/css2?family=Lato&display=swap'); */
+
+html{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+header{
+    width: 90%;
+    margin: auto;
+}
+
+header .header-top{
+    padding: 16px 0 16px 0;
+    border-bottom: 1px solid #f1f1f1;
+}
+
+header .header-top .top-icon-redes{
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+header .header-top .top-icon-redes li{
+    padding: 4px 0;
+}
+
+header .header-top .top-icon-redes li a{
+    display: flex;
+    text-decoration: none;
+    padding: 0 6px;
+}
+
+header .header-top .top-icon-redes li a i{
+    font-size: 14px;
+    color: #bbbbbb;
+}
+
+header .header-top .top-cont-pers{
+    display: none;
+}
+
+header .main-desktop{
+    display: none;
+}
+
+header .main-mobile .main-nav-mob-tab{
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+}
+
+header .main-mobile .main-nav-mob-tab li a{
+    text-decoration: none;
+}
+
+header .main-mobile .main-nav-mob-tab .carrito{
+    display: flex;
+    width: 20%;
+}
+
+header .main-mobile .main-nav-mob-tab .carrito a i{
+    color: #1b2535;
+    font-size: 12px;
+}
+
+header .main-mobile .main-nav-mob-tab .logo{
+    display: flex;
+    width: 60%;
+    padding: 25px 0;
+}
+
+header .main-mobile .main-nav-mob-tab .logo a{
+    margin: auto;
+}
+
+header .main-mobile .main-nav-mob-tab .logo a img{
+    width: 180px;
+}
+
+header .main-mobile .main-nav-mob-tab .hamburger{
+    display: flex;
+    flex-direction: row-reverse;
+    width: 20%;
+}
+
+header .main-mobile .main-nav-mob-tab .hamburger a .fa-bars{
+    color: #000000;
+    font-size: 22px;
+}
+
+
+@media(min-width: 1024px){
+
+    header ul{
+        list-style: none;
+        margin: 0;
+        padding: 0;
+    }
+    header a{
+        text-decoration: none;
+        color: #555555;
+    }
+    
+    header .header-top{
+        display: flex;
+        flex-wrap: wrap;
+        justify-self: start;
+        align-items: flex-start;
+        padding: 5px 0 5px 0;
+    }
+    
+    header .header-top .top-icon-redes{
+        width: 50%;
+        justify-content: flex-start;
+    }
+    
+    header .header-top .top-cont-pers{
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-end;
+        width: 50%;
+    }
+    
+    header .header-top .top-cont-pers a{
+        font-size: 14px;
+        color: #bbbbbb !important;
+        padding-left: 10px;
+    }
+    
+    header .main-mobile{
+        display: none;
+    }
+    header .main-desktop{
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: center;
+        height: 100px;
+    }
+    header .main-desktop .main-desk-logo{
+        display: flex;
+        align-items: center;
+        width: 20%;
+        height: 100px;
+    }
+    header .main-desktop .main-desk-logo a{
+        display: block;
+        width: 180px;
+    
+    }
+    header .main-desktop .main-desk-logo a img{
+        width: 100%;
+    }
+    header .main-desktop .main-nav-desk{
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: flex-end;
+        align-items: center;
+        width: 80%;
+        height: 100px;
+        text-transform: uppercase;
+    }
+    
+    header .main-desktop .main-nav-desk li{
+        font-size: 15px;
+        padding: 0 15px;
+    }
+    
+    header .main-desktop .main-nav-desk li .nav-desk-tienda{
+        padding: 12px 22px;
+        background-color: #000033;
+        color: #ffffff;
+        border-radius: 4px;
+        cursor: pointer;
+        font-weight: 600;
+    }
+
+}
+
+
+
+
+
+
+
+

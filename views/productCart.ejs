@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/normalize.css">
+    <link rel="stylesheet" href="/css/cart_styles.css">
+    <link rel="stylesheet" href="/css/header_styles.css">
+    <link rel="stylesheet" href="/css/footer_styles.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Lato&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>    
+    <link rel="shortcut icon" href="static/images/Icon_todo_aviador.png" />
+    <title>Todo aviador Perú | Carrito</title>
+</head>
+
+    <%- include("./partials/header") %>
+
+    <main>
+        <header>
+            <div class="ancho">
+                <h1>Carrito</h1>
+                <nav>
+                    <ul>
+                        <li class="home">
+                            <a href="/">
+                                <i class="fas fa-home"></i>
+                            </a>
+                            <span>></span>
+                        </li>
+                        <li class="carrito">
+                            <a href="/productCart">
+                            </a>
+                            <span>Carrito</span>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+        </header>
+        <div class="contenedor-contenido">
+            <div class="contenido-compra">
+                <article> 
+                    <table>
+                        <thead>
+                            <tr>
+                                <th class="producto-remover">  x </th>
+                                <th class="producto-imagen">  img  </th>
+                                <th class="producto-nombre">producto</th>
+                                <th class="producto-precio">precio</th>
+                                <th class="producto-cantidad">cantidad</th>
+                                <th class="producto-subtotal">subtotal</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td class="producto-remover">
+                                    <a href="">x</a>
+                                </td>
+                                <td class="producto-imagen">
+                                    <img src="/images/defecto.jpg" alt="">
+                                </td>
+                                <td class="producto-nombre" data-title="Producto">
+                                    
+                                    <a href="">Producsdasdasdasdasdasdasdasdasdasdasdto</a>
+                                </td>
+                                <td class="producto-precio" data-title="Precio">
+                                    
+                                    <span>S/79.99</span>
+                                </td>
+                                <td class="producto-cantidad" data-title="Cantidad">
+                                    <div class="contador">
+                                        <a href="">-</a>
+                                        <input type="number" name="" id="">
+                                        <a href="">+</a>
+                                    </div>
+                                    
+                                </td>
+                                <td class="producto-subtotal" data-title="Sub-total">
+                                    
+                                    <span>S/79.99</span>
+                                </td>
+                            </tr>
+                        
+                            <tr>
+                                <td class="producto-remover">
+                                    <a href="">x</a>
+                                </td>
+                                <td class="producto-imagen">
+                                    <img src="/images/defecto.jpg" alt="">
+                                </td>
+                                <td class="producto-nombre" data-title="Producto">
+                                    
+                                    <a href="">Producto</a>
+                                </td>
+                                <td class="producto-precio" data-title="Precio">
+                                    
+                                    <span>S/79.99</span>
+                                </td>
+                                <td class="producto-cantidad" data-title="Cantidad">
+                                    
+                                    <div class="contador">
+                                        <a href="">-</a>
+                                        <input type="number" name="" id="">
+                                        <a href="">+</a>
+                                    </div>
+                                </td>
+                                <td class="producto-subtotal" data-title="Sub-total">
+                                    
+                                    <span>S/79.99</span>
+                                </td>
+                            </tr>
+                        
+                            <tr>
+                                <td class="producto-footer">
+                                    <div class="cupon">
+                                        <form action="/productCart" method="GET">
+                                            <input type="text" name="" id="" placeholder="Código de cupón">
+                                            <input type="submit" value="Aplicar cupón">
+                                        </form>
+                                    </div>
+                                    <div class="actualizar">
+                                        <form action="/productCart" method="GET">
+                                            <input type="submit" value="Actualizar">
+                                        </form>
+                                    </div>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </article>
+            </div>
+            
+
+            <div class="contenido-extra">
+                <article class="prod-interes">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Te podria interesar</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>
+                                    <div class="prod-int-img-producto">
+                                        
+                                            <img src="/images/Defecto.jpg" alt="" class="img1">
+                                        
+                                            <img src="/images/Defecto2.jpg" alt="" class="img2">
+                                        
+                                    </div>
+                                    <div class="prod-int-categorias">
+                                        <a href="">cat para el avi</a>
+                                        , 
+                                        <a href=""> cat para la ropa</a>
+                                    </div>
+                                    <div class="prod-int-titulo">
+                                        <h2>Nombre del producto</h2>
+                                    </div>
+                                    <div class="prod-int-precio">
+                                        <span>S/20.00</span>
+                                    </div>
+                                    <div class="prod-int-rating">
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                    </div>
+                                    <div class="prod-int-btns">
+                                        <a href="">
+                                            <button>Agregar al carrito</button>
+                                        </a>
+                                        <a href="">
+                                            <button>Vista rapida</button>
+                                        </a>
+                                    </div>
+                                    
+                                </td>
+                                <td>
+                                    <div class="prod-int-img-producto">
+                                        <img src="/images/Defecto.jpg" alt="" class="img1">    
+                                        <img src="/images/Defecto2.jpg" alt="" class="img2">
+                                    </div>
+                                    <div class="prod-int-categorias">
+                                        <a href="">cat para el avi</a>
+                                        , 
+                                        <a href=""> cat para la ropa</a>
+                                    </div>
+                                    <div class="prod-int-titulo">
+                                        <h2>Nombre del producto</h2>
+                                    </div>
+                                    <div class="prod-int-precio">
+                                        <span>S/20.00</span>
+                                    </div>
+                                    <div class="prod-int-rating">
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                    </div>
+                                    <div class="prod-int-btns">
+                                        <a href="">
+                                            <button>Agregar al carrito</button>
+                                        </a>
+                                        <a href="">
+                                            <button>Vista rapida</button>
+                                        </a>
+                                    </div>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </article>
+
+                <article class="total-carro">
+                    <table>
+                        <thead>
+                            <tr class="titulo-total">
+                                <th>Total del carrito</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td class="producto-subtotal" data-title="Subtotal">
+                                    <span>S/79.99</span>
+                                </td>
+                                <td class="producto-envio" data-title="Gastos de envio">
+                                    <span> Ingresa tu dirección para ver las opciones de envio.</span>
+                                    <div class="calc-envio">
+                                        <a href="">Calcular costo de envio</a>
+                                        
+                                    </div>
+                                </td>
+                                <td class="producto-subtotal" data-title="Total">
+                                    <span>S/79.99</span>
+                                </td>
+                                <td class="terminar-compra">
+                                    <a href="">Ir a comprar</a>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </article>
+            </div>
+            
+        </div>
+        
+    </main>
+
+    <%- include("./partials/footer") %>
+
+</body>
+</html>
