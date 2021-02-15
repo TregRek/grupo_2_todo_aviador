@@ -31,7 +31,567 @@
                 </nav>
             </div>
         </header>
-        
+
+        <div class="lista-prod">
+            <section class="list-prod-filtro">
+                <div class="filtro-dinero">
+                    <h4>Precio</h4>
+                    <form action="" method="post">
+                        <input type="number" name="precio-menor" id="precio-menor" placeholder="10">
+                        <input type="number" name="precio-mayor" id="precio-mayor" placeholder="80">
+                        <button>-></button>
+                    </form>
+                </div>
+                <div class="filtro-categoria">
+                    <ul>
+                        <li>
+                            <a href="">
+                                auriculares o headsets
+                            </a>
+                        </li>
+                        <li>
+                            <a href="">
+                                bolsas de vuelo
+                            </a>
+                        </li>
+                        <li>
+                            <a href="">
+                                cartografia
+                            </a>
+                        </li>
+                        <li>
+                            <a href="">
+                                para el avión
+                            </a>
+                        </li>
+                        <li>
+                            <a href="">
+                                para el piloto
+                            </a>
+                        </li>
+                        <li>
+                            <a href="">
+                                cubierta de piloto
+                            </a>
+                        </li>
+                        <li>
+                            <a href="">
+                                regalos
+                            </a>
+                        </li>
+                        <li>
+                            <a href="">
+                                uniformes
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="filtro-mejor-calificado">
+                    <h4>Productos mejor calificados</h4>
+                    <ul>
+                        <li>
+                            <div class="fmc-imagen">
+                                <a href="">
+                                    <img src="" alt="">
+                                </a>
+                            </div>
+                            <div class="fmc-descripcion">
+                                <a href="">nombre del producto</a>
+                                <span>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                </span>
+                                <p>
+                                    S/60.00
+                                </p>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="fmc-imagen">
+                                <a href="">
+                                    <img src="" alt="">
+                                </a>
+                            </div>
+                            <div class="fmc-descripcion">
+                                <a href="">nombre del producto</a>
+                                <span>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                </span>
+                                <p>
+                                    S/60.00
+                                </p>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="fmc-imagen">
+                                <a href="">
+                                    <img src="" alt="">
+                                </a>
+                            </div>
+                            <div class="fmc-descripcion">
+                                <a href="">nombre del producto</a>
+                                <span>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                </span>
+                                <p>
+                                    S/60.00
+                                </p>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="fmc-imagen">
+                                <a href="">
+                                    <img src="" alt="">
+                                </a>
+                            </div>
+                            <div class="fmc-descripcion">
+                                <a href="">nombre del producto</a>
+                                <span>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                </span>
+                                <p>
+                                    S/60.00
+                                </p>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </section>
+
+            <section class="list-prod-productos">
+
+                <div class="header-list-prod">
+                    <select name="header-desk-ordenar-por" id="header-desk-ordenar-por">
+                        <option value="">Recomendados</option>
+                        <option value="">Precio de menor a mayor</option>
+                        <option value="">Precio de mayor a menor</option>
+                        <option value="">Los mejores evaluados</option>
+                        <option value="">Nuevos productos</option>
+                        <option value="">Marcas</option>
+                    </select>
+
+                </div>
+
+
+
+                <div class="header-mob-filtros">
+                    <ul>
+                        <li>
+                            <a href="">
+                                Filtrar
+                            </a>
+                        </li>
+                        <li>
+                            <a href="">
+                                Ordenar
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="header-list-paginas">
+                    <span>Página</span>
+                    <a href=""><</a>
+                    <a href="">1</a>
+                    <a href="">...</a>
+                    <a href="">2</a>
+                    <a href="">3</a>
+                    <a href="">...</a>
+                    <a href="">9</a>
+                    <a href="">></a>
+                </div>
+
+                <ul>
+                    <li>
+                        <div class="prod-int-img-producto">
+                                    
+                            <img src="/images/Defecto.jpg" alt="" class="img1">
+                        
+                            <img src="/images/Defecto2.jpg" alt="" class="img2">
+                        
+                        </div>
+                        <div class="prod-int-categorias">
+                            <a href="">cat para el avi</a>
+                            , 
+                            <a href=""> cat para la ropa</a>
+                        </div>
+                        <div class="prod-int-titulo">
+                            <h2>Nombre del producto</h2>
+                        </div>
+                        <div class="prod-int-precio">
+                            <span>S/20.00</span>
+                        </div>
+                        <div class="prod-int-rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                        <div class="prod-int-btns">
+                            <a href="">
+                                <button>Agregar al carrito</button>
+                            </a>
+                            <a href="">
+                                <button>Vista rapida</button>
+                            </a>
+                        </div>
+                    </li>
+
+                    <li>
+                        <div class="prod-int-img-producto">
+                                    
+                            <img src="/images/Defecto.jpg" alt="" class="img1">
+                        
+                            <img src="/images/Defecto2.jpg" alt="" class="img2">
+                        
+                        </div>
+                        <div class="prod-int-categorias">
+                            <a href="">cat para el avi</a>
+                            , 
+                            <a href=""> cat para la ropa</a>
+                        </div>
+                        <div class="prod-int-titulo">
+                            <h2>Nombre del producto</h2>
+                        </div>
+                        <div class="prod-int-precio">
+                            <span>S/20.00</span>
+                        </div>
+                        <div class="prod-int-rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                        <div class="prod-int-btns">
+                            <a href="">
+                                <button>Agregar al carrito</button>
+                            </a>
+                            <a href="">
+                                <button>Vista rapida</button>
+                            </a>
+                        </div>
+                    </li>
+
+                    <li>
+                        <div class="prod-int-img-producto">
+                                    
+                            <img src="/images/Defecto.jpg" alt="" class="img1">
+                        
+                            <img src="/images/Defecto2.jpg" alt="" class="img2">
+                        
+                        </div>
+                        <div class="prod-int-categorias">
+                            <a href="">cat para el avi</a>
+                            , 
+                            <a href=""> cat para la ropa</a>
+                        </div>
+                        <div class="prod-int-titulo">
+                            <h2>Nombre del producto</h2>
+                        </div>
+                        <div class="prod-int-precio">
+                            <span>S/20.00</span>
+                        </div>
+                        <div class="prod-int-rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                        <div class="prod-int-btns">
+                            <a href="">
+                                <button>Agregar al carrito</button>
+                            </a>
+                            <a href="">
+                                <button>Vista rapida</button>
+                            </a>
+                        </div>
+                    </li>
+
+                    <li>
+                        <div class="prod-int-img-producto">
+                                    
+                            <img src="/images/Defecto.jpg" alt="" class="img1">
+                        
+                            <img src="/images/Defecto2.jpg" alt="" class="img2">
+                        
+                        </div>
+                        <div class="prod-int-categorias">
+                            <a href="">cat para el avi</a>
+                            , 
+                            <a href=""> cat para la ropa</a>
+                        </div>
+                        <div class="prod-int-titulo">
+                            <h2>Nombre del producto</h2>
+                        </div>
+                        <div class="prod-int-precio">
+                            <span>S/20.00</span>
+                        </div>
+                        <div class="prod-int-rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                        <div class="prod-int-btns">
+                            <a href="">
+                                <button>Agregar al carrito</button>
+                            </a>
+                            <a href="">
+                                <button>Vista rapida</button>
+                            </a>
+                        </div>
+                    </li>
+
+                    <li>
+                        <div class="prod-int-img-producto">
+                                    
+                            <img src="/images/Defecto.jpg" alt="" class="img1">
+                        
+                            <img src="/images/Defecto2.jpg" alt="" class="img2">
+                        
+                        </div>
+                        <div class="prod-int-categorias">
+                            <a href="">cat para el avi</a>
+                            , 
+                            <a href=""> cat para la ropa</a>
+                        </div>
+                        <div class="prod-int-titulo">
+                            <h2>Nombre del producto</h2>
+                        </div>
+                        <div class="prod-int-precio">
+                            <span>S/20.00</span>
+                        </div>
+                        <div class="prod-int-rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                        <div class="prod-int-btns">
+                            <a href="">
+                                <button>Agregar al carrito</button>
+                            </a>
+                            <a href="">
+                                <button>Vista rapida</button>
+                            </a>
+                        </div>
+                    </li>
+
+                    <li>
+                        <div class="prod-int-img-producto">
+                                    
+                            <img src="/images/Defecto.jpg" alt="" class="img1">
+                        
+                            <img src="/images/Defecto2.jpg" alt="" class="img2">
+                        
+                        </div>
+                        <div class="prod-int-categorias">
+                            <a href="">cat para el avi</a>
+                            , 
+                            <a href=""> cat para la ropa</a>
+                        </div>
+                        <div class="prod-int-titulo">
+                            <h2>Nombre del producto</h2>
+                        </div>
+                        <div class="prod-int-precio">
+                            <span>S/20.00</span>
+                        </div>
+                        <div class="prod-int-rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                        <div class="prod-int-btns">
+                            <a href="">
+                                <button>Agregar al carrito</button>
+                            </a>
+                            <a href="">
+                                <button>Vista rapida</button>
+                            </a>
+                        </div>
+                    </li>
+
+                    <li>
+                        <div class="prod-int-img-producto">
+                                    
+                            <img src="/images/Defecto.jpg" alt="" class="img1">
+                        
+                            <img src="/images/Defecto2.jpg" alt="" class="img2">
+                        
+                        </div>
+                        <div class="prod-int-categorias">
+                            <a href="">cat para el avi</a>
+                            , 
+                            <a href=""> cat para la ropa</a>
+                        </div>
+                        <div class="prod-int-titulo">
+                            <h2>Nombre del producto</h2>
+                        </div>
+                        <div class="prod-int-precio">
+                            <span>S/20.00</span>
+                        </div>
+                        <div class="prod-int-rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                        <div class="prod-int-btns">
+                            <a href="">
+                                <button>Agregar al carrito</button>
+                            </a>
+                            <a href="">
+                                <button>Vista rapida</button>
+                            </a>
+                        </div>
+                    </li>
+
+                    <li>
+                        <div class="prod-int-img-producto">
+                                    
+                            <img src="/images/Defecto.jpg" alt="" class="img1">
+                        
+                            <img src="/images/Defecto2.jpg" alt="" class="img2">
+                        
+                        </div>
+                        <div class="prod-int-categorias">
+                            <a href="">cat para el avi</a>
+                            , 
+                            <a href=""> cat para la ropa</a>
+                        </div>
+                        <div class="prod-int-titulo">
+                            <h2>Nombre del producto</h2>
+                        </div>
+                        <div class="prod-int-precio">
+                            <span>S/20.00</span>
+                        </div>
+                        <div class="prod-int-rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                        <div class="prod-int-btns">
+                            <a href="">
+                                <button>Agregar al carrito</button>
+                            </a>
+                            <a href="">
+                                <button>Vista rapida</button>
+                            </a>
+                        </div>
+                    </li>
+
+                    <li>
+                        <div class="prod-int-img-producto">
+                                    
+                            <img src="/images/Defecto.jpg" alt="" class="img1">
+                        
+                            <img src="/images/Defecto2.jpg" alt="" class="img2">
+                        
+                        </div>
+                        <div class="prod-int-categorias">
+                            <a href="">cat para el avi</a>
+                            , 
+                            <a href=""> cat para la ropa</a>
+                        </div>
+                        <div class="prod-int-titulo">
+                            <h2>Nombre del producto</h2>
+                        </div>
+                        <div class="prod-int-precio">
+                            <span>S/20.00</span>
+                        </div>
+                        <div class="prod-int-rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                        <div class="prod-int-btns">
+                            <a href="">
+                                <button>Agregar al carrito</button>
+                            </a>
+                            <a href="">
+                                <button>Vista rapida</button>
+                            </a>
+                        </div>
+                    </li>
+
+                    <li>
+                        <div class="prod-int-img-producto">
+                                    
+                            <img src="/images/Defecto.jpg" alt="" class="img1">
+                        
+                            <img src="/images/Defecto2.jpg" alt="" class="img2">
+                        
+                        </div>
+                        <div class="prod-int-categorias">
+                            <a href="">cat para el avi</a>
+                            , 
+                            <a href=""> cat para la ropa</a>
+                        </div>
+                        <div class="prod-int-titulo">
+                            <h2>Nombre del producto</h2>
+                        </div>
+                        <div class="prod-int-precio">
+                            <span>S/20.00</span>
+                        </div>
+                        <div class="prod-int-rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                        <div class="prod-int-btns">
+                            <a href="">
+                                <button>Agregar al carrito</button>
+                            </a>
+                            <a href="">
+                                <button>Vista rapida</button>
+                            </a>
+                        </div>
+                    </li>
+                </ul>
+
+                <div class="header-list-paginas">
+                    <span>Página</span>
+                    <a href=""><</a>
+                    <a href="">1</a>
+                    <a href="">...</a>
+                    <a href="">2</a>
+                    <a href="">3</a>
+                    <a href="">...</a>
+                    <a href="">9</a>
+                    <a href="">></a>
+                </div>
+            </section>
+
+        </div>
         
     </main>
 
