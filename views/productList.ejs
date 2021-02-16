@@ -3,8 +3,7 @@
 <head>
 
     <%- include ('./partials/head') %>
-
-    <link rel="stylesheet" href="/css/cart_styles.css">
+    <link rel="stylesheet" href="/css/list_products_styles.css">
     <title>Todo aviador Perú | Carrito</title>
 </head>
 
@@ -22,7 +21,7 @@
                             </a>
                             <span>></span>
                         </li>
-                        <li class="carrito">
+                        <li class="subtitulo">
                             <a href="/producto/lista-producto">
                             </a>
                             <span>Productos</span>
@@ -32,55 +31,62 @@
             </div>
         </header>
 
-        <div class="lista-prod">
+        <div class="list-prod">
             <section class="list-prod-filtro">
+        
+                <!-- <%- include ('./partials/sidebar') %> -->
+
                 <div class="filtro-dinero">
                     <h4>Precio</h4>
-                    <form action="" method="post">
+                    <form action="/producto/listado" method="GET">
+                        <label for="precio-menor"></label>
                         <input type="number" name="precio-menor" id="precio-menor" placeholder="10">
+                        <span>a</span>
+                        <label for="precio-mayor"></label>
                         <input type="number" name="precio-mayor" id="precio-mayor" placeholder="80">
-                        <button>-></button>
+                        <button><i class="fas fa-sign-in-alt"></i></button>
                     </form>
                 </div>
                 <div class="filtro-categoria">
+                    <h4>Categorias</h4>
                     <ul>
                         <li>
-                            <a href="">
+                            <a href="/producto/listado">
                                 auriculares o headsets
                             </a>
                         </li>
                         <li>
-                            <a href="">
+                            <a href="/producto/listado">
                                 bolsas de vuelo
                             </a>
                         </li>
                         <li>
-                            <a href="">
+                            <a href="/producto/listado">
                                 cartografia
                             </a>
                         </li>
                         <li>
-                            <a href="">
+                            <a href="/producto/listado">
                                 para el avión
                             </a>
                         </li>
                         <li>
-                            <a href="">
+                            <a href="/producto/listado">
                                 para el piloto
                             </a>
                         </li>
                         <li>
-                            <a href="">
+                            <a href="/producto/listado">
                                 cubierta de piloto
                             </a>
                         </li>
                         <li>
-                            <a href="">
+                            <a href="/producto/listado">
                                 regalos
                             </a>
                         </li>
                         <li>
-                            <a href="">
+                            <a href="/producto/listado">
                                 uniformes
                             </a>
                         </li>
@@ -89,14 +95,16 @@
                 <div class="filtro-mejor-calificado">
                     <h4>Productos mejor calificados</h4>
                     <ul>
+                        <% for(let i = 1; i < producto.length; i++){ %>                            
+                            
                         <li>
                             <div class="fmc-imagen">
-                                <a href="">
-                                    <img src="" alt="">
+                                <a href="/producto/detalle">
+                                    <img src="<%= producto[i].imgPrinc %>" alt="">
                                 </a>
                             </div>
                             <div class="fmc-descripcion">
-                                <a href="">nombre del producto</a>
+                                <a href="/producto/detalle"><%= producto[i].nombre %></a>
                                 <span>
                                     <i class="fas fa-star"></i>
                                     <i class="fas fa-star"></i>
@@ -105,118 +113,115 @@
                                     <i class="fas fa-star"></i>
                                 </span>
                                 <p>
-                                    S/60.00
+                                    <%= producto[i].precio %>
                                 </p>
                             </div>
                         </li>
-                        <li>
-                            <div class="fmc-imagen">
-                                <a href="">
-                                    <img src="" alt="">
-                                </a>
-                            </div>
-                            <div class="fmc-descripcion">
-                                <a href="">nombre del producto</a>
-                                <span>
-                                    <i class="fas fa-star"></i>
-                                    <i class="fas fa-star"></i>
-                                    <i class="fas fa-star"></i>
-                                    <i class="fas fa-star"></i>
-                                    <i class="fas fa-star"></i>
-                                </span>
-                                <p>
-                                    S/60.00
-                                </p>
-                            </div>
-                        </li>
-                        <li>
-                            <div class="fmc-imagen">
-                                <a href="">
-                                    <img src="" alt="">
-                                </a>
-                            </div>
-                            <div class="fmc-descripcion">
-                                <a href="">nombre del producto</a>
-                                <span>
-                                    <i class="fas fa-star"></i>
-                                    <i class="fas fa-star"></i>
-                                    <i class="fas fa-star"></i>
-                                    <i class="fas fa-star"></i>
-                                    <i class="fas fa-star"></i>
-                                </span>
-                                <p>
-                                    S/60.00
-                                </p>
-                            </div>
-                        </li>
-                        <li>
-                            <div class="fmc-imagen">
-                                <a href="">
-                                    <img src="" alt="">
-                                </a>
-                            </div>
-                            <div class="fmc-descripcion">
-                                <a href="">nombre del producto</a>
-                                <span>
-                                    <i class="fas fa-star"></i>
-                                    <i class="fas fa-star"></i>
-                                    <i class="fas fa-star"></i>
-                                    <i class="fas fa-star"></i>
-                                    <i class="fas fa-star"></i>
-                                </span>
-                                <p>
-                                    S/60.00
-                                </p>
-                            </div>
-                        </li>
+
+                        <%}%>
+
                     </ul>
                 </div>
             </section>
 
-            <section class="list-prod-productos">
+            <section class="list-prod-products">
 
-                <div class="header-list-prod">
+                <div class="list-header-desk-ordenar">
                     <select name="header-desk-ordenar-por" id="header-desk-ordenar-por">
-                        <option value="">Recomendados</option>
-                        <option value="">Precio de menor a mayor</option>
-                        <option value="">Precio de mayor a menor</option>
-                        <option value="">Los mejores evaluados</option>
-                        <option value="">Nuevos productos</option>
-                        <option value="">Marcas</option>
+                        <option value="1">Recomendados</option>
+                        <option value="2">Precio de menor a mayor</option>
+                        <option value="3">Precio de mayor a menor</option>
+                        <option value="4">Los mejores evaluados</option>
+                        <option value="5">Nuevos productos</option>
+                        <option value="6">Marcas</option>
                     </select>
-
                 </div>
 
-
-
-                <div class="header-mob-filtros">
+                <div class="list-header-mob-filtros">
                     <ul>
-                        <li>
+                        <li class="list-header-mob-filter">
                             <a href="">
-                                Filtrar
+                                <i class="fas fa-filter"></i>
+                                <span>Filtrar</span>
                             </a>
                         </li>
-                        <li>
+                        <li class="list-header-mob-order">
                             <a href="">
-                                Ordenar
+                                <i class="fas fa-sort"></i>
+                                <span>Ordenar</span>
                             </a>
                         </li>
                     </ul>
                 </div>
 
-                <div class="header-list-paginas">
-                    <span>Página</span>
-                    <a href=""><</a>
-                    <a href="">1</a>
-                    <a href="">...</a>
-                    <a href="">2</a>
-                    <a href="">3</a>
-                    <a href="">...</a>
-                    <a href="">9</a>
-                    <a href="">></a>
+                <div class="list-header-list-pag">
+                    <div class="list-pag-ant">
+                        <a href="/producto/listado">
+                            <i class="fas fa-chevron-left"></i>
+                            <span>anterior</span>
+                        </a>
+                    </div>
+                   
+                    <div class="list-pag-num">
+                        <span>Página</span>
+                        <a href="/producto/listado">1</a>
+                        <span>...</span>
+                        <a href="/producto/listado">2</a>
+                        <a href="/producto/listado">3</a>
+                        <span>...</span>
+                        <a href="/producto/listado">9</a>
+                    </div>
+                    
+                    <div class="list-pag-sig">
+                        <a href="/producto/listado">
+                            <span>siguiente</span>
+                            <i class="fas fa-chevron-right"></i>
+                        </a>
+                    </div>
+                    
                 </div>
 
                 <ul>
+                    <% producto.forEach( prod =>{ %>
+                    
+                    <li>
+                        <div class="prod-int-img-producto">
+                                    
+                            <img src="<%= prod.imgPrinc %>" alt="<%= prod.nombre %>" class="img1">
+                        
+                            <img src="<%= prod.galImgs[1] %>" alt="<%= prod.nombre %>" class="img2">
+                        
+                        </div>
+                        <div class="prod-int-categorias">
+                            <a href="/producto/listado"><%= prod.categ %></a>
+                            , 
+                            <a href="/producto/listado"> <%= prod.etiqueta %></a>
+                        </div>
+                        <div class="prod-int-titulo">
+                            <h2><%= prod.nombre %></h2>
+                        </div>
+                        <div class="prod-int-precio">
+                            <span><%= prod.precio %></span>
+                        </div>
+                        <div class="prod-int-rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                        <div class="prod-int-btns">
+                            <a href="/cart">
+                                <button>Agregar al carrito</button>
+                            </a>
+                            <a href="/producto/detalle">
+                                <button>Vista rapida</button>
+                            </a>
+                        </div>
+                    </li>
+
+                    <% });%>
+
                     <li>
                         <div class="prod-int-img-producto">
                                     
@@ -226,9 +231,9 @@
                         
                         </div>
                         <div class="prod-int-categorias">
-                            <a href="">cat para el avi</a>
+                            <a href="/producto/listado">cat para el avi</a>
                             , 
-                            <a href=""> cat para la ropa</a>
+                            <a href="/producto/listado"> cat para la ropa</a>
                         </div>
                         <div class="prod-int-titulo">
                             <h2>Nombre del producto</h2>
@@ -244,10 +249,10 @@
                             <i class="fas fa-star"></i>
                         </div>
                         <div class="prod-int-btns">
-                            <a href="">
+                            <a href="/cart">
                                 <button>Agregar al carrito</button>
                             </a>
-                            <a href="">
+                            <a href="/producto/detalle">
                                 <button>Vista rapida</button>
                             </a>
                         </div>
@@ -262,9 +267,9 @@
                         
                         </div>
                         <div class="prod-int-categorias">
-                            <a href="">cat para el avi</a>
+                            <a href="/producto/listado">cat para el avi</a>
                             , 
-                            <a href=""> cat para la ropa</a>
+                            <a href="/producto/listado"> cat para la ropa</a>
                         </div>
                         <div class="prod-int-titulo">
                             <h2>Nombre del producto</h2>
@@ -280,10 +285,10 @@
                             <i class="fas fa-star"></i>
                         </div>
                         <div class="prod-int-btns">
-                            <a href="">
+                            <a href="/cart">
                                 <button>Agregar al carrito</button>
                             </a>
-                            <a href="">
+                            <a href="/producto/detalle">
                                 <button>Vista rapida</button>
                             </a>
                         </div>
@@ -298,9 +303,9 @@
                         
                         </div>
                         <div class="prod-int-categorias">
-                            <a href="">cat para el avi</a>
+                            <a href="/producto/listado">cat para el avi</a>
                             , 
-                            <a href=""> cat para la ropa</a>
+                            <a href="/producto/listado"> cat para la ropa</a>
                         </div>
                         <div class="prod-int-titulo">
                             <h2>Nombre del producto</h2>
@@ -316,10 +321,10 @@
                             <i class="fas fa-star"></i>
                         </div>
                         <div class="prod-int-btns">
-                            <a href="">
+                            <a href="/cart">
                                 <button>Agregar al carrito</button>
                             </a>
-                            <a href="">
+                            <a href="/producto/detalle">
                                 <button>Vista rapida</button>
                             </a>
                         </div>
@@ -334,9 +339,9 @@
                         
                         </div>
                         <div class="prod-int-categorias">
-                            <a href="">cat para el avi</a>
+                            <a href="/producto/listado">cat para el avi</a>
                             , 
-                            <a href=""> cat para la ropa</a>
+                            <a href="/producto/listado"> cat para la ropa</a>
                         </div>
                         <div class="prod-int-titulo">
                             <h2>Nombre del producto</h2>
@@ -352,10 +357,10 @@
                             <i class="fas fa-star"></i>
                         </div>
                         <div class="prod-int-btns">
-                            <a href="">
+                            <a href="/cart">
                                 <button>Agregar al carrito</button>
                             </a>
-                            <a href="">
+                            <a href="/producto/detalle">
                                 <button>Vista rapida</button>
                             </a>
                         </div>
@@ -370,9 +375,9 @@
                         
                         </div>
                         <div class="prod-int-categorias">
-                            <a href="">cat para el avi</a>
+                            <a href="/producto/listado">cat para el avi</a>
                             , 
-                            <a href=""> cat para la ropa</a>
+                            <a href="/producto/listado"> cat para la ropa</a>
                         </div>
                         <div class="prod-int-titulo">
                             <h2>Nombre del producto</h2>
@@ -388,10 +393,10 @@
                             <i class="fas fa-star"></i>
                         </div>
                         <div class="prod-int-btns">
-                            <a href="">
+                            <a href="/cart">
                                 <button>Agregar al carrito</button>
                             </a>
-                            <a href="">
+                            <a href="/producto/detalle">
                                 <button>Vista rapida</button>
                             </a>
                         </div>
@@ -406,9 +411,9 @@
                         
                         </div>
                         <div class="prod-int-categorias">
-                            <a href="">cat para el avi</a>
+                            <a href="/producto/listado">cat para el avi</a>
                             , 
-                            <a href=""> cat para la ropa</a>
+                            <a href="/producto/listado"> cat para la ropa</a>
                         </div>
                         <div class="prod-int-titulo">
                             <h2>Nombre del producto</h2>
@@ -424,10 +429,10 @@
                             <i class="fas fa-star"></i>
                         </div>
                         <div class="prod-int-btns">
-                            <a href="">
+                            <a href="/cart">
                                 <button>Agregar al carrito</button>
                             </a>
-                            <a href="">
+                            <a href="/producto/detalle">
                                 <button>Vista rapida</button>
                             </a>
                         </div>
@@ -442,9 +447,9 @@
                         
                         </div>
                         <div class="prod-int-categorias">
-                            <a href="">cat para el avi</a>
+                            <a href="/producto/listado">cat para el avi</a>
                             , 
-                            <a href=""> cat para la ropa</a>
+                            <a href="/producto/listado"> cat para la ropa</a>
                         </div>
                         <div class="prod-int-titulo">
                             <h2>Nombre del producto</h2>
@@ -460,10 +465,10 @@
                             <i class="fas fa-star"></i>
                         </div>
                         <div class="prod-int-btns">
-                            <a href="">
+                            <a href="/cart">
                                 <button>Agregar al carrito</button>
                             </a>
-                            <a href="">
+                            <a href="/producto/detalle">
                                 <button>Vista rapida</button>
                             </a>
                         </div>
@@ -478,9 +483,9 @@
                         
                         </div>
                         <div class="prod-int-categorias">
-                            <a href="">cat para el avi</a>
+                            <a href="/producto/listado">cat para el avi</a>
                             , 
-                            <a href=""> cat para la ropa</a>
+                            <a href="/producto/listado"> cat para la ropa</a>
                         </div>
                         <div class="prod-int-titulo">
                             <h2>Nombre del producto</h2>
@@ -496,10 +501,10 @@
                             <i class="fas fa-star"></i>
                         </div>
                         <div class="prod-int-btns">
-                            <a href="">
+                            <a href="/cart">
                                 <button>Agregar al carrito</button>
                             </a>
-                            <a href="">
+                            <a href="/producto/detalle">
                                 <button>Vista rapida</button>
                             </a>
                         </div>
@@ -514,9 +519,9 @@
                         
                         </div>
                         <div class="prod-int-categorias">
-                            <a href="">cat para el avi</a>
+                            <a href="/producto/listado">cat para el avi</a>
                             , 
-                            <a href=""> cat para la ropa</a>
+                            <a href="/producto/listado"> cat para la ropa</a>
                         </div>
                         <div class="prod-int-titulo">
                             <h2>Nombre del producto</h2>
@@ -532,63 +537,43 @@
                             <i class="fas fa-star"></i>
                         </div>
                         <div class="prod-int-btns">
-                            <a href="">
+                            <a href="/cart">
                                 <button>Agregar al carrito</button>
                             </a>
-                            <a href="">
-                                <button>Vista rapida</button>
-                            </a>
-                        </div>
-                    </li>
-
-                    <li>
-                        <div class="prod-int-img-producto">
-                                    
-                            <img src="/images/Defecto.jpg" alt="" class="img1">
-                        
-                            <img src="/images/Defecto2.jpg" alt="" class="img2">
-                        
-                        </div>
-                        <div class="prod-int-categorias">
-                            <a href="">cat para el avi</a>
-                            , 
-                            <a href=""> cat para la ropa</a>
-                        </div>
-                        <div class="prod-int-titulo">
-                            <h2>Nombre del producto</h2>
-                        </div>
-                        <div class="prod-int-precio">
-                            <span>S/20.00</span>
-                        </div>
-                        <div class="prod-int-rating">
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                        </div>
-                        <div class="prod-int-btns">
-                            <a href="">
-                                <button>Agregar al carrito</button>
-                            </a>
-                            <a href="">
+                            <a href="/producto/detalle">
                                 <button>Vista rapida</button>
                             </a>
                         </div>
                     </li>
                 </ul>
 
-                <div class="header-list-paginas">
-                    <span>Página</span>
-                    <a href=""><</a>
-                    <a href="">1</a>
-                    <a href="">...</a>
-                    <a href="">2</a>
-                    <a href="">3</a>
-                    <a href="">...</a>
-                    <a href="">9</a>
-                    <a href="">></a>
+                <div class="list-header-list-pag">
+                    <div class="list-pag-ant">
+                        <a href="">
+                            <i class="fas fa-chevron-left"></i>
+                            <span>anterior</span>
+                        </a>
+                    </div>
+                   
+                    <div class="list-pag-num">
+                        <span>Página</span>
+                        <a href="">1</a>
+                        <span>...</span>
+                        <a href="">2</a>
+                        <a href="">3</a>
+                        <span>...</span>
+                        <a href="">9</a>
+                    </div>
+                    
+                    <div class="list-pag-sig">
+                        <a href="">
+                            <span>siguiente</span>
+                            <i class="fas fa-chevron-right"></i>
+                        </a>
+                    </div>
+                    
                 </div>
+
             </section>
 
         </div>
