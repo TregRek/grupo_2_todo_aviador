@@ -8,4 +8,6 @@ router.get("/listado", productController.listado);
 
 router.get("/editar/:idProd", productController.editar)
 
+router.get("/crear/:idProd", productController.crear)
+
 module.exports = router;

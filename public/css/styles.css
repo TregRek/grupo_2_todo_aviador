@@ -358,3 +358,84 @@ main{
 }
 
 /************* FIN CSS AUGUSTO *************/
+
+
+/************* CSS MANUEL *************/
+
+/* CREATE PRODUCT*/
+
+.main-prod-create{
+    margin: auto;
+}
+
+.create-form {
+    display: flex;
+    flex-direction: column;
+    margin: auto auto 10px;
+}
+
+.create-form input, .create-form textarea, .create-form label, .create-form button, .create-form img{
+    margin: 5px 0px;
+}
+
+.create-form label{
+    font-weight:bold
+}
+
+.create-form input, .create-form textarea{
+    border:0;
+    border-bottom: 1px solid #e0e0e0;
+}
+
+.create-form img{
+    max-width: 500px;
+}
+
+.create-form button{
+    margin: 15px 0px;
+    background-color: #000033;
+    color:#fff;
+    padding: 10px;
+    border:0;
+    transition: all 0.5s;
+}
+
+@media (min-width: 768px){
+    .cuadro-login{
+        width: 655px;
+    }
+
+    .share-product li{
+        width:25%;
+    }
+
+    .img-detail{
+        display:flex;
+    }
+
+    .related-prod div{
+        display: flex;
+        justify-content:space-between;
+    }
+
+    .related-prod div ul img{
+        width:70%;
+    }
+
+    .create-form {
+        max-width: 900px;
+    }
+    
+}
+
+@media (min-width: 1200px){
+
+    .main-product-detail{
+        flex-direction: row;
+    }
+
+    .sidebar-product{
+        order:0
+    }
+}
+/************* FIN CSS MANUEL *************/

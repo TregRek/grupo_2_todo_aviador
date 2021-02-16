@@ -117,6 +117,13 @@ const productController = {
         let prod = filtro[0];
         res.render('./products/editProduct', {producto: prod});
     },
+
+    crear: (req, res) =>{
+        let idProd = req.params.idProd;
+        let filtro = productos.filter(producto => (producto.idProd == idProd));
+        let prod = filtro[0];
+        res.render('./products/createProduct', {producto: prod});
+    },
 };
 
 module.exports = productController;
