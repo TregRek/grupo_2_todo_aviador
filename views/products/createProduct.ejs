@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+   <head>
+      <%- include('../partials/head') %>
+        <link rel="stylesheet" href="/css/styles.css">
+        <title>Crear Producto - TodoAviador</title>
+   </head>
+   <%- include('../partials/header') %>
+   <main class='main-prod-create'>
+      
+      <form action="#" method="POST" class="create-form">
+         <h3>CREAR PRODUCTO</h3>
+         <label for="name">Nombre del producto</label>
+         <input type="text" name="name" placeholder="" >
+         <label for="name">Descripción del producto</label>
+         <textarea name="description" placeholder="Ingresa aquí la descripción del producto"></textarea>
+         <label>Imagen principal del producto</label>
+         <input type="file" name="image">
+         <label for="category">Categoría del producto</label>
+         <input type="text" name="category" placeholder="">
+         <label for="price">Precio del producto</label>
+         <input type="text" name="price" placeholder="" >
+         <button>Guardar</button>
+      </form>
+   </main>
+   <%- include('../partials/footer') %>
+</html>  
