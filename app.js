@@ -2,8 +2,8 @@ const express = require('express');
 const app = express();
 const path = require('path');
 
-var indexRouter = require('./routes/index');
-var productRouter = require('./routes/producto');
+var indexRouter = require('./routes/indexRoutes');
+var productRouter = require('./routes/productoRoutes');
 // const publicPath = path.resolve(__dirname, './public');
 
 app.use(express.static(path.join(__dirname, 'public')));
