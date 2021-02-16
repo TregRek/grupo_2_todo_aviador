@@ -107,7 +107,7 @@ const productController = {
     },
     
     listado: (req, res) =>{
-        res.render('productList',{producto: productos});
+        res.render('./products/productList',{producto: productos});
 
     },
 
