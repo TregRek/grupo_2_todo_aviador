@@ -332,20 +332,22 @@ main{
 .precio{
     margin-top: 20px;
     padding-bottom: 20px;
+    color: green;
 }
 
 
 ul button{
     text-align: center;
-    background-color: none;
-    border: solid 1px #000000;
     border-style: double;
     padding: 5px 3px 5px 3px;
+    color: white;
+    background-color: #000033;
+    border-radius: 5px;
 }
 
 ul button:hover{
-    color: white;
-    background-color: #000033;
+    color: #000033;
+    background-color: #808080;
 }
 .boton{
     padding: 10px;

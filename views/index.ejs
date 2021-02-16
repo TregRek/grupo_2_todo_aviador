@@ -30,6 +30,35 @@
                 </button>
                 </div>
             </section>
+            <section class="nuevos-productos">
+                <div>
+                    <div>
+                        <h2 class="tituloGris">DESCUBRE LOS</h2>
+                    </div>
+                    <div>    
+                        <h2 class="tituloNegro">NUEVOS PRODUCTOS</h2>
+                    </div>
+                </div>
+                <ul>
+                    <% for(let i = 0; i<productos.length; i++){ %>
+                        <li>
+                            <div class="contenedor_foto">
+                                <img class="foto-producto"src='<%= productos[i].imgPrinc %>' alt="">
+                                </img>
+                            </div>
+                            <p class="categoria-de-producto"> <%= productos[i].categ %></p>
+                            <h4 class="nombre-del-producto"><%= productos[i].nombre %></h4>
+                            <h3 class="precio"><%= productos[i].precio %></h3>
+                            <div class="boton">
+                            <button>Seleccionar opciones</button>
+                            </div>
+                            <div class="boton">
+                            <button>Vista Rápida</button>
+                            </div>
+                        </li>
+                    <% } %>
+                </ul>
+            </section>
             <section class="mas-vendidos">
                 <div>
                     <div>
@@ -40,121 +69,23 @@
                     </div>
                 </div>
                 <ul>
-                    <li>
-                        <div class="contenedor_foto">
-                            <img class="foto-producto"src="/images/camisa-aviador-corbata-galones-y-modelo.jpg" alt="fotoCamisa">
-                                <div class="container-oferta">
-                                    <h3 class="oferta">OFERTA</h3>
-                                </div>
-                            </img>
-                        </div>
-                        <p class="categoria-de-producto">Para el piloto,Uniformes</p>
-                        <h4 class="nombre-del-producto">Camisa Aviador para Pilotos</h4>
-                        <h4 class="precio-anterior">S/65.00</h3>
-                        <h3 class="precio-oferta">S/55.00</h3>
-                        <div class="boton">
-                        <button>Seleccionar opciones</button>
-                        </div>
-                        <div class="boton">
-                        <button>Vista Rápida</button>
-                        </div>
-                    </li>
-                    <li>
-                        <img class="foto-producto"src="/images/Guardianes-de-nasca.png" alt="fotoLibroGuardianes">
-                        <p class="categoria-de-producto">Libros, Regalos</p>
-                        <h4 class="nombre-del-producto">Libro "Los Guardianes de Nasca"</h4>
-                        <h3 class="precio">S/60.00</h3>
-                        <div class="boton">
-                            <button>Agregar al carrito</button>
-                        </div>
-                        <div class="boton">
-                            <button>Vista Rápida</button>
-                        </div>
-                    </li>
-                    <li>
-                        <img class="foto-producto"src="/images/Pilots-mapstrap-example-3-504x504.jpg" alt="fotoMapstrap">
-                        <p class="categoria-de-producto">Para el piloto</p>
-                        <h4 class="nombre-del-producto">Pilot Mapstrap</h4>
-                        <h3 class="precio">S/16.00</h3>
-                        <div class="boton">
-                            <button>Agregar al carrito</button>
+                    <% for(let i = 0; i<productos.length; i++) { %>
+                        <li>
+                            <div class="contenedor_foto">
+                                <img class="foto-producto"src='<%= productos[i].imgPrinc %>' alt="fotoCamisa">
+                                </img>
+                            </div>
+                            <p class="categoria-de-producto"> <%= productos[i].categ %></p>
+                            <h4 class="nombre-del-producto"><%= productos[i].nombre %></h4>
+                            <h3 class="precio"><%= productos[i].precio %></h3>
+                            <div class="boton">
+                            <button>Seleccionar opciones</button>
                             </div>
                             <div class="boton">
                             <button>Vista Rápida</button>
                             </div>
-                    </li>
-                    <li>
-                        <img class="foto-producto"src="/images/plotter-cpr.png" alt="fotoPlotter">
-                        <p class="categoria-de-producto">Para el piloto</p>
-                        <h4 class="nombre-del-producto">Regla Rotating Plotter</h4>
-                        <h3 class="precio">S/85.00</h3>
-                        <div class="boton">
-                            <button>Agregar al carrito</button>
-                            </div>
-                            <div class="boton">
-                            <button>Vista Rápida</button>
-                            </div>
-                    </li>
-                </ul>
-            </section>
-            <section class="nuevos-productos">
-                <div>
-                    <div>
-                        <h2 class="tituloGris">DESCUBRE LOS</h2>
-                    </div>
-                    <div>    
-                        <h2 class="tituloNegro">MÁS VENDIDOS</h2>
-                    </div>
-                </div>
-                <ul>
-                    <li>
-                        <img class="foto-producto"src="/images/Cessna Lanyard.jpg" alt="fotoLanyardCessna">
-                        <p class="categoria-de-producto">Accesorios, Regalos</p>
-                        <h4 class="nombre-del-producto">Lanyard Cessna</h4>
-                        <h3 class="precio">S/20.00</h3>
-                        <div class="boton">
-                            <button>Agregar al carrito</button>
-                            </div>
-                            <div class="boton">
-                            <button>Vista Rápida</button>
-                            </div>
-                    </li>
-                    <li>
-                        <img class="foto-producto"src="/images/Pilot-lanyard-con-argolla-e1609813811260.jpg" alt="fotoPilotLanyard">
-                        <p class="categoria-de-producto">Accesorios, Regalos</p>
-                        <h4 class="nombre-del-producto">Pilot Lanyard</h4>
-                        <h3 class="precio">S/20.00</h3>
-                        <div class="boton">
-                            <button>Agregar al carrito</button>
-                            </div>
-                            <div class="boton">
-                            <button>Vista Rápida</button>
-                            </div>
-                    </li>
-                    <li>
-                        <img class="foto-producto"src="/images/PPA-504x638.png" alt="fotoPPAhdiw">
-                        <p class="categoria-de-producto">Libros, Para el piloto</p>
-                        <h4 class="nombre-del-producto">Libro Piloto Porivado de Avión</h4>
-                        <h3 class="precio">S/75.00</h3>
-                        <div class="boton">
-                            <button>Agregar al carrito</button>
-                            </div>
-                            <div class="boton">
-                            <button>Vista Rápida</button>
-                            </div>
-                    </li>
-                    <li>
-                        <img class="foto-producto"src="/images/e6b-metal.jpg" alt="fotoE6Bmetal">
-                        <p class="categoria-de-producto">Para el piloto</p>
-                        <h4 class="nombre-del-producto">Computador de Vuelo E6B Metálico</h4>
-                        <h3 class="precio">S/160.00</h3>
-                        <div class="boton">
-                            <button>Agregar al carrito</button>
-                            </div>
-                            <div class="boton">
-                            <button>Vista Rápida</button>
-                            </div>
-                    </li>
+                        </li>
+                    <% } %>
                 </ul>
             </section>
             <section class="newsletter">

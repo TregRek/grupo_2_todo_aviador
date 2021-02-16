@@ -1,5 +1,5 @@
 let productos = [{idProd: '0001',
-                nombre: 'Pilot Strap', 
+                nombre: 'Pilot Mapstrap', 
                 precio: 'S/16.00', 
                 desc1: 'Accesorio que sirve de complemento para sujetar los mapas, facilitar la observación del piloto en vuelo y la organizacion en la cabina.',
                 desc2: 'Hecho de materiales de fácil transporte y durabilidad',
