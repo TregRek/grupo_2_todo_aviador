@@ -66,7 +66,7 @@ main header .ancho nav ul .home span{
     margin: 0 5px;
 }
 
-main header .ancho nav ul .carrito{
+main header .ancho nav ul .subtitulo{
     width: 12%;
     display: flex;
     font-size: 16px;
@@ -328,8 +328,6 @@ main .total-carro .terminar-compra a:hover{
     color: #ffffffc0;
     background-color: #000030;
 }
-
-/*!---------------FOOTER---------------¡*/
 
 
 
