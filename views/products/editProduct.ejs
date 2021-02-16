@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+   <head>
+      <%- include('../partials/head') %>
+        <link rel="stylesheet" href="/css/styles.css">
+        <title>Editar producto - TodoAviador</title>
+   </head>
+   <%- include('../partials/header') %>
+   <main class='main-prod-edit'>
+      
+      <form action="#" method="POST" class="edit-form">
+         <h3>EDITAR PRODUCTO</h3>
+         <label for="name">Nombre del producto</label>
+         <input type="text" name="name" value= "<%= producto.nombre %>" >
+         <label for="name">Descripción del producto</label>
+         <textarea name="description"><%= producto.desc1 %></textarea>
+         <label>Imagen principal del producto</label>
+         <img src= <%= producto.imgPrinc %> alt="imgPrinc">
+         <input type="file" name="image">
+         <label for="category">Categoría del producto</label>
+         <input type="text" name="category" value= "<%= producto.categ %>">
+         <label for="price">Precio del producto</label>
+         <input type="text" name="price" value= "<%= producto.precio %>" >
+         <button>Guardar</button>
+      </form>
+   </main>
+   <%- include('../partials/footer') %>
+</html>  
