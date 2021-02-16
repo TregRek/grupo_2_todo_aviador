@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+   <head>
+      <%- include('../partials/head') %>
+        <link rel="stylesheet" href="/css/styles.css">
+        <title>Producto - TodoAviador</title>
+   </head>
+   <%- include('../partials/header') %>
+      <main class="main-product-detail">
+         <%- include('../partials/sidebar') %>
+         <section class="product-page">
+            <section class="product-detail">
+               <div class="img-detail">
+                  <div class="prod-images">
+                     <img src= <%= producto.imgPrinc %> alt="imagen-principal" class="main-img-prod">
+                     <div class="galery-img">
+                        <ul>
+                           <% for (let i=0; i<producto.galImgs.length; i++) { %>
+                              <li><img src= <%= producto.galImgs[i] %> alt=<%= "alt"+i %>></li>
+                           <% } %>
+                        </ul>
+                     </div>
+                  </div>
+                  <div>
+                     <h2><%= producto.nombre %></h2>
+                     <h3 class="precio"><%= producto.precio %></h3>
+                     <p><%= producto.desc1 %></p>
+                     <p><%= producto.desc2 %></p>
+                     <h6>En stock</h6>
+                     <div class="add-cart">
+                        <button>-</button>
+                        <p>1</p>
+                        <button>+</button>
+                        <button class="add-cart-button">Agregar al carrito</button>
+                     </div>
+                     <div class="prod-desc-cat">
+                        <p>Categoría: <%= producto.categ %></p>
+                        <p>Etiqueta: <%= producto.etiqueta %></p>
+                     </div>
+                     <p><i class="far fa-heart"></i></p>
+                     <button class="compare-button">Comparar</button>
+                  </div>
+               </div>
+               <section>
+                  <div class="prod-desc-title">
+                     <ul>
+                        <li><a href="#">Descripción</a></li>
+                        <li><a href="#">Comentarios</a></li>
+                     </ul>
+                  </div>
+                  <div>
+                     <h3>Descripción</h3>
+                     <p><%= producto.desc1 %></p>
+                     <p><%= producto.desc2 %></p>
+                  </div>
+                  <div class="share-product">
+                     <ul>
+                        <li>
+                           <a href="#">
+                              <i class="fab fa-twitter"></i>
+                              <p>Compartir en Twitter</p>
+                           </a>
+                        </li>
+                        <li>
+                           <a href="#">
+                              <i class="fab fa-facebook"></i>
+                              <p>Compartir en Facebook</p>
+                           </a>
+                        </li>
+                        <li>
+                           <a href="#">
+                              <i class="fab fa-pinterest-p"></i>
+                              <p>Compartir en Pinterest</p>
+                           </a>
+                        </li>
+                        <li>
+                           <a href="#">
+                              <i class="fas fa-envelope"></i>
+                              <p>Compartir por correo</p>
+                           </a>
+                        </li>
+                     </ul>
+                  </div>
+               </section>
+            </section>
+            <section class="related-prod">
+               <h3>Productos relacionados</h3>
+               <div>
+                  <% for (let i=0; i < productosRel.length; i++) { %>
+                     <ul>
+                        <li><img src= <%= productosRel[i].imgPrinc %> alt="related"></li>
+                        <li><p><%= productosRel[i].categ + ", " + productosRel[i].etiqueta %></p></li>
+                        <li><p><%= productosRel[i].nombre %></p></li>
+                        <li><h6 class="precio"><%= productosRel[i].precio %></h6></li>
+                        <li><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></li>
+                        <li><button>Comprar</button></li>
+                     </ul>
+                  <% } %>
+               </div>
+            </section>
+         </section>
+      </main>
+      <%- include('../partials/footer') %>
+</html>
