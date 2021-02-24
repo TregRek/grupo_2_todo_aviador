@@ -32,6 +32,9 @@
                         <button>+</button>
                         <button class="add-cart-button">Agregar al carrito</button>
                         <a href="/producto/editar/<%= product.id %>" class="action-button edit">EDITAR PRODUCTO</a>
+                        <form action="/producto/eliminar/<%= product.id %>?_method=DELETE" method="POST">
+                           <button type="submit" class="action-button delete">ELIMINAR</button>
+                        </form>
                      </div>
                      <div class="prod-desc-cat">
                         <p>Categoría: <%= product.category %></p>

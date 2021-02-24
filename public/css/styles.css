@@ -191,8 +191,12 @@ main{
     margin-top: 15px;
   }
   
-  .action-button.edit {
+.action-button.edit {
     background-color: chocolate;
+}
+
+.action-button.delete {
+    background-color: rgb(248, 69, 37);
   }
 
 .add-cart-button, .compare-button, .related-prod div ul button{
@@ -355,10 +359,6 @@ main{
         justify-content:space-between;
     }
 
-    .related-prod div ul img{
-        width:250px;
-    }
-
     .edit-form {
         max-width: 900px;
     }
@@ -435,10 +435,6 @@ main{
     .related-prod div{
         display: flex;
         justify-content:space-between;
-    }
-
-    .related-prod div ul img{
-        width:70%;
     }
 
     .create-form {

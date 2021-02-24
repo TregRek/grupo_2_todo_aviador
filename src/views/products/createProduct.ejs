@@ -8,7 +8,7 @@
    <%- include('../partials/header') %>
    <main class='main-prod-create'>
       
-      <form action="#" method="POST" class="create-form">
+      <form action="/producto/crear" method="POST" class="create-form" enctype="multipart/form-data">
          <h3>CREAR PRODUCTO</h3>
          <label for="name">Nombre del producto</label>
          <input type="text" name="name" placeholder="" >
@@ -19,8 +19,8 @@
          <label for="category">Categoría del producto</label>
          <input type="text" name="category" placeholder="">
          <label for="price">Precio del producto</label>
-         <input type="text" name="price" placeholder="" >
-         <button>Guardar</button>
+         <input type="text" name="price" placeholder="Ej. 25.50" >
+         <button type="submit">Guardar</button>
       </form>
    </main>
    <%- include('../partials/footer') %>

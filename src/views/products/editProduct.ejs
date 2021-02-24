@@ -8,7 +8,7 @@
    <%- include('../partials/header') %>
    <main class='main-prod-edit'>
       
-      <form action="#" method="POST" class="edit-form">
+      <form action="/producto/editar/<%= product.id %>?_method=PUT" enctype="multipart/form-data" method="POST" class="edit-form">
          <h3>EDITAR PRODUCTO</h3>
          <label for="name">Nombre del producto</label>
          <input type="text" name="name" value= "<%= product.name %>" >
@@ -21,7 +21,7 @@
          <input type="text" name="category" value= "<%= product.category %>">
          <label for="price">Precio del producto</label>
          <input type="text" name="price" value= "<%= product.price %>" >
-         <button>Guardar</button>
+         <button type="submit">Guardar</button>
       </form>
    </main>
    <%- include('../partials/footer') %>
