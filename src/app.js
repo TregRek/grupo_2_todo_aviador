@@ -4,7 +4,7 @@ const path = require('path');
 
 var indexRouter = require('./routes/index');
 var productRouter = require('./routes/producto');
-const publicPath = path.resolve(__dirname, './public');
+const publicPath = path.resolve(__dirname, '../public');
 
 app.use(express.static(publicPath));
 

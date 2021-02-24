@@ -11,16 +11,16 @@
       <form action="#" method="POST" class="edit-form">
          <h3>EDITAR PRODUCTO</h3>
          <label for="name">Nombre del producto</label>
-         <input type="text" name="name" value= "<%= producto.nombre %>" >
+         <input type="text" name="name" value= "<%= product.name %>" >
          <label for="name">Descripción del producto</label>
-         <textarea name="description"><%= producto.desc1 %></textarea>
+         <textarea name="description"><%= product.description %></textarea>
          <label>Imagen principal del producto</label>
-         <img src= <%= producto.imgPrinc %> alt="imgPrinc">
+         <img src= "/images/<%= product.image %>" alt="imgPrinc">
          <input type="file" name="image">
          <label for="category">Categoría del producto</label>
-         <input type="text" name="category" value= "<%= producto.categ %>">
+         <input type="text" name="category" value= "<%= product.category %>">
          <label for="price">Precio del producto</label>
-         <input type="text" name="price" value= "<%= producto.precio %>" >
+         <input type="text" name="price" value= "<%= product.price %>" >
          <button>Guardar</button>
       </form>
    </main>

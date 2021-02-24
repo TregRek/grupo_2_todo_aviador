@@ -2,8 +2,8 @@
 <html>
    <head>
       <%- include('../partials/head') %>
-        <link rel="stylesheet" href="/css/styles.css">
-        <title>Producto - TodoAviador</title>
+      <link rel="stylesheet" href="/css/styles.css">
+      <title>Producto - TodoAviador</title>
    </head>
    <%- include('../partials/header') %>
       <main class="main-product-detail">
@@ -12,30 +12,30 @@
             <section class="product-detail">
                <div class="img-detail">
                   <div class="prod-images">
-                     <img src= <%= producto.imgPrinc %> alt="imagen-principal" class="main-img-prod">
+                     <img src= "/images/<%= product.image %>" alt="imagen-principal" class="main-img-prod">
                      <div class="galery-img">
                         <ul>
-                           <% for (let i=0; i<producto.galImgs.length; i++) { %>
-                              <li><img src= <%= producto.galImgs[i] %> alt=<%= "alt"+i %>></li>
+                           <% for (let i=0; i<product.galImgs.length; i++) { %>
+                              <li><img src= <%= product.galImgs[i] %> alt=<%= "alt"+i %>></li>
                            <% } %>
                         </ul>
                      </div>
                   </div>
                   <div>
-                     <h2><%= producto.nombre %></h2>
-                     <h3 class="precio"><%= producto.precio %></h3>
-                     <p><%= producto.desc1 %></p>
-                     <p><%= producto.desc2 %></p>
+                     <h2><%= product.name %></h2>
+                     <h3 class="precio">S/<%= product.price %></h3>
+                     <p><%= product.description %></p>
                      <h6>En stock</h6>
                      <div class="add-cart">
                         <button>-</button>
                         <p>1</p>
                         <button>+</button>
                         <button class="add-cart-button">Agregar al carrito</button>
+                        <a href="/producto/editar/<%= product.id %>" class="action-button edit">EDITAR PRODUCTO</a>
                      </div>
                      <div class="prod-desc-cat">
-                        <p>Categoría: <%= producto.categ %></p>
-                        <p>Etiqueta: <%= producto.etiqueta %></p>
+                        <p>Categoría: <%= product.category %></p>
+                        <p>Etiqueta: <%= product.tags %></p>
                      </div>
                      <p><i class="far fa-heart"></i></p>
                      <button class="compare-button">Comparar</button>
@@ -50,8 +50,7 @@
                   </div>
                   <div>
                      <h3>Descripción</h3>
-                     <p><%= producto.desc1 %></p>
-                     <p><%= producto.desc2 %></p>
+                     <p><%= product.description %></p>
                   </div>
                   <div class="share-product">
                      <ul>
@@ -86,12 +85,12 @@
             <section class="related-prod">
                <h3>Productos relacionados</h3>
                <div>
-                  <% for (let i=0; i < productosRel.length; i++) { %>
+                  <% for (let i=0; i < productsRel.length; i++) { %>
                      <ul>
-                        <li><img src= <%= productosRel[i].imgPrinc %> alt="related"></li>
-                        <li><p><%= productosRel[i].categ + ", " + productosRel[i].etiqueta %></p></li>
-                        <li><p><%= productosRel[i].nombre %></p></li>
-                        <li><h6 class="precio"><%= productosRel[i].precio %></h6></li>
+                        <li><img src= "/images/<%= productsRel[i].image %>" alt="related" class= "relProdImg"></li>
+                        <li><p><%= productsRel[i].category + ", " + productsRel[i].tags %></p></li>
+                        <li><p><a href="/producto/detalle/<%= productsRel[i].id %>"><%= productsRel[i].name %></a></p></li>
+                        <li><h6 class="precio">S/<%= productsRel[i].price %></h6></li>
                         <li><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></li>
                         <li><button>Comprar</button></li>
                      </ul>

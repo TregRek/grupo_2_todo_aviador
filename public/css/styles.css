@@ -130,7 +130,8 @@ main{
 }
 
 .main-img-prod{
-    width: 70%;
+    width: 400px;
+    margin: 0px 20px 0px 0px;
 }
 
 .product-detail{
@@ -177,6 +178,22 @@ main{
     border-bottom: 1px solid #e9e9e9;
     padding:10px 0;
 }
+
+.action-button {
+    border: none;
+    border-radius: 8px;
+    font-size: 1.2em;
+    color: #ffffff;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 15px 30px;
+    margin-top: 15px;
+  }
+  
+  .action-button.edit {
+    background-color: chocolate;
+  }
 
 .add-cart-button, .compare-button, .related-prod div ul button{
     background-color: #000033;
@@ -261,7 +278,9 @@ main{
 }
 
 .related-prod div ul img{
-    width:70%;
+    width: 265px;
+    height: 265px;
+    object-fit: scale-down;
 }
 
 .related-prod div p, .related-prod div h6{
@@ -337,7 +356,7 @@ main{
     }
 
     .related-prod div ul img{
-        width:70%;
+        width:250px;
     }
 
     .edit-form {
