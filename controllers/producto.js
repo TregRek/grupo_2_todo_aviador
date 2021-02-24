@@ -90,24 +90,40 @@ let productos =
     }
 ];
 
-const indexController = {
-    index: (req, res) =>{
-        res.render('./user/index', {productos: productos});
+const productController = {
+    producto: (req, res) =>{
+        let idProd = req.params.idProd;
+        let filtro = productos.filter(producto => (producto.idProd == idProd));
+        let prod = filtro[0];
+        let productosRel = [];
+        for (let i = 0; i < prod.prodsRel.length; i++) {
+            for(let j = 0; j < productos.length; j++) {
+                if(productos[j].idProd == prod.prodsRel[i]) {
+                    productosRel.push(productos[j]);
+                }
+            }
+        }
+        res.render('./products/productDetail', {producto: prod, productosRel: productosRel});
     },
-    login: (req, res) =>{
-        res.render('./user/login');
+    
+    listado: (req, res) =>{
+        res.render('./products/productList',{producto: productos});
+
     },
-    register: (req, res) =>{
-        res.render('./user/register');
+
+    editar: (req, res) =>{
+        let idProd = req.params.idProd;
+        let filtro = productos.filter(producto => (producto.idProd == idProd));
+        let prod = filtro[0];
+        res.render('./products/editProduct', {producto: prod});
     },
-    cart:  (req, res) =>{
-        res.render('./user/productCart');
-    }
+
+    crear: (req, res) =>{
+        let idProd = req.params.idProd;
+        let filtro = productos.filter(producto => (producto.idProd == idProd));
+        let prod = filtro[0];
+        res.render('./products/createProduct', {producto: prod});
+    },
 };
 
-module.exports = indexController;
-
-
-
-
-
+module.exports = productController;

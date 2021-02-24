@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <%- include('../partials/head') %>
+            <link rel="stylesheet" href="/css/home-styles.css">
+            <title>TodoAviador - Inicio</title>
+        </head>
+        
+        <%- include('../partials/header') %>
+        <main> 
+            <section class="banner">
+            
+                <div class="container-banner-text1">
+                    <h2 class="banner-text1">Todo en un solo lugar</h2>
+                </div>
+
+                <div class="container-banner-text2">
+                    <h2 class="banner-text2">Explora  Aviación</h2>
+                </div>
+
+                <div class="container-banner-text3">
+                    <p class="banner-text3">Espacio aeronáutico desarrollado con mucha pasión,
+                     en conjunto con decenas de marcas y tiendas aeronáuticas para conectar a todos
+                      los que amamos la aviación.<br><br>Únete a nuestra comunidad.</p>
+                </div>
+
+                <div class="button-container">
+                <button value="Explora">Explora
+                    <a href="#" class=""></a>
+                </button>
+                </div>
+            </section>
+            <section class="nuevos-productos">
+                <div>
+                    <div>
+                        <h2 class="tituloGris">DESCUBRE LOS</h2>
+                    </div>
+                    <div>    
+                        <h2 class="tituloNegro">NUEVOS PRODUCTOS</h2>
+                    </div>
+                </div>
+                <ul>
+                    <% for(let i = 0; i<productos.length; i++){ %>
+                        <li>
+                            <div class="contenedor_foto">
+                                <img class="foto-producto"src='<%= productos[i].imgPrinc %>' alt="">
+                                </img>
+                            </div>
+                            <p class="categoria-de-producto"> <%= productos[i].categ %></p>
+                            <h4 class="nombre-del-producto"><%= productos[i].nombre %></h4>
+                            <h3 class="precio"><%= productos[i].precio %></h3>
+                            <div class="boton">
+                            <button>Seleccionar opciones</button>
+                            </div>
+                            <div class="boton">
+                            <button>Vista Rápida</button>
+                            </div>
+                        </li>
+                    <% } %>
+                </ul>
+            </section>
+            <section class="mas-vendidos">
+                <div>
+                    <div>
+                        <h2 class="tituloGris">DESCUBRE LOS</h2>
+                    </div>
+                    <div>    
+                        <h2 class="tituloNegro">MÁS VENDIDOS</h2>
+                    </div>
+                </div>
+                <ul>
+                    <% for(let i = 0; i<productos.length; i++) { %>
+                        <li>
+                            <div class="contenedor_foto">
+                                <img class="foto-producto"src='<%= productos[i].imgPrinc %>' alt="fotoCamisa">
+                                </img>
+                            </div>
+                            <p class="categoria-de-producto"> <%= productos[i].categ %></p>
+                            <h4 class="nombre-del-producto"><%= productos[i].nombre %></h4>
+                            <h3 class="precio"><%= productos[i].precio %></h3>
+                            <div class="boton">
+                            <button>Seleccionar opciones</button>
+                            </div>
+                            <div class="boton">
+                            <button>Vista Rápida</button>
+                            </div>
+                        </li>
+                    <% } %>
+                </ul>
+            </section>
+            <section class="newsletter">
+                    <h5>SUSCRÍBETE A NUESTRA NEWSLETTER</h5>
+                    <div class="campo">
+                    <input type="email" placeholder="Ingresa tu email" name="email"> <button>ENVIAR</button></input>
+                    </div>
+                    <div class="terminos">
+                        <input type="checkbox" name="aceptaTerminos" value="true">Acepto los términos</input>
+                    </div>
+                </div>
+            </section>
+            <section class="noticias">
+                <div>
+                    <div>
+                        <h2 class="tituloGris">ÚLTIMAS NOTICIAS</h2>
+                    </div>
+                    <div>    
+                        <h2 class="tituloNegro">DE NUESTRO BLOG</h2>
+                    </div>
+                </div>
+                <ul>
+                    <li>
+                        <img class="foto-noticia"src="/images/Defecto.jpg" alt="fotoNoticia1">
+                        <h6 class="titulo-de-noticia">Lorem ipsum dolor sit.</h6>
+                        <p> Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ipsam delectus, modi recusandae voluptate inventore aliquam.</p>
+                        <div>
+                            <i class="far fa-comment"></i> 
+                            <a href="#">3 Comentarios</a>
+                        </div>
+                    </li>
+                    <li>
+                        <img class="foto-noticia"src="/images/Defecto2.jpg" alt="fotoNoticia2">
+                        <h6 class="titulo-de-noticia">Lorem ipsum dolor sit.</h6>
+                        <p> Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ipsam delectus, modi recusandae voluptate inventore aliquam.</p>
+                        <div>
+                            <i class="far fa-comment"></i>  
+                            <a href="#">3 Comentarios</a>
+                        </div>
+                    </li>
+                    <li>
+                        <img class="foto-noticia"src="/images/Defecto.jpg" alt="fotoNoticia3">
+                        <div class="descripcion-noticia">
+                            <h6 class="titulo-de-noticia">Lorem ipsum dolor sit.</h6>
+                            <p> Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ipsam delectus, modi recusandae voluptate inventore aliquam.</p>
+                            <div>
+                                <i class="far fa-comment"></i>  
+                                <a href="#">3 Comentarios</a>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+            </section>
+            <section class="caracteristicas">
+                <div class="caracteristicas__envios">
+                    <i class="fas fa-shipping-fast"></i>
+                    <h4>ENVÍOS GRATUITOS A TODO EL PAÍS</h4>
+                </div>
+                <div class="caracteristicas__cambios">
+                    <i class="fas fa-tags"></i>
+                    <h4>CAMBIOS Y DEVOLUCIONES</h4>
+                </div>
+                <div class="caracteristicas__soporte">
+                    <i class="fas fa-hands-helping"></i>
+                    <h4>24/7 SOPORTE AL CLIENTE</h4>
+                </div>
+            </section>
+        </main>
+        <%- include("../partials/footer") %>
+
+    
+</html>
