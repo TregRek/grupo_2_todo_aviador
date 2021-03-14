@@ -13,9 +13,21 @@
                     <p>¡Bienvenido! Regístrate y sé parte de nuestra comunidad</p>
                     <form action="/register" method="POST" class="formulario-login">
                         <input type="text" name="usuario" id="usuario" placeholder="Usuario">
+                        <% if (locals.errors && errors.usuario) { %>
+                            <div class="errors"><%= errors.usuario.msg %></div>
+                        <% } %> 
                         <input type="email" name="email" id="email" placeholder="Correo">
+                        <% if (locals.errors && errors.email) { %>
+                            <div class="errors"><%= errors.email.msg %></div>
+                        <% } %> 
                         <input type="password" name="password" id="password" placeholder="Contraseña">
-                        <input type="password" name="conf-password" id="conf-password" placeholder="Confirmar contraseña">
+                        <% if (locals.errors && errors.password) { %>
+                            <div class="errors"><%= errors.password.msg %></div>
+                        <% } %> 
+                        <input type="password" name="confPassword" id="confPassword" placeholder="Confirmar contraseña">
+                        <% if (locals.errors && errors.confPassword) { %>
+                            <div class="errors"><%= errors.confPassword.msg %></div>
+                        <% } %> 
                         <button type="submit" name="register">Registrarme</button>
                     </form>
                 </div>
