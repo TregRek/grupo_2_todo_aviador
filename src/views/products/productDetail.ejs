@@ -6,6 +6,34 @@
       <title>Producto - TodoAviador</title>
    </head>
    <%- include('../partials/header') %>
+      <section class="ancho">
+         <div>
+          <h1>Productos</h1>
+         </div>
+         <div>
+          <nav>
+              <ul>
+                  <li class="home">
+                      <a href="/">
+                          <i class="fas fa-home"></i>
+                      </a>
+                      <span>></span>
+                  </li>
+                  <li>
+                      <a href="/producto/lista-producto">
+                        Tienda
+                      </a>
+                      <span>></span>
+                  </li>
+                  <li>
+                     <a href="/producto/lista-producto">
+                        <%= product.name %>
+                     </a>
+                 </li>
+              </ul>
+          </nav>
+         </div>
+      </section>
       <main class="main-product-detail">
          <%- include('../partials/sidebar') %>
          <section class="product-page">
@@ -22,15 +50,17 @@
                      </div>
                   </div>
                   <div>
-                     <h2><%= product.name %></h2>
-                     <h3 class="precio">S/<%= product.price %></h3>
+                     <h1><%= product.name %></h1>
+                     <h2 class="precio">S/<%= product.price %></h2>
                      <p><%= product.description %></p>
-                     <h6>En stock</h6>
+                     <h3>En stock</h3>
                      <div class="add-cart">
                         <button>-</button>
                         <p>1</p>
                         <button>+</button>
-                        <button class="add-cart-button">Agregar al carrito</button>
+                        <button class="action-button add-cart-button">Agregar al carrito</button>
+                     </div>
+                     <div>
                         <a href="/producto/editar/<%= product.id %>" class="action-button edit">EDITAR PRODUCTO</a>
                         <form action="/producto/eliminar/<%= product.id %>?_method=DELETE" method="POST">
                            <button type="submit" class="action-button delete">ELIMINAR</button>
@@ -41,7 +71,7 @@
                         <p>Etiqueta: <%= product.tags %></p>
                      </div>
                      <p><i class="far fa-heart"></i></p>
-                     <button class="compare-button">Comparar</button>
+                     <button class="action-button compare-button">Comparar</button>
                   </div>
                </div>
                <section>
@@ -93,9 +123,9 @@
                         <li><img src= "/images/<%= productsRel[i].image %>" alt="related" class= "relProdImg"></li>
                         <li><p><%= productsRel[i].category + ", " + productsRel[i].tags %></p></li>
                         <li><p><a href="/producto/detalle/<%= productsRel[i].id %>"><%= productsRel[i].name %></a></p></li>
-                        <li><h6 class="precio">S/<%= productsRel[i].price %></h6></li>
+                        <li><h2 class="precio">S/<%= productsRel[i].price %></h2></li>
                         <li><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></li>
-                        <li><button>Comprar</button></li>
+                        <li><button class="action-button">Comprar</button></li>
                      </ul>
                   <% } %>
                </div>

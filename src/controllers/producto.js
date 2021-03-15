@@ -30,6 +30,7 @@ const productController = {
     update: (req, res) => {
         let prodPreEdit = products.filter(product => (product.id == req.params.idProd))[0];
         let prodEdit = {};
+        console.log(req.body);
         if(req.file){
 			prodEdit = {
 				id: req.params.idProd,

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+    <head>
+    <%- include('../partials/head') %>
+        <link rel="stylesheet" href="/css/styles.css">
+        <title>Login - TodoAviador</title>
+    </head>
+    <%- include('../partials/header') %>
+       
+        <main class="main-profile">
+            <section>
+                <h1>Hola <%= user.usuario %></h1>
+            </section>
+            <section>
+                <h3>Cambiar datos de usuario</h3>
+                <form action="/editUser?_method=PUT" enctype="multipart/form-data" method="POST">
+                    <label for="usuario">Nombre de usuario</label>
+                    <input type="text" name="usuario" value="<%= user.usuario %>" id="usuario">
+                    <label for="email">Email</label>
+                    <input type="email" name="email" value="<%= user.email %>" id="email">
+                    <button type="submit" class="action-button">Guardar cambios</button>
+                </form>
+            </section>
+            <section>
+                <h3>Cambiar contraseña</h3>
+                <form action="/editPassword?_method=PUT" enctype="multipart/form-data" method="POST">
+                    <input type="password" name="actPassword" id="actPassword" placeholder="Contraseña actual">
+                    <% if (locals.errors && errors.actPassword) { %>
+                        <div class="errors"><%= errors.actPassword.msg %></div>
+                    <% } %> 
+                    <input type="password" name="newPassword" id="newPassword" placeholder="Nueva contraseña">
+                    <% if (locals.errors && errors.newPassword) { %>
+                        <div class="errors"><%= errors.newPassword.msg %></div>
+                    <% } %> 
+                    <input type="password" name="confPassword" id="confPassword" placeholder="Confirmar nueva contraseña">
+                    <% if (locals.errors && errors.confPassword) { %>
+                        <div class="errors"><%= errors.confPassword.msg %></div>
+                    <% } %> 
+                    <button type="submit" class="action-button">Cambiar contraseña</button>
+                </form>
+            </section>
+        </main>
+    <%- include('../partials/footer') %>
+</html>

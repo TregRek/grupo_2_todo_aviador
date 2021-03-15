@@ -104,6 +104,44 @@ header .main-mobile .main-nav-mob-tab .hamburger a .fa-bars{
     font-size: 22px;
 }
 
+.hamburger-menu{
+    display: flex;
+    justify-content: center;
+    width: 20%;
+}
+
+.burger-nav{
+    display: none;
+}
+.burger-nav ul{
+    display: flex;
+    flex-direction: column;
+}
+
+.burger-nav a {
+    color:#1b2535;
+    text-decoration: none;
+    font-size:1.2rem;
+    text-transform: uppercase;
+}
+
+.burger-nav li {
+    list-style: none;
+    margin-bottom:1em;
+}
+
+.nav-toggle{
+    display:none;
+}
+
+.nav-toggle:checked ~ nav {
+    display:block;
+}
+
+.nav-toggle-label{
+    margin: auto;
+}
+
 
 @media(min-width: 1024px){
 

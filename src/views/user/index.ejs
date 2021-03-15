@@ -40,15 +40,15 @@
                     </div>
                 </div>
                 <ul>
-                    <% for(let i = 0; i<productos.length; i++){ %>
+                    <% for(let i = 0; i<4; i++){ %>
                         <li>
                             <div class="contenedor_foto">
-                                <img class="foto-producto"src='<%= productos[i].imgPrinc %>' alt="">
+                                <img class="foto-producto"src="/images/<%= productos[i].image %>" alt="imgPrinc">
                                 </img>
                             </div>
-                            <p class="categoria-de-producto"> <%= productos[i].categ %></p>
-                            <h4 class="nombre-del-producto"><%= productos[i].nombre %></h4>
-                            <h3 class="precio"><%= productos[i].precio %></h3>
+                            <p class="categoria-de-producto"> <%= productos[i].category %></p>
+                            <h4 class="nombre-del-producto"><%= productos[i].name %></h4>
+                            <h3 class="precio">S/<%= productos[i].price %></h3>
                             <div class="boton">
                             <button>Seleccionar opciones</button>
                             </div>
@@ -69,15 +69,15 @@
                     </div>
                 </div>
                 <ul>
-                    <% for(let i = 0; i<productos.length; i++) { %>
+                    <% for(let i = 0; i<4; i++) { %>
                         <li>
                             <div class="contenedor_foto">
-                                <img class="foto-producto"src='<%= productos[i].imgPrinc %>' alt="fotoCamisa">
+                                <img class="foto-producto"src="/images/<%= productos[i].image %>" alt="imgPrinc">
                                 </img>
                             </div>
-                            <p class="categoria-de-producto"> <%= productos[i].categ %></p>
-                            <h4 class="nombre-del-producto"><%= productos[i].nombre %></h4>
-                            <h3 class="precio"><%= productos[i].precio %></h3>
+                            <p class="categoria-de-producto"> <%= productos[i].category %></p>
+                            <h4 class="nombre-del-producto"><%= productos[i].name %></h4>
+                            <h3 class="precio">S/<%= productos[i].price %></h3>
                             <div class="boton">
                             <button>Seleccionar opciones</button>
                             </div>

@@ -1,0 +1,14 @@
+[
+ {
+  "id": 1,
+  "usuario": "asgarcia",
+  "email": "asgarcia@gmail.com",
+  "password": "$2a$10$FtV3BghtzFQDxYra/u1eqetLLYGbkdlh4ictqayMU9VYXiHiMzTJ6"
+ },
+ {
+  "id": 2,
+  "usuario": "asgarcia103",
+  "email": "asgarcia103@gmail.com",
+  "password": "$2a$10$ukgJl4I8t.dHEVsGihe7YOyNuw4oCThZXWgLl5YEcf2321r9uqckq"
+ }
+]

@@ -12,11 +12,11 @@
                     <h2>Crea tu cuenta</h2>
                     <p>¡Bienvenido! Regístrate y sé parte de nuestra comunidad</p>
                     <form action="/register" method="POST" class="formulario-login">
-                        <input type="text" name="usuario" id="usuario" placeholder="Usuario">
+                        <input type="text" name="usuario" id="usuario" placeholder="Usuario" value="<%= locals.old && old.usuario ? old.usuario : '' %>">
                         <% if (locals.errors && errors.usuario) { %>
                             <div class="errors"><%= errors.usuario.msg %></div>
                         <% } %> 
-                        <input type="email" name="email" id="email" placeholder="Correo">
+                        <input type="email" name="email" id="email" placeholder="Correo" value="<%= locals.old && old.email ? old.email : '' %>">
                         <% if (locals.errors && errors.email) { %>
                             <div class="errors"><%= errors.email.msg %></div>
                         <% } %> 

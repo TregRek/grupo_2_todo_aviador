@@ -39,12 +39,12 @@ a{
     flex-direction: column;
 }
 
-.formulario-login input{
+.formulario-login input, .main-profile input{
     margin: 5px;
 }
 
 
-.formulario-login button, .edit-form button{
+.formulario-login button, .edit-form button, .main-profile button{
     margin: 15px 0px;
     background-color: #000033;
     color:#fff;
@@ -53,7 +53,7 @@ a{
     transition: all 0.5s;
 }
 
-#usuario, #password, #email, #conf-password{
+input{
     border:0;
     border-bottom: 1px solid #e0e0e0;
     height: 30px;
@@ -67,7 +67,7 @@ a{
     transition: all 0.5s;
 }
 
-.formulario-login button:hover, .edit-form button:hover {
+.formulario-login button:hover, .edit-form button:hover, .main-profile button:hover{
     background-color:#545454;
     box-shadow: 0px 0px 10px rgb(100, 100, 100);
 }
@@ -84,6 +84,26 @@ a{
     width:100%;
     padding:20px 10px;
     background-color:#f6f6f6;
+}
+
+/*************** BREADCRUMS ***********/
+.ancho{
+    padding: 8px 40px;
+    display: flex;
+    flex-direction:row;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    align-items: center;
+    width: 100%;
+    margin: auto;
+    background-color: #1f1e1e;
+    color: #fff;
+}
+.ancho ul{
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display:flex;
 }
 
 /*************** SIDE BAR PRODUCTO ***********/
@@ -110,12 +130,18 @@ a{
 .sidebar-product{
     display:none;
     margin-right: 20px;
-    padding-left: 20px;
+}
+
+.sidebar-product ul{
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display:flex;
 }
 
 /*************** DETALLES PRODUCTO ***********/
 main{
-    padding: 5px 20px 0px;
+    padding: 5px 40px 0px;
 }
 
 .main-product-detail{
@@ -131,7 +157,6 @@ main{
 
 .main-img-prod{
     width: 400px;
-    margin: 0px 20px 0px 0px;
 }
 
 .product-detail{
@@ -188,7 +213,6 @@ main{
     align-items: center;
     justify-content: center;
     padding: 15px 30px;
-    margin-top: 15px;
   }
   
 .action-button.edit {
@@ -199,7 +223,7 @@ main{
     background-color: rgb(248, 69, 37);
   }
 
-.add-cart-button, .compare-button, .related-prod div ul button{
+.add-cart-button, .compare-button, .related-prod button{
     background-color: #000033;
     border-radius: 79px;
     color:#fff;
@@ -291,13 +315,6 @@ main{
     margin:5px 0;
 }
 
-.sidebar-product ul{
-    list-style: none;
-    margin: 0;
-    padding: 0;
-    display:flex;
-}
-
 .socials li{
     height: 48px;
     width: 48px;
@@ -310,6 +327,7 @@ main{
 
 .precio{
     color: #57bf6d;
+    margin:0;
 }
 
 
@@ -337,6 +355,18 @@ main{
     border-bottom: 1px solid #e0e0e0;
 }
 
+/*************** PERFIL DE USUARIO ***********/
+.main-profile , .main-profile section, .main-profile form{
+    display: flex;
+    flex-direction: column;
+}
+
+.main-profile button{
+    width: 250px;
+    margin: 10px auto;
+}
+
+
 .edit-form img{
     max-width: 500px;
 }
@@ -346,6 +376,9 @@ main{
         width: 655px;
     }
 
+    .main-img-prod{
+        margin: 0px 20px 0px 0px;
+    }
     .share-product li{
         width:25%;
     }
@@ -363,6 +396,9 @@ main{
         max-width: 900px;
     }
     
+    .main-profile button{
+        margin: 10px 0px;
+    }
 }
 
 @media (min-width: 1200px){
