@@ -49,7 +49,7 @@ router.post("/register", validateRegister, indexController.processRegister);
 router.get("/cart", indexController.cart);
 //---------------PERFIL DE USUARIO--------------
 router.get("/profile", authMiddleware, indexController.profile);
-router.put("/editPassword", validateEditPass,indexController.editPassword);
+router.put("/editPassword", validateEditPass, indexController.editPassword);
 //---------------LOGOUT--------------
 router.get("/logout", indexController.logout);
 

@@ -44,7 +44,7 @@ a{
 }
 
 
-.formulario-login button, .edit-form button, .main-profile button{
+.formulario-login button, .edit-form button, .main-profile button, .errorPage a{
     margin: 15px 0px;
     background-color: #000033;
     color:#fff;
@@ -67,7 +67,7 @@ input{
     transition: all 0.5s;
 }
 
-.formulario-login button:hover, .edit-form button:hover, .main-profile button:hover{
+.formulario-login button:hover, .edit-form button:hover, .main-profile button:hover, .errorPage a:hover{
     background-color:#545454;
     box-shadow: 0px 0px 10px rgb(100, 100, 100);
 }
@@ -371,6 +371,24 @@ main{
     max-width: 500px;
 }
 
+.errorPage {
+    width:100%;
+    background-image: url(../images/355981-terminator22.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    color:#fff;
+}
+
+.errorPage section {
+    text-align: center;
+    padding: 100px 0px;
+}
+
+.errorPage a {
+    margin-right: 40px;
+}
+
+/*************** MEDIA QUERIES ***********/
 @media (min-width: 768px){
     .cuadro-login{
         width: 655px;

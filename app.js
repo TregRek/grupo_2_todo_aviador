@@ -24,3 +24,6 @@ app.set('view engine', 'ejs');
 
 app.use('/', indexRouter);
 app.use('/producto', productRouter);
+app.use(function error404Middleware (req,res,next) {
+	res.status(404).render('./user/404');
+});
