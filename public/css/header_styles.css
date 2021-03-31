@@ -143,7 +143,7 @@ header .main-mobile .main-nav-mob-tab .hamburger a .fa-bars{
 }
 
 
-@media(min-width: 1024px){
+@media(min-width: 1023px){
 
     header ul{
         list-style: none;

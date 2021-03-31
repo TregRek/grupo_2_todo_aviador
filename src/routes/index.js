@@ -1,8 +1,20 @@
 const express = require('express');
 const router = express.Router();
-const indexController = require('../controllers/index');
 const guestMiddleware = require('../middlewares/guestMiddleware');
 const authMiddleware = require('../middlewares/authMiddleware');
+const path = require('path');
+const multer = require('multer');
+const storage = multer.diskStorage({
+    destination: (req, file, cb) => {
+        cb(null, path.join(__dirname,'../../public/images'));
+    },
+    filename: (req, file, cb) =>{
+        const newFilename = file.originalname;
+        cb(null, newFilename);
+    }
+});
+const upload = multer({storage: storage});
+const indexController = require('../controllers/index');
 const { body } = require('express-validator');
 let validateRegister = [
     body('usuario').notEmpty().withMessage('Debes ingresar un nombre de usuario'), 
@@ -24,6 +36,11 @@ let validateLogin = [
     body('usuario').notEmpty().withMessage('Debes ingresar un nombre de usuario'), 
     body('password').notEmpty().withMessage('Debes ingresar una contraseña')
 ];
+let validateUser = [
+    body('usuario').notEmpty().withMessage('Debes ingresar un nombre de usuario'), 
+    body('email').notEmpty().withMessage('Debes ingresar un correo').bail()
+    .isEmail().withMessage('Debes ingresar un email válido'),
+];
 let validateEditPass = [
     body('actPassword').notEmpty().withMessage('Debes ingresar la contraseña anterior'), 
     body('newPassword').notEmpty().withMessage('Debes ingresar una contraseña nueva').bail()
@@ -41,7 +58,7 @@ let validateEditPass = [
 router.get("/", indexController.index);
 //---------------LOGIN DE USUARIO--------------
 router.get("/login", guestMiddleware,indexController.login);
-router.post("/login", validateLogin,indexController.processLogin);
+router.post("/login", validateLogin, indexController.processLogin);
 //---------------REGISTRO DE USUARIO--------------
 router.get("/register", guestMiddleware ,indexController.register);
 router.post("/register", validateRegister, indexController.processRegister);
@@ -49,7 +66,8 @@ router.post("/register", validateRegister, indexController.processRegister);
 router.get("/cart", indexController.cart);
 //---------------PERFIL DE USUARIO--------------
 router.get("/profile", authMiddleware, indexController.profile);
-router.put("/editPassword", validateEditPass, indexController.editPassword);
+router.put("/editPassword/:idUser", validateEditPass, indexController.editPassword);
+router.put("/editUser/:idUser", [upload.single('image'), validateUser], indexController.editUser);
 //---------------LOGOUT--------------
 router.get("/logout", indexController.logout);
 

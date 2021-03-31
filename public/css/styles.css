@@ -40,7 +40,7 @@ a{
 }
 
 .formulario-login input, .main-profile input{
-    margin: 5px;
+    margin: 5px 0px;
 }
 
 
@@ -371,6 +371,17 @@ main{
     max-width: 500px;
 }
 
+.profileImg{
+    max-width: 50%;
+    margin-bottom: 20px;
+    border-radius: 50%;
+}
+
+.fileInput {
+    border-bottom: 0px;
+}
+
+/*************** ERROR PAGE ***********/
 .errorPage {
     width:100%;
     background-image: url(../images/355981-terminator22.jpg);
@@ -416,6 +427,10 @@ main{
     
     .main-profile button{
         margin: 10px 0px;
+    }
+
+    .profileImg{
+        width: 300px;
     }
 }
 

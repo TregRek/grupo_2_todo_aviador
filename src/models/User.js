@@ -47,10 +47,11 @@ const User = {
         let identifier = 0;
         for(let i=0; i<allUsers.length; i++){
             if(allUsers[i].id == userData.id){
-                identifier= i;
+                identifier = i;
             }
         }
-        allUsers[i] = userData;
+        allUsers[identifier] = userData;
+        fs.writeFileSync(usersFilePath, JSON.stringify(allUsers, null, ' '));
         return true;
     },
     delete: function(id) {

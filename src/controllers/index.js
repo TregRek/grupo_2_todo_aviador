@@ -18,6 +18,7 @@ const indexController = {
            return res.render('./user/login', { errors: errors.mapped(), old: req.body});
         }
         let userToLogin = User.findByField('usuario', req.body.usuario);
+        console.log(userToLogin);
         if(!userToLogin){
             return res.render('./user/login', {
                 errors:{ 
@@ -88,9 +89,7 @@ const indexController = {
     },
     editPassword: (req, res) => {
         let errors = validationResult(req);
-        console.log(req.body);
-        if (errors.errors.length > 0) {3
-            console.log(errors.mapped());
+        if (errors.errors.length > 0) {
             return res.render('./user/profile', {errors: errors.mapped(), user: req.session.userLogged});
         }
         let userToEdit = User.findByField('usuario', req.session.userLogged);
@@ -99,6 +98,38 @@ const indexController = {
             password: bcryptjs.hashSync(req.body.newPassword, 10)
         }
         User.edit(userToEdit);
+        return res.redirect('/profile');
+    },
+    editUser: (req, res) => {
+        let errors = validationResult(req);
+        if (errors.errors.length > 0) {
+            return res.render('./user/profile', {errors: errors.mapped(), user: req.session.userLogged});
+        }
+        let userToEdit = User.findByField('usuario', req.session.userLogged.usuario);
+        if(req.file){
+            userToEdit = {
+                ...req.session.userLogged,
+                usuario: req.body.usuario,
+                email: req.body.email,
+                image: req.file.originalname,
+                password: userToEdit.password
+            }
+        } else {
+            userToEdit = {
+                ...req.session.userLogged,
+                usuario: req.body.usuario,
+                email: req.body.email,
+                password: userToEdit.password
+            }
+        }
+        User.edit(userToEdit);
+        req.session.userLogged = userToEdit;
+        res.clearCookie('usuario');
+        res.cookie('usuario', req.body.usuario, {maxAge: 1000*60*5});
+        return res.redirect('/profile');
+    },
+    testUser: (req, res) => {
+        console.log(req.body);
         return res.redirect('/profile');
     },
     cart:  (req, res) =>{

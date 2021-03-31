@@ -3,7 +3,7 @@
     <head>
     <%- include('../partials/head') %>
         <link rel="stylesheet" href="/css/styles.css">
-        <title>Login - TodoAviador</title>
+        <title>Perfil - TodoAviador</title>
     </head>
     <%- include('../partials/header') %>
        
@@ -13,17 +13,25 @@
             </section>
             <section>
                 <h3>Cambiar datos de usuario</h3>
-                <form action="/editUser?_method=PUT" enctype="multipart/form-data" method="POST">
+                <form action="/editUser/<%= user.id %>?_method=PUT" enctype="multipart/form-data" method="POST">
+                    <img src="/images/<%= user.image %>" alt="userImage" class="profileImg">
+                    <input type="file" name="image" class='fileInput'>
                     <label for="usuario">Nombre de usuario</label>
                     <input type="text" name="usuario" value="<%= user.usuario %>" id="usuario">
+                    <% if (locals.errors && errors.usuario) { %>
+                        <div class="errors"><%= errors.usuario.msg %></div>
+                    <% } %> 
                     <label for="email">Email</label>
                     <input type="email" name="email" value="<%= user.email %>" id="email">
+                    <% if (locals.errors && errors.email) { %>
+                        <div class="errors"><%= errors.email.msg %></div>
+                    <% } %> 
                     <button type="submit" class="action-button">Guardar cambios</button>
                 </form>
             </section>
             <section>
                 <h3>Cambiar contraseña</h3>
-                <form action="/editPassword?_method=PUT" enctype="multipart/form-data" method="POST">
+                <form action="/editPassword/<%= user.id %>?_method=PUT" method="POST">
                     <input type="password" name="actPassword" id="actPassword" placeholder="Contraseña actual">
                     <% if (locals.errors && errors.actPassword) { %>
                         <div class="errors"><%= errors.actPassword.msg %></div>
