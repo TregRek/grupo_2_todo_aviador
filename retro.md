@@ -79,3 +79,24 @@
 #Dejar de hacer:
 - Extender las weekly a más de 20 min.
 
+
+#SPRINT 6 
+#Seguir Haciendo:
+- Reunirse para distribuir las tareas equitativamente.
+- Iniciar actividades desde el inicio de sprint y no esperar a última hora.
+
+#Hacer más:
+- Ir avanzando el proyecto por cada tema nuevo que veamos en el Playground.
+- Juntarnos para compartir conocimiento y absolver dudas que tengamos sobre lo que estamos aprendiendo.
+- Revisar el código de cada uno para ver si podemos optimizarlo.
+- Agregar comentarios a nuestro código para hacerlo más legible.
+
+#Comenzar a hacer:
+- Reuniones weekly cada miércoles para revisar avances y levantar dudas o solicitar apoyo.
+- Definir deadlines o fechas limite de entrega.
+
+#Hacer menos:
+- NULL
+
+#Dejar de hacer:
+- Extender las weekly a más de 20 min.
