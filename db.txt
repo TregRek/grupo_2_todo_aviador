@@ -1,0 +1,39 @@
+create schema todo_aviador;
+
+CREATE TABLE `todo_aviador`.`user` (
+  `id_user` INT UNSIGNED NOT NULL AUTO_INCREMENT,
+  `first_name` VARCHAR(45) NOT NULL,
+  `last_name` VARCHAR(45) NOT NULL,
+  `password` VARCHAR(45) NOT NULL,
+  `email` VARCHAR(320) NOT NULL,
+  `status` CHAR(1) NOT NULL,
+  `name_img` VARCHAR(45) NOT NULL,
+  `created_at` TIMESTAMP NULL,
+  `updated_at` TIMESTAMP NULL,
+  PRIMARY KEY (`id_user`));
+
+CREATE TABLE `todo_aviador`.`image` (
+  `id_image` INT UNSIGNED NOT NULL AUTO_INCREMENT,
+  `name_img` VARCHAR(45) NOT NULL,
+  PRIMARY KEY (`id_image`));
+
+CREATE TABLE `todo_aviador`.`brand` (
+  `id_brand` INT UNSIGNED NOT NULL AUTO_INCREMENT,
+  `name` VARCHAR(45) NOT NULL,
+  PRIMARY KEY (`id_brand`));
+
+CREATE TABLE `todo_aviador`.`size` (
+  `id_size` INT UNSIGNED NOT NULL AUTO_INCREMENT,
+  `size` VARCHAR(45) NOT NULL,
+  PRIMARY KEY (`id_size`));
+  
+CREATE TABLE `todo_aviador`.`category` (
+  `id_category` INT UNSIGNED NOT NULL AUTO_INCREMENT,
+  `name_categ` VARCHAR(45) NOT NULL,
+  PRIMARY KEY (`id_category`));
+  
+CREATE TABLE `todo_aviador`.`color` (
+  `id_color` INT UNSIGNED NOT NULL AUTO_INCREMENT,
+  `color` VARCHAR(45) NOT NULL,
+  PRIMARY KEY (`id_color`));
+
