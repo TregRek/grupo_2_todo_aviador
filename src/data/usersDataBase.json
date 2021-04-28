@@ -12,5 +12,11 @@
   "email": "asgarcia103@gmail.com",
   "password": "$2a$10$ukgJl4I8t.dHEVsGihe7YOyNuw4oCThZXWgLl5YEcf2321r9uqckq",
   "image": "default-user.png"
+ },
+ {
+  "id": 3,
+  "usuario": "Luuchoh",
+  "email": "luxo997@gmail.com",
+  "password": "$2a$10$0CKcQKapx8Zy78RKtG81oOs.tfWJtR9QH9HeyUJdYnY6U4CV9fT3."
  }
 ]
