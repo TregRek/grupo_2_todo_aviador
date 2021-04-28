@@ -20,6 +20,8 @@ let validateRegister = [
     body('usuario').notEmpty().withMessage('Debes ingresar un nombre de usuario'), 
     body('email').notEmpty().withMessage('Debes ingresar un correo').bail()
     .isEmail().withMessage('Debes ingresar un email válido'),
+    body('nombres').notEmpty().withMessage('Debes ingresar tus nombres'),
+    body('apellidos').notEmpty().withMessage('Debes ingresar tus apellidos'),
     body('password').notEmpty().withMessage('Debes ingresar una contraseña').bail()
     .isLength({min: 8}).withMessage('La contraseña debe tener almenos 8 caracteres'), 
     body('confPassword').notEmpty().withMessage('Debes confirmar la contraseña').bail()
@@ -41,6 +43,13 @@ let validateUser = [
     body('email').notEmpty().withMessage('Debes ingresar un correo').bail()
     .isEmail().withMessage('Debes ingresar un email válido'),
 ];
+let validateEditUser = [
+    body('usuario').notEmpty().withMessage('Debes ingresar un nombre de usuario'), 
+    body('email').notEmpty().withMessage('Debes ingresar un correo').bail()
+    .isEmail().withMessage('Debes ingresar un email válido'),
+    body('nombres').notEmpty().withMessage('Debes ingresar tus nombres'),
+    body('apellidos').notEmpty().withMessage('Debes ingresar tus apellidos')
+];
 let validateEditPass = [
     body('actPassword').notEmpty().withMessage('Debes ingresar la contraseña anterior'), 
     body('newPassword').notEmpty().withMessage('Debes ingresar una contraseña nueva').bail()
@@ -61,13 +70,13 @@ router.get("/login", guestMiddleware,indexController.login);
 router.post("/login", validateLogin, indexController.processLogin);
 //---------------REGISTRO DE USUARIO--------------
 router.get("/register", guestMiddleware ,indexController.register);
-router.post("/register", validateRegister, indexController.processRegister);
+router.post("/register", [upload.single('image'), validateRegister], indexController.processRegister);
 //---------------CARRITO DE USUARIO--------------
 router.get("/cart", indexController.cart);
 //---------------PERFIL DE USUARIO--------------
 router.get("/profile", authMiddleware, indexController.profile);
-router.put("/editPassword/:idUser", validateEditPass, indexController.editPassword);
-router.put("/editUser/:idUser", [upload.single('image'), validateUser], indexController.editUser);
+router.put("/editPassword/", validateEditPass, indexController.editPassword);
+router.put("/editUser/", [upload.single('image'), validateEditUser], indexController.editUser);
 //---------------LOGOUT--------------
 router.get("/logout", indexController.logout);
 

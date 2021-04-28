@@ -11,10 +11,18 @@
                 <div class="login-top-div">
                     <h2>Crea tu cuenta</h2>
                     <p>¡Bienvenido! Regístrate y sé parte de nuestra comunidad</p>
-                    <form action="/register" method="POST" class="formulario-login">
+                    <form action="/register" method="POST" class="formulario-login" enctype="multipart/form-data">
                         <input type="text" name="usuario" id="usuario" placeholder="Usuario" value="<%= locals.old && old.usuario ? old.usuario : '' %>">
                         <% if (locals.errors && errors.usuario) { %>
                             <div class="errors"><%= errors.usuario.msg %></div>
+                        <% } %> 
+                        <input type="text" name="nombres" id="nombres" placeholder="Nombres" value="<%= locals.old && old.nombres ? old.nombres : '' %>">
+                        <% if (locals.errors && errors.nombres) { %>
+                            <div class="errors"><%= errors.nombres.msg %></div>
+                        <% } %> 
+                        <input type="text" name="apellidos" id="apellidos" placeholder="Apellidos" value="<%= locals.old && old.apellidos ? old.apellidos : '' %>">
+                        <% if (locals.errors && errors.apellidos) { %>
+                            <div class="errors"><%= errors.apellidos.msg %></div>
                         <% } %> 
                         <input type="email" name="email" id="email" placeholder="Correo" value="<%= locals.old && old.email ? old.email : '' %>">
                         <% if (locals.errors && errors.email) { %>
@@ -28,6 +36,8 @@
                         <% if (locals.errors && errors.confPassword) { %>
                             <div class="errors"><%= errors.confPassword.msg %></div>
                         <% } %> 
+                        <label>Imagen de perfil</label>
+                        <input type="file" name="image">
                         <button type="submit" name="register">Registrarme</button>
                     </form>
                 </div>

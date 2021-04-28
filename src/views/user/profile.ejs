@@ -9,17 +9,27 @@
        
         <main class="main-profile">
             <section>
-                <h1>Hola <%= user.usuario %></h1>
+                <h1>Hola <%= user.user_name %></h1>
             </section>
             <section>
                 <h3>Cambiar datos de usuario</h3>
-                <form action="/editUser/<%= user.id %>?_method=PUT" enctype="multipart/form-data" method="POST">
-                    <img src="/images/<%= user.image %>" alt="userImage" class="profileImg">
+                <form action="/editUser/?_method=PUT" enctype="multipart/form-data" method="POST">
+                    <img src="/images/<%= user.name_img %>" alt="userImage" class="profileImg">
                     <input type="file" name="image" class='fileInput'>
                     <label for="usuario">Nombre de usuario</label>
-                    <input type="text" name="usuario" value="<%= user.usuario %>" id="usuario">
+                    <input type="text" name="usuario" value="<%= user.user_name %>" id="usuario">
                     <% if (locals.errors && errors.usuario) { %>
                         <div class="errors"><%= errors.usuario.msg %></div>
+                    <% } %> 
+                    <label for="nombres">Nombres</label>
+                    <input type="text" name="nombres" value="<%= user.first_name %>" id="nombres">
+                    <% if (locals.errors && errors.nombres) { %>
+                        <div class="errors"><%= errors.nombres.msg %></div>
+                    <% } %> 
+                    <label for="apellidos">Apellidos</label>
+                    <input type="text" name="apellidos" value="<%= user.last_name %>" id="apellidos">
+                    <% if (locals.errors && errors.apellidos) { %>
+                        <div class="errors"><%= errors.apellidos.msg %></div>
                     <% } %> 
                     <label for="email">Email</label>
                     <input type="email" name="email" value="<%= user.email %>" id="email">
@@ -31,7 +41,7 @@
             </section>
             <section>
                 <h3>Cambiar contraseña</h3>
-                <form action="/editPassword/<%= user.id %>?_method=PUT" method="POST">
+                <form action="/editPassword/?_method=PUT" method="POST">
                     <input type="password" name="actPassword" id="actPassword" placeholder="Contraseña actual">
                     <% if (locals.errors && errors.actPassword) { %>
                         <div class="errors"><%= errors.actPassword.msg %></div>

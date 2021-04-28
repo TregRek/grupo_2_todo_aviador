@@ -1,9 +1,9 @@
-/*
-----------------INSERT DE USUARIOS-----------------
+
+-- --------------INSERT DE USUARIOS-----------------
 insert into user (user_name, first_name, last_name, password, email, status, name_img) values ('asgarcia', 'Augusto', 'Saldarriaga', '$2a$10$ukgJl4I8t.dHEVsGihe7YOyNuw4oCThZXWgLl5YEcf2321r9uqckq', 'asgarcia103@gmail.com', 1, 'claudia.png');
 insert into user (user_name, first_name, last_name, password, email, status, name_img) values ('asgarcia103', 'Augusto', 'Saldarriaga', '$2a$10$ukgJl4I8t.dHEVsGihe7YOyNuw4oCThZXWgLl5YEcf2321r9uqckq', 'asgarcia@gmail.com', 1, 'default-user.png');
 
-----------------INSERT DE IMAGENES-----------------
+-- --------------INSERT DE IMAGENES-----------------
 insert into image (name_img) values ('Pilots-mapstrap-example-2-504x504.jpg');
 insert into image (name_img) values ('PPA-504x638.png');
 insert into image (name_img) values ('NAV-504x616.png');
@@ -18,19 +18,19 @@ insert into image (name_img) values ('Cessna-Lanyard.jpg');
 insert into image (name_img) values ('TEST-prep-libro.png');
 insert into image (name_img) values ('Defecto.jpg');
 
-----------------INSERT DE CATEGORIAS-----------------
+-- --------------INSERT DE CATEGORIAS-----------------
 insert into category (name_category) values ('Para el piloto');
 insert into category (name_category) values ('Regalos');
 insert into category (name_category) values ('Libros');
 insert into category (name_category) values ('Uniformes');
 
-----------------INSERT DE TALLAS---------------------
+-- --------------INSERT DE TALLAS---------------------
 INSERT INTO size (size) values ('SMALL');
 INSERT INTO size (size) values ('MEDIUM');
 INSERT INTO size (size) values ('LARGE');
 INSERT INTO size (size) values ('XL');
 
-----------------INSERT DE COLORES---------------------
+-- --------------INSERT DE COLORES---------------------
 INSERT INTO color (color) values ('Rojo');
 INSERT INTO color (color) values ('Verde');
 INSERT INTO color (color) values ('Azul');
@@ -42,15 +42,14 @@ INSERT INTO color (color) values ('Turquesa');
 INSERT INTO color (color) values ('Dorado');
 INSERT INTO color (color) values ('Plateado');
 
-----------------INSERT DE MARCAS---------------------
+-- --------------INSERT DE MARCAS---------------------
 INSERT INTO brand (name_brand) values ('Tommy');
 INSERT INTO brand (name_brand) values ('HGT');
 INSERT INTO brand (name_brand) values ('Modern Pilot');
 INSERT INTO brand (name_brand) values ('Boeing');
 INSERT INTO brand (name_brand) values ('H&M');
 
-----------------INSERT DE PRODUCTOS---------------------
-select * from product;
+-- --------------INSERT DE PRODUCTOS---------------------
 INSERT INTO product (name_product, description) VALUES ('Pilot Mapstrap','Accesorio que sirve de complemento para sujetar los mapas, facilitar la observación del piloto en vuelo y la organización en la cabina. Hecho de materiales de fácil transporte y durabilidad.');
 INSERT INTO product (name_product, description) VALUES ('Libro Piloto Privado de Avión', 'Como es habitual en los tomos de HDIW, propone una metodología de instrucción completamente diferente a lo ya conocido. Para este excelente material, la propuesta es formar parte de un día típico en la vida de un Piloto Privado en instrucción. Desde su llegada a la escuela de vuelo, la preparación de la aeronave, la planificación de la aeronave, briefings, maniobras de vuelo, arribo al aeródromo y como paso final, llegar al aula y además de evaluar los conceptos vistos, continuar con el aprendizaje de los conceptos básicos de las materias más importantes, como: AERODINÁMICA, NAVEGACIÓN, MOTORES e INSTRUMENTOS DE VUELO.');
 INSERT INTO product (name_product, description) VALUES ('Libro Navegación IFR & Comms','En esta nueva edición, conoceremos el fascinante mundo de la navegación aérea y sus comunicaciones en lo que propone ser un día típico en un VUELO DE LINEA AEREA. Abarcando cada tramo de una navegación, interactuando con los diferentes controles de transito con las estructuras de comunicación adecuadas a cada fase de vuelo. Sin duda una herramienta indispensable para todo aquel Piloto en entrenamiento o para aquellos fanáticos de la aviación comercial, ya que entre varias atracciones dentro de este material, lograremos vivir en primera persona, un día completo en la vida de un vuelo de línea.');
@@ -64,7 +63,7 @@ INSERT INTO product (name_product, description) VALUES ('Libro “Los Guardianes
 INSERT INTO product (name_product, description) VALUES ('Lanyard Cessna','Accesorio que te permite portar licencias, identificaciones, alcohol en gel o llaves de una manera práctica. Modelo: Con Gancho Color: Negro');
 INSERT INTO product (name_product, description) VALUES ('Libro Test Prep','Conoces tu verdadero nivel académico? El más completo banco de preguntas basados en los conocimientos necesarios para transitar cada uno de los niveles en al carrera de un piloto profesional. 100 preguntas para el nivel INICIAL. 100 preguntas para el nivel INTERMEDIO. 100 preguntas para el nivel AVANZADO. 100 preguntas para el nivel TLA. Obtiene tu promedio de cada nivel y descubrí tu verdadero nivel académico! Ediciones portadas color y contenidos en blanco y negro');
 
-----------------INSERT DE PRODUCT_ENTRY---------------------
+-- --------------INSERT DE PRODUCT_ENTRY---------------------
 INSERT INTO product_entry (id_product, id_size, id_category, id_brand, id_color, price, stock, status) VALUES (1, 1, 1, 1, 1, 16, 20, 1);
 INSERT INTO product_entry (id_product, id_size, id_category, id_brand, id_color, price, stock, status) VALUES (2, 2, 2, 2, 2, 75, 10, 1);
 INSERT INTO product_entry (id_product, id_size, id_category, id_brand, id_color, price, stock, status) VALUES (3, 3, 3, 3, 3, 75, 6, 1);
@@ -78,7 +77,7 @@ INSERT INTO product_entry (id_product, id_size, id_category, id_brand, id_color,
 INSERT INTO product_entry (id_product, id_size, id_category, id_brand, id_color, price, stock, status) VALUES (11, 3, 3, 3, 1, 20, 7, 1);
 INSERT INTO product_entry (id_product, id_size, id_category, id_brand, id_color, price, stock, status) VALUES (12, 4, 4, 4, 2, 55, 5, 1);
 
-----------------INSERT DE PRODUCT_IMAGE---------------------
+-- --------------INSERT DE PRODUCT_IMAGE---------------------
 INSERT INTO prod_image (id_product, id_image) values ('1','1');
 INSERT INTO prod_image (id_product, id_image) values ('2','2');
 INSERT INTO prod_image (id_product, id_image) values ('3','3');
@@ -90,5 +89,5 @@ INSERT INTO prod_image (id_product, id_image) values ('8','8');
 INSERT INTO prod_image (id_product, id_image) values ('9','9');
 INSERT INTO prod_image (id_product, id_image) values ('10','10');
 INSERT INTO prod_image (id_product, id_image) values ('11','11');
-INSERT INTO prod_image (id_product, id_image) values ('12','12');*/
+INSERT INTO prod_image (id_product, id_image) values ('12','12');
 
