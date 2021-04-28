@@ -1,21 +1,21 @@
 module.exports = (sequelize, dataTypes) => {
     let alias = "ProductEntries"
     let cols = {
-        idProdEntry: {
+        id_product_entry: {
             type: dataTypes.INTEGER,
             primaryKey: true,
             autoIncrement: true
         },
-        idColor: {
+        id_color: {
             type: dataTypes.INTEGER
         },
-        idCategory: {
+        id_category: {
             type: dataTypes.INTEGER
         },
-        idSize: {
+        id_size: {
             type: dataTypes.INTEGER
         },
-        idBrand: {
+        id_brand: {
             type: dataTypes.INTEGER
         },
         price: {
@@ -29,30 +29,34 @@ module.exports = (sequelize, dataTypes) => {
         }
     }
     let config= {
-        tableName: "productentries"
+        tableName: "product_entry"
     }
 
     const ProductEntry = sequelize.define(alias, cols, config);
     ProductEntry.associate = (models) => {
-        ProductEntry.hasMany(models.CartProd, {
+        ProductEntry.hasMany(models.CartProds, {
             as: "cartProducts",
-            foreignKey: "idProdEntry"
+            foreignKey: "id_product_entry"
         });
-        ProductEntry.belongsTo(models.Product, {
+        ProductEntry.belongsTo(models.Products, {
             as: "products",
-            foreignKey: "idProduct"
+            foreignKey: "id_product"
         });
-        ProductEntry.belongsTo(models.Size, {
+        ProductEntry.belongsTo(models.Sizes, {
             as: "sizes",
-            foreignKey: "idSize"
+            foreignKey: "id_size"
         });
-        ProductEntry.belongsTo(models.Category, {
+        ProductEntry.belongsTo(models.Categories, {
             as: "categories",
-            foreignKey: "idCategory"
+            foreignKey: "id_category"
         });
-        ProductEntry.belongsTo(models.Color, {
+        ProductEntry.belongsTo(models.Colors, {
             as: "colors",
-            foreignKey: "idColor"
+            foreignKey: "id_color"
+        });
+        ProductEntry.belongsTo(models.Brands, {
+            as: "brands",
+            foreignKey: "id_brand"
         });
     }
 

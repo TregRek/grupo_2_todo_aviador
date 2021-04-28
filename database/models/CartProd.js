@@ -1,15 +1,15 @@
 module.exports = (sequelize, dataTypes) => {
     let alias = "CartProds"
     let cols = {
-        idCartProd: {
+        id_cart_prod: {
             type: dataTypes.INTEGER,
             primaryKey: true,
             autoIncrement: true
         },
-        idCart: {
+        id_cart: {
             type: dataTypes.INTEGER
         },
-        idProdEntry: {
+        id_product_entry: {
             type: dataTypes.INTEGER
         },
         amount: {
@@ -17,18 +17,18 @@ module.exports = (sequelize, dataTypes) => {
         }
     }
     let config= {
-        tableName: "cartprods"
+        tableName: "cart_prod"
     }
 
     const CartProd = sequelize.define(alias, cols, config);
     CartProd.associate = (models) => {
-        CartProd.belongsTo(models.Cart, {
+        CartProd.belongsTo(models.Carts, {
             as: "carts",
-            foreignKey: "idCart"
+            foreignKey: "id_cart"
         });
-        CartProd.belongsTo(models.ProductEntry, {
+        CartProd.belongsTo(models.ProductEntries, {
             as: "productEntries",
-            foreignKey: "idProdEntry"
+            foreignKey: "id_product_entry"
         });
     }
     return CartProd;

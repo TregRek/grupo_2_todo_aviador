@@ -1,12 +1,12 @@
 module.exports = (sequelize, dataTypes) => {
     let alias = "Carts"
     let cols = {
-        idCart: {
+        id_cart: {
             type: dataTypes.INTEGER,
             primaryKey: true,
             autoIncrement: true
         },
-        idUser: {
+        id_user: {
             type: dataTypes.INTEGER
         },
         date: {
@@ -20,22 +20,22 @@ module.exports = (sequelize, dataTypes) => {
         }
     }
     let config= {
-        tableName: "carts"
+        tableName: "cart"
     }
 
     const Cart = sequelize.define(alias, cols, config);
     Cart.associate = (models) => {
-        Cart.belongsTo(models.User, {
+        Cart.belongsTo(models.Users, {
             as: "users",
-            foreignKey: "idUser"
+            foreignKey: "id_user"
         });
-        Cart.belongsTo(models.Order, {
+        Cart.belongsTo(models.Orders, {
             as: "orders",
-            foreignKey: "idCart"
+            foreignKey: "id_cart"
         });
-        Cart.hasMany(models.CartProd, {
+        Cart.hasMany(models.CartProds, {
             as: "cartProds",
-            foreignKey: "idCart"
+            foreignKey: "id_cart"
         });
     }
     return Cart;

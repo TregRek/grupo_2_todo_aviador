@@ -3,11 +3,13 @@ const path = require('path');
 const User = require('../models/User');
 const bcryptjs = require('bcryptjs');
 const productsFilePath = path.join(__dirname, '../data/productsDataBase.json');
+const db = require('../../database/models');
 let products = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8'));
 const { validationResult } = require('express-validator');
 const indexController = {
     index: (req, res) =>{
         res.render('./user/index', {productos: products});
+        console.log(db);
     },
     login: (req, res) =>{
         return res.render('./user/login');
@@ -17,6 +19,11 @@ const indexController = {
         if (errors.errors.length > 0) {
            return res.render('./user/login', { errors: errors.mapped(), old: req.body});
         }
+        let userToLogin1 = db.User.findOne({
+            where:  {user_name: req.body.usuario}
+        }).then((resultado)=>{
+            console.log(resultado);
+        })
         let userToLogin = User.findByField('usuario', req.body.usuario);
         console.log(userToLogin);
         if(!userToLogin){

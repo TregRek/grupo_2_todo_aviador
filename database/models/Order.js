@@ -1,15 +1,15 @@
 module.exports = (sequelize, dataTypes) => {
     let alias = "Orders"
     let cols = {
-        idOrder: {
+        id_order: {
             type: dataTypes.INTEGER,
             primaryKey: true,
             autoIncrement: true
         },
-        idCart: {
+        id_cart: {
             type: dataTypes.INTEGER
         },
-        idUser: {
+        id_user: {
             type: dataTypes.INTEGER
         },
         payment: {
@@ -29,18 +29,18 @@ module.exports = (sequelize, dataTypes) => {
         }
     }
     let config= {
-        tableName: "orders"
+        tableName: "order"
     }
 
     const Order = sequelize.define(alias, cols, config);
     Order.associate = (models) => {
-        Order.belongsTo(models.User, {
+        Order.belongsTo(models.Users, {
             as: "users",
-            foreignKey: "idUser"
+            foreignKey: "id_user"
         });
-        Order.belongsTo(models.Cart, {
+        Order.belongsTo(models.Carts, {
             as: "carts",
-            foreignKey: "idCart"
+            foreignKey: "id_cart"
         });
     }
     return Order;

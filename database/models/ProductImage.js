@@ -1,32 +1,32 @@
 module.exports = (sequelize, dataTypes) => {
     let alias = "ProductImages"
     let cols = {
-        idProdImg: {
+        id_prod_image: {
             type: dataTypes.INTEGER,
             primaryKey: true,
             autoIncrement: true
         },
-        idImg: {
+        id_Image: {
             type: dataTypes.INTEGER
         },
-        idProduct: {
+        id_product: {
             type: dataTypes.INTEGER
         }
     }
     let config= {
-        tableName: "productimages",
+        tableName: "prod_image",
         timestamps: false
     }
 
     const ProductImage = sequelize.define(alias, cols, config);
     ProductImage.associate = (models) => {
-        ProductImage.belongsTo(models.Image, {
+        ProductImage.belongsTo(models.Images, {
             as: "images",
-            foreignKey: "idImg"
+            foreignKey: "id_image"
         });
-        ProductImage.belongsTo(models.Product, {
+        ProductImage.belongsTo(models.Products, {
             as: "products",
-            foreignKey: "idProducts"
+            foreignKey: "id_product"
         });
     }
     return ProductImage;
