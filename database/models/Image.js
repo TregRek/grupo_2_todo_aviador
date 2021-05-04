@@ -6,7 +6,7 @@ module.exports = (sequelize, dataTypes) => {
             primaryKey: true,
             autoIncrement: true
         },
-        name_Img: {
+        name_img: {
             type: dataTypes.STRING
         }
     }
@@ -19,7 +19,7 @@ module.exports = (sequelize, dataTypes) => {
     Image.associate = (models) => {
         Image.hasMany(models.ProductImages, {
             as: "products",
-            foreignKey: "id_img"
+            foreignKey: "id_image"
         }); 
     }
     return Image;

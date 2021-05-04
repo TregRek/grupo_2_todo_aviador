@@ -1,119 +1,143 @@
-const fs = require('fs');
-const path = require('path');
-const productsFilePath = path.join(__dirname, '../data/productsDataBase.json');
 const db = require('../../database/models');
-let products = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8'));
 const productController = {
     producto: (req, res) =>{
-        let filtro = products.filter(product => (product.id == req.params.idProd));
-        let prod = filtro[0];
-        let productsRel = [];
-        for (let i = 0; i < prod.prodsRel.length; i++) {
-            for(let j = 0; j < products.length; j++) {
-                if(products[j].id == prod.prodsRel[i]) {
-                    productsRel.push(products[j]);
-                }
-            }
-        }
-        res.render('./products/productDetail', {product: prod, productsRel: productsRel});
+        let product;
+        db.ProductEntries.findAll({
+            where: {id_product: req.params.idProd},
+            include:[
+                {model: db.Categories, as:'categories', atributes:['name_category']}, 
+                {model: db.Sizes, as:'sizes', atributes: ['size']},
+                {model: db.Brands, as:'brands', atributes: ['name_brand']},
+                {model: db.Colors, as:'colors', atributes: ['color']},
+                {model: db.Products, as:'products', atributes: ['name_product', 'description'], 
+                include:[{model: db.ProductImages, as:'productimages', atributes:['id_image', 'id_product'],
+                include:[{model: db.Images, as:'images', atributes:['name_img']}]}]}
+            ] 
+        }).then((resultado)=>{
+            let prod_img = resultado[0].products.productimages;
+            product = {
+                name_product: resultado[0].products.name_product,
+                description: resultado[0].products.description,
+                category: resultado[0].categories.name_category,
+                color: resultado[0].colors.color,
+                size: resultado[0].sizes.size,
+                brand: resultado[0].brands.name_brand,
+                image: prod_img[0].images.name_img,
+                price: resultado[0].price,
+                stock: resultado[0].stock,
+                id_product: resultado[0].id_product
+            };
+            res.render('./products/productDetail', {product: product});
+        })
     },
     
     listado: (req, res) =>{
-        res.render('./products/productList', {producto: products});
+        let productos;
+        db.Products.findAll({
+            include: [{association: "productEntries", include:[{association: "categories"}]}, 
+                    {association: "productimages", include:[{association: "images"}]}]
+        }).then((results)=>{
+            productos = results;
+            res.render('./products/productList', {productos: productos});
+        })
     },
 
-    editar: (req, res) =>{
-        let filtro = products.filter(producto => (producto.id == req.params.idProd));
-        let prod = filtro[0];
-        res.render('./products/editProduct', {product: prod});
+    editar: async (req, res) =>{
+        let allCategories = await db.Categories.findAll();;
+        let allColors = await db.Colors.findAll();
+        let allSizes = await db.Sizes.findAll();
+        let allBrands = await db.Brands.findAll();
+        let productoEditar = await db.Products.findOne({
+            where: {id_product: req.params.idProd},
+            include: [{association:"productEntries"}, {association:"productimages", include:[{association: "images"}]}]
+        });
+        res.render('./products/editProduct', {product: productoEditar, categories:allCategories, brands:allBrands, sizes:allSizes, colors:allColors});
     },
 
-    update: (req, res) => {
-        let prodPreEdit = products.filter(product => (product.id == req.params.idProd))[0];
-        let prodEdit = {};
-        console.log(req.body);
-        if(req.file){
-			prodEdit = {
-				id: req.params.idProd,
-				name: req.body.name,
-                price: req.body.price,
-                category: req.body.category,
-				description: req.body.description,
-				image: req.file.originalname,
-                variations: prodPreEdit.variations,
-                tags: prodPreEdit.tags,
-                galImgs:[], 
-                prodsRel: prodPreEdit.prodsRel
-			};
-		} else {
-			prodEdit = {
-				id: req.params.idProd,
-				name: req.body.name,
-                price: req.body.price,
-                category: req.body.category,
-				description: req.body.description,
-				image: prodPreEdit.image,
-                variations: prodPreEdit.variations,
-                tags: prodPreEdit.tags,
-                galImgs:[], 
-                prodsRel: prodPreEdit.prodsRel
-			};
-		}
-        products = products.filter(product => (product.id != req.params.idProd));
-		products.push(prodEdit);
-        fs.writeFileSync(productsFilePath, JSON.stringify(products));
-		let redirec = '/producto/detalle/' + prodEdit.id;
+    update: async (req, res) => {
+        await db.Products.update({
+            name_product: req.body.name,
+            description: req.body.description
+        },{
+            where: {id_product: req.params.idProd}
+        });
+        await db.ProductEntries.update({
+            id_category: req.body.category,
+            id_size: req.body.size,
+            id_color: req.body.color,
+            id_brand: req.body.brand,
+            price: req.body.price,
+            stock: req.body.stock
+        },{
+            where: {id_product: req.params.idProd}
+        });
+        if (req.file) {
+            let img = await db.Images.create({
+                name_img: req.file.originalname
+            });
+            await db.ProductImages.update({
+                id_image: img.id_image
+            },{
+                where:{id_product: req.params.idProd}
+            });
+        }
+		let redirec = '/producto/detalle/' + req.params.idProd;
 		res.redirect(redirec);
     },
 
-    crear: (req, res) => {
-        res.render('./products/createProduct');
+    crear: async (req, res) => {
+        let allCategories = await db.Categories.findAll();
+        let allColors = await db.Colors.findAll();
+        let allSizes = await db.Sizes.findAll();
+        let allBrands = await db.Brands.findAll();
+        res.render('./products/createProduct', {categories:allCategories, brands:allBrands, sizes:allSizes, colors:allColors});
     },
 
-    store: (req, res) => {
-        let idMax = 0;
-		let newProd = {};
-		for(let i = 0; i< products.length; i++) {
-			if(products[i].id > idMax){
-				idMax = products[i].id;
-			}
-		}
-        if(req.file){
-			newProd = {
-				id: (idMax+1),
-				name: req.body.name,
-                price: req.body.price,
-                category: [],
-				description: req.body.description,
-				image: req.file.originalname,
-                variations: [],
-                tags: [],
-                galImgs:[], 
-                prodsRel: []
-			};
-		} else {
-			newProd = {
-				id: (idMax+1),
-				name: req.body.name,
-                price: req.body.price,
-                category: [],
-				description: req.body.description,
-				image: "Defecto.jpg",
-                variations: [],
-                tags: [],
-                galImgs:[], 
-                prodsRel: []
-			};
-		}
-        products.push(newProd);
-		fs.writeFileSync(productsFilePath, JSON.stringify(products));
+    store: async (req, res) => {
+        let productCreated = await db.Products.create({
+            name_product: req.body.name,
+            description: req.body.description
+        });
+        await db.ProductEntries.create({
+            id_product: productCreated.id_product,
+            id_category: req.body.category,
+            id_size: req.body.size,
+            id_color: req.body.color,
+            id_brand: req.body.brand,
+            price: req.body.price,
+            stock: req.body.stock
+        });
+        if (req.file) {
+            let img = await db.Images.create({
+                name_img: req.file.originalname
+            });
+            await db.ProductImages.create({
+                id_image: img.id_image,
+                id_product: productCreated.id_product
+            });
+        } else {
+            let defaultImg = await db.Images.findOne({
+                where: {name_img:"Defecto"}
+            }); 
+            await db.ProductImages.create({
+                id_image: defaultImg.id_image,
+                id_product: productCreated.id_product
+            });
+        }
         let redirec = '/producto/listado';
 		res.redirect(redirec);
     },
 
-    destroy : (req, res) => {
-		products = products.filter(product => (product.id != req.params.idProd));
-		fs.writeFileSync(productsFilePath, JSON.stringify(products));
+    destroy : async (req, res) => {
+        await db.ProductEntries.destroy({
+            where:{id_product: req.params.idProd}
+        });
+        await db.ProductImages.destroy({
+            where:{id_product: req.params.idProd}
+        });
+        await db.Products.destroy({
+            where: {id_product: req.params.idProd}
+        });
 		let redirec = '/producto/listado';
 		res.redirect(redirec);
 	}

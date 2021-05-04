@@ -93,16 +93,16 @@
                 <div class="filtro-mejor-calificado">
                     <h4>Productos mejor calificados</h4>
                     <ul>
-                        <% for(let i = 1; i < producto.length; i++){ %>                            
+                        <% for(let i = 0; i < productos.length; i++){ %>                            
                             
                         <li>
                             <div class="fmc-imagen">
-                                <a href="/producto/detalle">
-                                    <img src="/images/<%= producto[i].image %>" alt="">
+                                <a href="/producto/detalle/<%= productos[i].id_product %>">
+                                    <img src="/images/<%= productos[i].productimages[0].images.name_img %>" alt="<%= productos[i].name_product %>">
                                 </a>
                             </div>
                             <div class="fmc-descripcion">
-                                <a href="/producto/detalle"><%= producto[i].name %></a>
+                                <a href="/producto/detalle/<%= productos[i].id_product %>"><%= productos[i].name_product %></a>
                                 <span>
                                     <i class="fas fa-star"></i>
                                     <i class="fas fa-star"></i>
@@ -111,7 +111,7 @@
                                     <i class="fas fa-star"></i>
                                 </span>
                                 <p>
-                                    <%= producto[i].price %>
+                                    <%= productos[i].productEntries[0].price %>
                                 </p>
                             </div>
                         </li>
@@ -180,26 +180,24 @@
                 </div>
 
                 <ul>
-                    <% producto.forEach( prod =>{ %>
+                    <% productos.forEach( prod =>{ %>
                     
                     <li>
                         <div class="prod-int-img-producto">
                                     
-                            <img src="/images/<%= prod.image %>" alt="<%= prod.name %>" class="img1">
+                            <img src="/images/<%= prod.productimages[0].images.name_img %>" alt="<%= prod.name_product %>" class="img1">
                         
-                            <img src="/images/<%= prod.galImgs[1] %>" alt="<%= prod.name %>" class="img2">
+                            <img src="/images/<%= prod.productimages[0].images.name_img %>" alt="<%= prod.name_product %>" class="img2">
                         
                         </div>
                         <div class="prod-int-categorias">
-                            <a href="/producto/listado"><%= prod.category %></a>
-                            , 
-                            <a href="/producto/listado"> <%= prod.tags %></a>
+                            <a href="/producto/listado"><%= prod.productEntries[0].categories.name_category %></a>
                         </div>
                         <div class="prod-int-titulo">
-                            <h2><%= prod.name %></h2>
+                            <h2><%= prod.name_product %></h2>
                         </div>
                         <div class="prod-int-precio">
-                            <span><%= prod.price %></span>
+                            <span><%= prod.productEntries[0].price %></span>
                         </div>
                         <div class="prod-int-rating">
                             <i class="fas fa-star"></i>
@@ -212,7 +210,7 @@
                             <a href="/cart">
                                 <button>Agregar al carrito</button>
                             </a>
-                            <a href="/producto/detalle/<%= prod.id %>">
+                            <a href="/producto/detalle/<%= prod.id_product %>">
                                 <button>Vista rapida</button>
                             </a>
                         </div>

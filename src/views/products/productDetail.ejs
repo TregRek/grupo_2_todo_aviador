@@ -41,19 +41,21 @@
                <div class="img-detail">
                   <div class="prod-images">
                      <img src= "/images/<%= product.image %>" alt="imagen-principal" class="main-img-prod">
+                     <% /* %>
                      <div class="galery-img">
-                        <ul>
-                           <% for (let i=0; i<product.galImgs.length; i++) { %>
-                              <li><img src= <%= product.galImgs[i] %> alt=<%= "alt"+i %>></li>
-                           <% } %>
-                        </ul>
-                     </div>
+                         <ul>
+                            <% for (let i=0; i<product.galImgs.length; i++) { %>
+                               <li><img src= <%= product.galImgs[i] %> alt=<%= "alt"+i %>></li>
+                            <% } %>
+                         </ul>
+                     <</div> 
+                     <% */ %>
                   </div>
                   <div>
-                     <h1><%= product.name %></h1>
+                     <h1><%= product.name_product %></h1>
                      <h2 class="precio">S/<%= product.price %></h2>
                      <p><%= product.description %></p>
-                     <h3>En stock</h3>
+                     <h3><%= product.stock > 0 ? "En stock: " + product.stock : "Agotado"%></h3>
                      <div class="add-cart">
                         <button>-</button>
                         <p>1</p>
@@ -61,14 +63,14 @@
                         <button class="action-button add-cart-button">Agregar al carrito</button>
                      </div>
                      <div>
-                        <a href="/producto/editar/<%= product.id %>" class="action-button edit">EDITAR PRODUCTO</a>
-                        <form action="/producto/eliminar/<%= product.id %>?_method=DELETE" method="POST">
+                        <a href="/producto/editar/<%= product.id_product %>" class="action-button edit">EDITAR PRODUCTO</a>
+                        <form action="/producto/eliminar/<%= product.id_product %>?_method=DELETE" method="POST">
                            <button type="submit" class="action-button delete">ELIMINAR</button>
                         </form>
                      </div>
                      <div class="prod-desc-cat">
                         <p>Categoría: <%= product.category %></p>
-                        <p>Etiqueta: <%= product.tags %></p>
+                        <!-- <p>Etiqueta: <%= product.tags %></p> -->
                      </div>
                      <p><i class="far fa-heart"></i></p>
                      <button class="action-button compare-button">Comparar</button>
@@ -114,21 +116,6 @@
                      </ul>
                   </div>
                </section>
-            </section>
-            <section class="related-prod">
-               <h3>Productos relacionados</h3>
-               <div>
-                  <% for (let i=0; i < productsRel.length; i++) { %>
-                     <ul>
-                        <li><img src= "/images/<%= productsRel[i].image %>" alt="related" class= "relProdImg"></li>
-                        <li><p><%= productsRel[i].category + ", " + productsRel[i].tags %></p></li>
-                        <li><p><a href="/producto/detalle/<%= productsRel[i].id %>"><%= productsRel[i].name %></a></p></li>
-                        <li><h2 class="precio">S/<%= productsRel[i].price %></h2></li>
-                        <li><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></li>
-                        <li><button class="action-button">Comprar</button></li>
-                     </ul>
-                  <% } %>
-               </div>
             </section>
          </section>
       </main>

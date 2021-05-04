@@ -8,19 +8,51 @@
    <%- include('../partials/header') %>
    <main class='main-prod-edit'>
       
-      <form action="/producto/editar/<%= product.id %>?_method=PUT" enctype="multipart/form-data" method="POST" class="edit-form">
+      <form action="/producto/editar/<%= product.id_product %>?_method=PUT" enctype="multipart/form-data" method="POST" class="edit-form">
          <h3>EDITAR PRODUCTO</h3>
          <label for="name">Nombre del producto</label>
-         <input type="text" name="name" value= "<%= product.name %>" >
+         <input type="text" name="name" value= "<%= product.name_product %>" >
          <label for="name">Descripción del producto</label>
          <textarea name="description"><%= product.description %></textarea>
          <label>Imagen principal del producto</label>
-         <img src= "/images/<%= product.image %>" alt="imgPrinc">
+         <img src= "/images/<%= product.productimages[0].images.name_img %>" alt="imgPrinc">
          <input type="file" name="image">
          <label for="category">Categoría del producto</label>
-         <input type="text" name="category" value= "<%= product.category %>">
+         <select name="category" id="category">
+            <% categories.forEach(category => { %>
+               <option value="<%= category.id_category %>" <% category.id_category == product.productEntries[0].id_category ? 'selected' : '' %>>
+                  <%= category.name_category %>
+               </option>
+            <% }); %>
+         </select>
+         <label for="size">Talla del producto</label>
+         <select name="size" id="size">
+            <% sizes.forEach(size => { %>
+               <option value="<%= size.id_size %>" <% size.id_size == product.productEntries[0].id_size ? 'selected' : '' %>>
+                  <%= size.size %>
+               </option>
+            <% }); %>
+         </select>
+         <label for="color">Color del producto</label>
+         <select name="color" id="color">
+            <% colors.forEach(color => { %>
+               <option value="<%= color.id_color %>" <% color.id_color == product.productEntries[0].id_color ? 'selected' : '' %>>
+                  <%= color.color %>
+               </option>
+            <% }); %>
+         </select>
+         <label for="brand">Marca del producto</label>
+         <select name="brand" id="brand">
+            <% brands.forEach(brand => { %>
+               <option value="<%= brand.id_brand %>" <% brand.id_brand == product.productEntries[0].id_brand ? 'selected' : '' %>>
+                  <%= brand.name_brand %>
+               </option>
+            <% }); %>
+         </select>
          <label for="price">Precio del producto</label>
-         <input type="text" name="price" value= "<%= product.price %>" >
+         <input type="text" name="price" value= "<%= product.productEntries[0].price %>" >
+         <label for="stock">Stock del producto</label>
+         <input type="text" name="stock" value= "<%= product.productEntries[0].stock %>" >
          <button type="submit">Guardar</button>
       </form>
    </main>

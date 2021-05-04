@@ -6,6 +6,9 @@ module.exports = (sequelize, dataTypes) => {
             primaryKey: true,
             autoIncrement: true
         },
+        id_product:{
+            type: dataTypes.INTEGER
+        },
         id_color: {
             type: dataTypes.INTEGER
         },
@@ -29,7 +32,8 @@ module.exports = (sequelize, dataTypes) => {
         }
     }
     let config= {
-        tableName: "product_entry"
+        tableName: "product_entry",
+        timestamps: false
     }
 
     const ProductEntry = sequelize.define(alias, cols, config);

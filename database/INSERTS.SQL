@@ -90,4 +90,3 @@ INSERT INTO prod_image (id_product, id_image) values ('9','9');
 INSERT INTO prod_image (id_product, id_image) values ('10','10');
 INSERT INTO prod_image (id_product, id_image) values ('11','11');
 INSERT INTO prod_image (id_product, id_image) values ('12','12');
-

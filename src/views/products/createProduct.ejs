@@ -11,15 +11,51 @@
       <form action="/producto/crear" method="POST" class="create-form" enctype="multipart/form-data">
          <h3>CREAR PRODUCTO</h3>
          <label for="name">Nombre del producto</label>
-         <input type="text" name="name" placeholder="" >
+         <input type="text" name="name" placeholder="Nombre de tu producto">
          <label for="name">Descripción del producto</label>
          <textarea name="description" placeholder="Ingresa aquí la descripción del producto"></textarea>
          <label>Imagen principal del producto</label>
          <input type="file" name="image">
          <label for="category">Categoría del producto</label>
-         <input type="text" name="category" placeholder="">
+         <select name="category" id="category">
+            <option value='' selected>Elige una categoría</option>
+            <% categories.forEach(category => { %>
+               <option value="<%= category.id_category %>">
+                  <%= category.name_category %>
+               </option>
+            <% }); %>
+         </select>
+         <label for="size">Talla del producto</label>
+         <select name="size" id="size">
+            <option value='' selected>Elige una talla</option>
+            <% sizes.forEach(size => { %>
+               <option value="<%= size.id_size %>">
+                  <%= size.size %>
+               </option>
+            <% }); %>
+         </select>
+         <label for="color">Color del producto</label>
+         <select name="color" id="color">
+            <option value='' selected>Elige un color</option>
+            <% colors.forEach(color => { %>
+               <option value="<%= color.id_color %>">
+                  <%= color.color %>
+               </option>
+            <% }); %>
+         </select>
+         <label for="brand">Marca del producto</label>
+         <select name="brand" id="brand">
+            <option value='' selected>Elige una marca</option>
+            <% brands.forEach(brand => { %>
+               <option value="<%= brand.id_brand %>">
+                  <%= brand.name_brand %>
+               </option>
+            <% }); %>
+         </select>
          <label for="price">Precio del producto</label>
          <input type="text" name="price" placeholder="Ej. 25.50" >
+         <label for="stock">Stock del producto</label>
+         <input type="text" name="stock" placeholder="Ej. 11" >
          <button type="submit">Guardar</button>
       </form>
    </main>
