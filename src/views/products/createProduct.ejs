@@ -10,12 +10,24 @@
       
       <form action="/producto/crear" method="POST" class="create-form" enctype="multipart/form-data">
          <h3>CREAR PRODUCTO</h3>
+         <div class = "errores">
+            <ul></ul>
+         </div>
          <label for="name">Nombre del producto</label>
-         <input type="text" name="name" placeholder="Nombre de tu producto">
+         <input type="text" name="name" placeholder="Nombre de tu producto" id="name" value="<%= locals.old && old.name ? old.name : '' %>">
+         <% if (locals.errors && errors.name) { %>
+            <div class="errors"><%= errors.name.msg %></div>
+         <% } %> 
          <label for="name">Descripción del producto</label>
-         <textarea name="description" placeholder="Ingresa aquí la descripción del producto"></textarea>
+         <textarea name="description" placeholder="Ingresa aquí la descripción del producto" id="description" value="<%= locals.old && old.description ? old.description : '' %>"></textarea>
+         <% if (locals.errors && errors.description) { %>
+            <div class="errors"><%= errors.description.msg %></div>
+         <% } %> 
          <label>Imagen principal del producto</label>
-         <input type="file" name="image">
+         <input type="file" name="image" id="image">
+         <% if (locals.errors && errors.image) { %>
+            <div class="errors"><%= errors.image.msg %></div>
+         <% } %> 
          <label for="category">Categoría del producto</label>
          <select name="category" id="category">
             <option value='' selected>Elige una categoría</option>
@@ -53,11 +65,12 @@
             <% }); %>
          </select>
          <label for="price">Precio del producto</label>
-         <input type="text" name="price" placeholder="Ej. 25.50" >
+         <input type="text" name="price" placeholder="Ej. 25.50" id="price">
          <label for="stock">Stock del producto</label>
-         <input type="text" name="stock" placeholder="Ej. 11" >
-         <button type="submit">Guardar</button>
+         <input type="text" name="stock" placeholder="Ej. 11" id="stock">
+         <button type="submit" id="submit">Guardar</button>
       </form>
    </main>
+   <script src='/js/productValidator.js'></script>
    <%- include('../partials/footer') %>
 </html>  

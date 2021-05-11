@@ -20,10 +20,13 @@ let validateRegister = [
     body('usuario').notEmpty().withMessage('Debes ingresar un nombre de usuario'), 
     body('email').notEmpty().withMessage('Debes ingresar un correo').bail()
     .isEmail().withMessage('Debes ingresar un email válido'),
-    body('nombres').notEmpty().withMessage('Debes ingresar tus nombres'),
-    body('apellidos').notEmpty().withMessage('Debes ingresar tus apellidos'),
+    body('nombres').notEmpty().withMessage('Debes ingresar tus nombres').bail()
+    .isLength({ min: 2 }).withMessage('El nombre debe tener almenos 2 caracteres'),
+    body('apellidos').notEmpty().withMessage('Debes ingresar tus apellidos').bail()
+    .isLength({ min: 2 }).withMessage('El nombre debe tener almenos 2 caracteres'),
     body('password').notEmpty().withMessage('Debes ingresar una contraseña').bail()
-    .isLength({min: 8}).withMessage('La contraseña debe tener almenos 8 caracteres'), 
+    .isLength({min: 8}).withMessage('La contraseña debe tener almenos 8 caracteres').bail()
+    .matches(/^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])[0-9a-zA-Z]{8,}$/, "i").withMessage('La contraseña debe tener una mayuscula, una minuscula y un caracter especial'), 
     body('confPassword').notEmpty().withMessage('Debes confirmar la contraseña').bail()
     .custom((value, {req}) => {
         let ogPassword = req.body.password;
@@ -32,16 +35,24 @@ let validateRegister = [
             throw new Error('Las contraseñas deben coincidir');
         }
         return true;
+    }),
+    body('image').custom((value, { req }) => {
+        let file = req.file;
+        let acceptedExtensions = ['.jpg', '.png', '.gif', '.jpeg'];
+        if(!file){
+            throw new Error('Tienes que subir una imagen');
+        }else{
+            let fileExtension = path.extname(file.originalname);
+            if(!acceptedExtensions.includes(fileExtension)){
+                throw new Error(`La extensiones permitidas son ${acceptedExtensions.join(', ')}`);
+            }
+        }
+        return true;
     })
 ];
 let validateLogin = [
     body('usuario').notEmpty().withMessage('Debes ingresar un nombre de usuario'), 
     body('password').notEmpty().withMessage('Debes ingresar una contraseña')
-];
-let validateUser = [
-    body('usuario').notEmpty().withMessage('Debes ingresar un nombre de usuario'), 
-    body('email').notEmpty().withMessage('Debes ingresar un correo').bail()
-    .isEmail().withMessage('Debes ingresar un email válido'),
 ];
 let validateEditUser = [
     body('usuario').notEmpty().withMessage('Debes ingresar un nombre de usuario'), 

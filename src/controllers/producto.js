@@ -1,4 +1,5 @@
 const db = require('../../database/models');
+const { validationResult } = require('express-validator');
 const productController = {
     producto: (req, res) =>{
         let product;
@@ -51,10 +52,22 @@ const productController = {
             where: {id_product: req.params.idProd},
             include: [{association:"productEntries"}, {association:"productimages", include:[{association: "images"}]}]
         });
-        res.render('./products/editProduct', {product: productoEditar, categories:allCategories, brands:allBrands, sizes:allSizes, colors:allColors});
+        return res.render('./products/editProduct', {product: productoEditar, categories:allCategories, brands:allBrands, sizes:allSizes, colors:allColors});
     },
 
     update: async (req, res) => {
+        let errors = validationResult(req);
+        if(errors.error.length>0){
+            let allCategories = await db.Categories.findAll();;
+            let allColors = await db.Colors.findAll();
+            let allSizes = await db.Sizes.findAll();
+            let allBrands = await db.Brands.findAll();
+            let productoEditar = await db.Products.findOne({
+                where: {id_product: req.params.idProd},
+                include: [{association:"productEntries"}, {association:"productimages", include:[{association: "images"}]}]
+            });
+            return res.render('./products/editProduct', {product: productoEditar, categories:allCategories, brands:allBrands, sizes:allSizes, colors:allColors, errors: errors.mapped()});
+        }
         await db.Products.update({
             name_product: req.body.name,
             description: req.body.description
@@ -94,6 +107,10 @@ const productController = {
     },
 
     store: async (req, res) => {
+        let errors = validationResult(req);
+        if(errors.error.length>0){
+            return res.render('./products/createProduct', { errors: errors.mapped(), old: req.body});
+        }
         let productCreated = await db.Products.create({
             name_product: req.body.name,
             description: req.body.description

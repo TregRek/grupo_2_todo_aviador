@@ -10,13 +10,25 @@
       
       <form action="/producto/editar/<%= product.id_product %>?_method=PUT" enctype="multipart/form-data" method="POST" class="edit-form">
          <h3>EDITAR PRODUCTO</h3>
+         <div class = "errores">
+            <ul></ul>
+         </div>
          <label for="name">Nombre del producto</label>
-         <input type="text" name="name" value= "<%= product.name_product %>" >
+         <input type="text" name="name" value= "<%= product.name_product %>" id="name">
+         <% if (locals.errors && errors.name) { %>
+            <div class="errors"><%= errors.name.msg %></div>
+         <% } %> 
          <label for="name">Descripción del producto</label>
-         <textarea name="description"><%= product.description %></textarea>
+         <textarea name="description" id="description"><%= product.description %></textarea>
+         <% if (locals.errors && errors.description) { %>
+            <div class="errors"><%= errors.description.msg %></div>
+         <% } %> 
          <label>Imagen principal del producto</label>
          <img src= "/images/<%= product.productimages[0].images.name_img %>" alt="imgPrinc">
-         <input type="file" name="image">
+         <input type="file" name="image" id="image">
+         <% if (locals.errors && errors.image) { %>
+            <div class="errors"><%= errors.image.msg %></div>
+         <% } %> 
          <label for="category">Categoría del producto</label>
          <select name="category" id="category">
             <% categories.forEach(category => { %>
@@ -50,11 +62,12 @@
             <% }); %>
          </select>
          <label for="price">Precio del producto</label>
-         <input type="text" name="price" value= "<%= product.productEntries[0].price %>" >
+         <input type="text" name="price" value= "<%= product.productEntries[0].price %>" id="price">
          <label for="stock">Stock del producto</label>
-         <input type="text" name="stock" value= "<%= product.productEntries[0].stock %>" >
+         <input type="text" name="stock" value= "<%= product.productEntries[0].stock %>" id="stock">
          <button type="submit">Guardar</button>
       </form>
    </main>
+   <script src='/js/productValidator.js'></script>
    <%- include('../partials/footer') %>
 </html>  

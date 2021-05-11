@@ -456,6 +456,17 @@ main{
     margin: auto;
 }
 
+.errores ul li{
+    color:#ed4337;
+    list-style: none;
+    font-size: .9rem;
+}
+
+.errores ul{
+    padding:0;
+    margin: 0;
+}
+
 .create-form {
     display: flex;
     flex-direction: column;
