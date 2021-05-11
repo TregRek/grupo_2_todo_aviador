@@ -12,11 +12,14 @@
                 <div class="login-top-div">
                     <h2>Inicar Sesión</h2>
                     <p>Se parte de nuestra comunidad</p>
+                    <!-- FORMULARIO DE LOG IN -->
                     <form action="/login" method="POST" class="formulario-login">
+                        <!-- NOMBRE DE USUARIO -->
                         <input type="text" name="usuario" id="usuario" placeholder="Usuario" value="<%= locals.old && old.usuario ? old.usuario : '' %>">
                         <% if (locals.errors && errors.usuario) { %>
                             <div class="errors"><%= errors.usuario.msg %></div>
                         <% } %> 
+                        <!-- CONTRASEÑA -->
                         <input type="password" name="password" id="password" placeholder="Contraseña">
                         <% if (locals.errors && errors.password) { %>
                             <div class="errors"><%= errors.password.msg %></div>
@@ -35,5 +38,6 @@
                 </div>
             </section>
         </main>
+        <script src="js/loginValidator.js"></script>
     <%- include('../partials/footer') %>
 </html>
