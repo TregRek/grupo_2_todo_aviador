@@ -109,7 +109,11 @@ const productController = {
     store: async (req, res) => {
         let errors = validationResult(req);
         if(errors.error.length>0){
-            return res.render('./products/createProduct', { errors: errors.mapped(), old: req.body});
+            let allCategories = await db.Categories.findAll();
+            let allColors = await db.Colors.findAll();
+            let allSizes = await db.Sizes.findAll();
+            let allBrands = await db.Brands.findAll();
+            return res.render('./products/createProduct', { errors: errors.mapped(), old: req.body, categories:allCategories, brands:allBrands, sizes:allSizes, colors:allColors});
         }
         let productCreated = await db.Products.create({
             name_product: req.body.name,
