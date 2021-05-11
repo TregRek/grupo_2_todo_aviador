@@ -1,7 +1,7 @@
 window.addEventListener("load", ()=>{
     
     let loginForm = document.querySelector('form');
-    registerForm.addEventListener("submit", (e) => {
+    loginForm.addEventListener("submit", (e) => {
         let errores = [];
         let campoUsuario = document.querySelector('#usuario');
         let campoPassword= document.querySelector('#password'); 
