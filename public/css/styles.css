@@ -43,6 +43,9 @@ a{
     margin: 5px 0px;
 }
 
+.recordarme{
+    align-content:center;
+}
 
 .formulario-login button, .edit-form button, .main-profile button, .errorPage a{
     margin: 15px 0px;
