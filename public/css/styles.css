@@ -456,13 +456,15 @@ main{
     margin: auto;
 }
 
-.errores ul li{
+.errores ul li,
+.errores2 ul li{
     color:#ed4337;
     list-style: none;
     font-size: .9rem;
 }
 
-.errores ul{
+.errores ul,
+.errores2 ul{
     padding:0;
     margin: 0;
 }
