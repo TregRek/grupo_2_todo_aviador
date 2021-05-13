@@ -7,17 +7,16 @@ window.addEventListener("load", ()=>{
         let campoPassword= document.querySelector('#password'); 
         
         //VALIDANDO CAMPO USUARIO
-        if(campoUsuario==""){
+        if(campoUsuario.value == ""){
             errores.push("Debe ingresar su nombre de usuario");
         } else if (campoUsuario.value.length < 3){
             errores.push("Recuerde: Su nombre de usuario contiene al menos 3 caracteres");
         }
         //VALIDANDO CAMPO DE PASSWORD
-        if(campoPassword == ""){
+        if(campoPassword.value == ""){
             errores.push("Por favor ingrese su contraseña");
-        } else if (campoPassword.value.length < 6){
-            errores.push('Su contraseña debe tener al menos 6 caracteres');
-        }else if (campoPassword.value)
+        }
+
         if(errores.length > 0){
             e.preventDefault();
             let ulErrores = document.querySelector('div.errores ul');
