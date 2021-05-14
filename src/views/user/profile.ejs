@@ -13,9 +13,9 @@
             </section>
             <section>
                 <h3>Cambiar datos de usuario</h3>
-                <form action="/editUser/?_method=PUT" enctype="multipart/form-data" method="POST">
+                <form action="/editUser/?_method=PUT" enctype="multipart/form-data" method="POST" class="user-data">
                     <img src="/images/<%= user.name_img %>" alt="userImage" class="profileImg">
-                    <input type="file" name="image" class='fileInput'>
+                    <input type="file" name="image" class='fileInput' accept='image/*'>
                     <label for="usuario">Nombre de usuario</label>
                     <input type="text" name="usuario" value="<%= user.user_name %>" id="usuario">
                     <% if (locals.errors && errors.usuario) { %>
@@ -36,12 +36,16 @@
                     <% if (locals.errors && errors.email) { %>
                         <div class="errors"><%= errors.email.msg %></div>
                     <% } %> 
+                    <div class = "errores">
+                        <ul></ul>
+                     </div>
                     <button type="submit" class="action-button">Guardar cambios</button>
+                    
                 </form>
             </section>
             <section>
                 <h3>Cambiar contraseña</h3>
-                <form action="/editPassword/?_method=PUT" method="POST">
+                <form action="/editPassword/?_method=PUT" method="POST" class="user-password"> 
                     <input type="password" name="actPassword" id="actPassword" placeholder="Contraseña actual">
                     <% if (locals.errors && errors.actPassword) { %>
                         <div class="errors"><%= errors.actPassword.msg %></div>
@@ -54,9 +58,14 @@
                     <% if (locals.errors && errors.confPassword) { %>
                         <div class="errors"><%= errors.confPassword.msg %></div>
                     <% } %> 
+                    <div class = "errores2">
+                        <ul></ul>
+                     </div>
                     <button type="submit" class="action-button">Cambiar contraseña</button>
+                    
                 </form>
             </section>
+        <script src="/js/userProfileValidator.js"></script>
         </main>
     <%- include('../partials/footer') %>
 </html>

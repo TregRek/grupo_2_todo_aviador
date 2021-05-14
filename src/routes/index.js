@@ -26,7 +26,8 @@ let validateRegister = [
     .isLength({ min: 2 }).withMessage('El nombre debe tener almenos 2 caracteres'),
     body('password').notEmpty().withMessage('Debes ingresar una contraseña').bail()
     .isLength({min: 8}).withMessage('La contraseña debe tener almenos 8 caracteres').bail()
-    .matches(/^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])[0-9a-zA-Z]{8,}$/, "i").withMessage('La contraseña debe tener una mayuscula, una minuscula y un caracter especial'), 
+    .matches(/^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])[0-9a-zA-Z]{8,}$/, "i")
+    .withMessage('La contraseña debe tener una mayuscula, una minuscula y un caracter especial'), 
     body('confPassword').notEmpty().withMessage('Debes confirmar la contraseña').bail()
     .custom((value, {req}) => {
         let ogPassword = req.body.password;
@@ -64,7 +65,7 @@ let validateEditUser = [
 let validateEditPass = [
     body('actPassword').notEmpty().withMessage('Debes ingresar la contraseña anterior'), 
     body('newPassword').notEmpty().withMessage('Debes ingresar una contraseña nueva').bail()
-    .isLength({min: 8}).withMessage('La contraseña debe tener almenos 8 caracteres'), 
+    .isLength({min: 8}).withMessage('La contraseña debe tener al menos 8 caracteres'), 
     body('confPassword').notEmpty().withMessage('Debes confirmar la contraseña').bail()
     .custom((value, {req}) => {
         if(req.body.newPassword !== req.body.confPassword){

@@ -40,8 +40,8 @@
                         <% if (locals.errors && errors.password) { %>
                             <div class="errors"><%= errors.password.msg %></div>
                         <% } %> 
-                        <input type="password" name="confPassword" id="confPassword" placeholder="Confirmar contraseña">
-                        <% if (locals.errors && errors.confPassword) { %>
+                        <input type="password" name="confPassword" id="confPassword" placeholder="Confirmarcontraseña">
+                        <% if (locals.errors && errors.confPassword) { %> 
                             <div class="errors"><%= errors.confPassword.msg %></div>
                         <% } %> 
                         <label>Imagen de perfil</label>
@@ -58,6 +58,6 @@
                 </div>
             </section>
         </main>
-        <script src='/js/registerValidator.js'></script>
+        <script src="js/registerValidator.js"></script>
     <%- include('../partials/footer') %>
 </html>
