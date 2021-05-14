@@ -14,7 +14,7 @@ const indexController = {
     },
     processLogin: (req, res) => {
         let errors = validationResult(req);
-        if (errors.errors.length > 0) {
+        if (errors.length > 0) {
            return res.render('./user/login', { errors: errors.mapped(), old: req.body});
         }
         let userToLogin;
@@ -62,8 +62,7 @@ const indexController = {
     },
     processRegister: (req, res) => {
         let errors = validationResult(req);
-        if (errors.errors.length > 0) {
-            console.log(errors);
+        if (errors.length > 0) {
             return res.render('./user/register', {errors: errors.mapped(), old: req.body});
         }
         let userInDB = db.Users.findOne({
@@ -121,7 +120,7 @@ const indexController = {
     },
     editPassword: (req, res) => {
         let errors = validationResult(req);
-        if (errors.errors.length > 0) {
+        if (errors.length > 0) {
             return res.render('./user/profile', {errors: errors.mapped(), user: req.session.userLogged});
         }
         db.Users.update({
@@ -134,7 +133,7 @@ const indexController = {
     },
     editUser: (req, res) => {
         let errors = validationResult(req);
-        if (errors.errors.length > 0) {
+        if (errors.length > 0) {
             return res.render('./user/profile', {errors: errors.mapped(), user: req.session.userLogged});
         }
         let userInDB = db.Users.findOne({
