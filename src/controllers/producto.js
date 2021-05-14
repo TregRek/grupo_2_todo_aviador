@@ -57,7 +57,8 @@ const productController = {
 
     update: async (req, res) => {
         let errors = validationResult(req);
-        if(errors.error.length>0){
+        console.log(errors);
+        if(errors.length>0){
             let allCategories = await db.Categories.findAll();;
             let allColors = await db.Colors.findAll();
             let allSizes = await db.Sizes.findAll();
@@ -108,7 +109,7 @@ const productController = {
 
     store: async (req, res) => {
         let errors = validationResult(req);
-        if(errors.error.length>0){
+        if(errors.length>0){
             let allCategories = await db.Categories.findAll();
             let allColors = await db.Colors.findAll();
             let allSizes = await db.Sizes.findAll();
