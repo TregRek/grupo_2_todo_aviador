@@ -123,3 +123,27 @@
 #Dejar de hacer:
 NULL
 
+#SPRINT 8
+#Seguir Haciendo:
+- Reunirse para distribuir las tareas equitativamente.
+- Revisar el código de cada uno para ver si podemos optimizarlo.
+- Iniciar actividades desde el inicio de sprint y no esperar a última hora.
+- Juntarnos para compartir conocimiento y absolver dudas que tengamos sobre lo que estamos aprendiendo.
+- Reestructurar el codigo para agregar comentarios.}
+
+
+#Hacer más:
+- Ir avanzando el proyecto por cada tema nuevo que veamos en el Playground.
+- Definir deadlines o fechas limite de entrega.
+- Reuniones weekly cada miércoles para revisar avances y levantar dudas o solicitar apoyo.
+
+#Comenzar a hacer:
+NULL
+
+
+#Hacer menos:
+- Postergar el inicio de actividades del sprint.
+- Extender las weekly a más de 20 min.
+
+#Dejar de hacer:
+NULL
