@@ -24,7 +24,6 @@ window.addEventListener("load", ()=>{
             let ulErrores = document.querySelector('div.errores ul');
             ulErrores.innerHTML="";
             for(let i = 0; i<errores.length;i++){
-                ulErrores.innerHTML+="<li>"+campoNombre+"</li>"
                 ulErrores.innerHTML+="<li>"+errores[i]+"</li>"
             }
         }

@@ -106,7 +106,6 @@
 - Reunirse para distribuir las tareas equitativamente.
 - Revisar el código de cada uno para ver si podemos optimizarlo.
 
-
 #Hacer más:
 - Iniciar actividades desde el inicio de sprint y no esperar a última hora.
 - Ir avanzando el proyecto por cada tema nuevo que veamos en el Playground.
@@ -116,7 +115,6 @@
 
 #Comenzar a hacer:
 - Reuniones weekly cada miércoles para revisar avances y levantar dudas o solicitar apoyo.
-
 
 #Hacer menos:
 - Postergar el inicio de actividades del sprint.

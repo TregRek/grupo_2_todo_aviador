@@ -14,7 +14,8 @@ const indexController = {
     },
     processLogin: (req, res) => {
         let errors = validationResult(req);
-        if (errors.length > 0) {
+        console.log(errors.length);
+        if (errors.errors.length > 0) {
            return res.render('./user/login', { errors: errors.mapped(), old: req.body});
         }
         let userToLogin;
