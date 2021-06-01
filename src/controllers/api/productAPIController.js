@@ -71,7 +71,6 @@ const productAPIController = {
             colores.push(product_entry.colors.color);
             marcas.push(product_entry.brands.name_brand);
             tallas.push(product_entry.sizes.size);
-            console.log(product_entry);
         })
         let productFound;
         if(productSearch === null){
@@ -85,7 +84,7 @@ const productAPIController = {
             productFound.sizes = tallas;
             productFound.price = prodEntryProm[0].price;
             productFound.stock = prodEntryProm[0].stock;
-            productFound.urlImage = 'http://localhost:3000/images/' + productSearch.productimages[0].images.name_img;
+            productFound.urlImage = 'http://localhost:3001/images/' + productSearch.productimages[0].images.name_img;
             return res.json(productFound);
         }
     }
