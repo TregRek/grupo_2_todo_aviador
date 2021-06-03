@@ -117,8 +117,8 @@ footer .descr-producto .info-producto{
 
 footer .descr-producto .info-producto span,
 .info-producto a{
-    display: flex;
-    width: auto;
+    display: block;
+    width: 100%;
     font-size: 12px;
 }
 

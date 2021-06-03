@@ -34,11 +34,24 @@ const indexController = {
         })
         return res.render('./user/login', {fProducts:fProducts});
     },
-    processLogin: (req, res) => {
+    processLogin: async (req, res) => {
+
+        let fProducts;
+         await db.Products.findAll({
+            order:[
+                ['id_product', 'DESC']
+            ],
+            limit: 3,
+            include: [{association: "productEntries", include:[{association: "categories"}]}, 
+                    {association: "productimages", include:[{association: "images"}]}]
+        }).then((results)=>{
+            fProducts = results;
+        })
+
         let errors = validationResult(req);
         console.log(errors.length);
         if (errors.errors.length > 0) {
-           return res.render('./user/login', { errors: errors.mapped(), old: req.body});
+           return res.render('./user/login', { errors: errors.mapped(), old: req.body,fProducts:fProducts});
         }
         let userToLogin;
         db.Users.findOne({
@@ -49,7 +62,8 @@ const indexController = {
                     errors:{ 
                         usuario: {msg: 'El usuario no se encuentra registrado'}
                     }, 
-                    old: req.body
+                    old: req.body,
+                    fProducts:fProducts
                 });
             }else {
                 userToLogin = resultado.dataValues;
@@ -60,7 +74,8 @@ const indexController = {
                     errors:{ 
                         usuario: {msg: 'Las credenciales son incorrectas'}
                     }, 
-                    old: req.body
+                    old: req.body,
+                    fProducts:fProducts
                 });
             }
             delete userToLogin.password;
@@ -105,10 +120,21 @@ const indexController = {
         })
         res.render('./user/register', {fProducts:fProducts});
     },
-    processRegister: (req, res) => {
+    processRegister: async (req, res) => {
+        let fProducts;
+         await db.Products.findAll({
+            order:[
+                ['id_product', 'DESC']
+            ],
+            limit: 3,
+            include: [{association: "productEntries", include:[{association: "categories"}]}, 
+                    {association: "productimages", include:[{association: "images"}]}]
+        }).then((results)=>{
+            fProducts = results;
+        })
         let errors = validationResult(req);
         if (errors.length > 0) {
-            return res.render('./user/register', {errors: errors.mapped(), old: req.body});
+            return res.render('./user/register', {errors: errors.mapped(), old: req.body, fProducts:fProducts});
         }
         let userInDB = db.Users.findOne({
             where:  {user_name: req.body.usuario}
@@ -124,7 +150,8 @@ const indexController = {
                         errors: {
                             usuario: {msg:'El usuario ya se encuentra en uso'}
                         }, 
-                        old: req.body
+                        old: req.body,
+                        fProducts:fProducts
                     });
                 }
                 if(values[1]){
@@ -132,7 +159,8 @@ const indexController = {
                         errors: {
                             email: {msg:'El email ya se encuentra registrado'}
                         }, 
-                        old: req.body
+                        old: req.body,
+                        fProducts:fProducts
                     });
                 }
                 let userToCreate;
@@ -163,10 +191,21 @@ const indexController = {
                 return res.redirect('/profile');
             });
     },
-    editPassword: (req, res) => {
+    editPassword: async (req, res) => {
+        let fProducts;
+         await db.Products.findAll({
+            order:[
+                ['id_product', 'DESC']
+            ],
+            limit: 3,
+            include: [{association: "productEntries", include:[{association: "categories"}]}, 
+                    {association: "productimages", include:[{association: "images"}]}]
+        }).then((results)=>{
+            fProducts = results;
+        })
         let errors = validationResult(req);
         if (errors.length > 0) {
-            return res.render('./user/profile', {errors: errors.mapped(), user: req.session.userLogged});
+            return res.render('./user/profile', {errors: errors.mapped(), user: req.session.userLogged, fProducts:fProducts});
         }
         db.Users.update({
             password: bcryptjs.hashSync(req.body.newPassword, 10)
@@ -176,10 +215,21 @@ const indexController = {
             return res.redirect('/profile');
         })
     },
-    editUser: (req, res) => {
+    editUser: async (req, res) => {
+        let fProducts;
+         await db.Products.findAll({
+            order:[
+                ['id_product', 'DESC']
+            ],
+            limit: 3,
+            include: [{association: "productEntries", include:[{association: "categories"}]}, 
+                    {association: "productimages", include:[{association: "images"}]}]
+        }).then((results)=>{
+            fProducts = results;
+        })
         let errors = validationResult(req);
         if (errors.length > 0) {
-            return res.render('./user/profile', {errors: errors.mapped(), user: req.session.userLogged});
+            return res.render('./user/profile', {errors: errors.mapped(), user: req.session.userLogged, fProducts:fProducts});
         }
         let userInDB = db.Users.findOne({
             where:  {user_name: req.body.usuario}
@@ -194,7 +244,8 @@ const indexController = {
                     errors: {
                         usuario: {msg:'El usuario ya se encuentra en uso'}
                     },
-                    user: req.session.userLogged
+                    user: req.session.userLogged,
+                    fProducts:fProducts
                 });
             }
             if(values[1] && values[1].dataValues.email!=req.session.userLogged.email){
@@ -202,7 +253,8 @@ const indexController = {
                     errors: {
                         email: {msg:'El email ya se encuentra registrado'}
                     },
-                    user: req.session.userLogged
+                    user: req.session.userLogged, 
+                    fProducts:fProducts
                 });
             }    
             if(req.file){

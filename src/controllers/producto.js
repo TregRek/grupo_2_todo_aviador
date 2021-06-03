@@ -93,6 +93,18 @@ const productController = {
     },
 
     update: async (req, res) => {
+        let fProducts;
+         await db.Products.findAll({
+            order:[
+                ['id_product', 'DESC']
+            ],
+            limit: 3,
+            include: [{association: "productEntries", include:[{association: "categories"}]}, 
+                    {association: "productimages", include:[{association: "images"}]}]
+        }).then((results)=>{
+            fProducts = results;
+        })
+
         let errors = validationResult(req);
         console.log(errors);
         if(errors.length>0){
@@ -104,7 +116,7 @@ const productController = {
                 where: {id_product: req.params.idProd},
                 include: [{association:"productEntries"}, {association:"productimages", include:[{association: "images"}]}]
             });
-            return res.render('./products/editProduct', {product: productoEditar, categories:allCategories, brands:allBrands, sizes:allSizes, colors:allColors, errors: errors.mapped()});
+            return res.render('./products/editProduct', {product: productoEditar, categories:allCategories, brands:allBrands, sizes:allSizes, colors:allColors, errors: errors.mapped(), fProducts:fProducts});
         }
         await db.Products.update({
             name_product: req.body.name,
@@ -156,13 +168,26 @@ const productController = {
     },
 
     store: async (req, res) => {
+
+        let fProducts;
+         await db.Products.findAll({
+            order:[
+                ['id_product', 'DESC']
+            ],
+            limit: 3,
+            include: [{association: "productEntries", include:[{association: "categories"}]}, 
+                    {association: "productimages", include:[{association: "images"}]}]
+        }).then((results)=>{
+            fProducts = results;
+        })
+
         let errors = validationResult(req);
         if(errors.length>0){
             let allCategories = await db.Categories.findAll();
             let allColors = await db.Colors.findAll();
             let allSizes = await db.Sizes.findAll();
             let allBrands = await db.Brands.findAll();
-            return res.render('./products/createProduct', { errors: errors.mapped(), old: req.body, categories:allCategories, brands:allBrands, sizes:allSizes, colors:allColors});
+            return res.render('./products/createProduct', { errors: errors.mapped(), old: req.body, categories:allCategories, brands:allBrands, sizes:allSizes, colors:allColors, fProducts:fProducts});
         }
         let productCreated = await db.Products.create({
             name_product: req.body.name,
