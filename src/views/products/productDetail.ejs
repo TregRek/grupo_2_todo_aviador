@@ -6,8 +6,6 @@
       <title>Producto - TodoAviador</title>
    </head>
    <%- include('../partials/header') %>
-   <%- console.log(fProducts) %>
-   <%- console.log(product) %>
    
       <section class="ancho">
          <div>
@@ -63,7 +61,7 @@
                         <button>-</button>
                         <p>1</p>
                         <button>+</button>
-                        <button class="action-button add-cart-button">Agregar al carrito</button>
+                        <a href="/cart/<%= product.id_product %>" class="action-button add-cart-button">Agregar al carrito</a>
                      </div>
                      <div>
                         <a href="/producto/editar/<%= product.id_product %>" class="action-button edit">EDITAR PRODUCTO</a>
