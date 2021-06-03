@@ -1,9 +1,22 @@
 const db = require('../../database/models');
 const { validationResult } = require('express-validator');
 const productController = {
-    producto: (req, res) =>{
+    producto: async (req, res) =>{
+
+        let fProducts;
+         await db.Products.findAll({
+            order:[
+                ['id_product', 'DESC']
+            ],
+            limit: 3,
+            include: [{association: "productEntries", include:[{association: "categories"}]}, 
+                    {association: "productimages", include:[{association: "images"}]}]
+        }).then((results)=>{
+            fProducts = results;
+        })
+
         let product;
-        db.ProductEntries.findAll({
+        await db.ProductEntries.findAll({
             where: {id_product: req.params.idProd},
             include:[
                 {model: db.Categories, as:'categories', atributes:['name_category']}, 
@@ -28,19 +41,31 @@ const productController = {
                 stock: resultado[0].stock,
                 id_product: resultado[0].id_product
             };
-            res.render('./products/productDetail', {product: product});
+           
         })
+        return res.render('./products/productDetail', {product: product, fProducts:fProducts});
     },
     
-    listado: (req, res) =>{
-        let productos;
-        db.Products.findAll({
+    listado: async (req, res) =>{
+        let fProducts;
+         await db.Products.findAll({
+            order:[
+                ['id_product', 'DESC']
+            ],
+            limit: 3,
             include: [{association: "productEntries", include:[{association: "categories"}]}, 
                     {association: "productimages", include:[{association: "images"}]}]
         }).then((results)=>{
-            productos = results;
-            res.render('./products/productList', {productos: productos});
+            fProducts = results;
         })
+        let product;
+        await db.Products.findAll({
+            include: [{association: "productEntries", include:[{association: "categories"}]}, 
+                    {association: "productimages", include:[{association: "images"}]}]
+        }).then((results)=>{
+            product = results;
+        })
+        return res.render('./products/productList', {product: product, fProducts:fProducts});
     },
 
     editar: async (req, res) =>{
@@ -52,7 +77,19 @@ const productController = {
             where: {id_product: req.params.idProd},
             include: [{association:"productEntries"}, {association:"productimages", include:[{association: "images"}]}]
         });
-        return res.render('./products/editProduct', {product: productoEditar, categories:allCategories, brands:allBrands, sizes:allSizes, colors:allColors});
+        let fProducts;
+         await db.Products.findAll({
+            order:[
+                ['id_product', 'DESC']
+            ],
+            limit: 3,
+            include: [{association: "productEntries", include:[{association: "categories"}]}, 
+                    {association: "productimages", include:[{association: "images"}]}]
+        }).then((results)=>{
+            fProducts = results;
+        })
+        
+        return res.render('./products/editProduct', {product: productoEditar, categories:allCategories, brands:allBrands, sizes:allSizes, colors:allColors, fProducts: fProducts});
     },
 
     update: async (req, res) => {
@@ -104,7 +141,18 @@ const productController = {
         let allColors = await db.Colors.findAll();
         let allSizes = await db.Sizes.findAll();
         let allBrands = await db.Brands.findAll();
-        res.render('./products/createProduct', {categories:allCategories, brands:allBrands, sizes:allSizes, colors:allColors});
+        let fProducts;
+         await db.Products.findAll({
+            order:[
+                ['id_product', 'DESC']
+            ],
+            limit: 3,
+            include: [{association: "productEntries", include:[{association: "categories"}]}, 
+                    {association: "productimages", include:[{association: "images"}]}]
+        }).then((results)=>{
+            fProducts = results;
+        })
+        res.render('./products/createProduct', {categories:allCategories, brands:allBrands, sizes:allSizes, colors:allColors, fProducts:fProducts});
     },
 
     store: async (req, res) => {

@@ -6,11 +6,33 @@ const db = require('../../database/models');
 let products = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8'));
 const { validationResult } = require('express-validator');
 const indexController = {
-    index: (req, res) =>{
-        res.render('./user/index', {productos: products});
+    index: async (req, res) =>{
+        let fProducts;
+         await db.Products.findAll({
+            order:[
+                ['id_product', 'DESC']
+            ],
+            limit: 3,
+            include: [{association: "productEntries", include:[{association: "categories"}]}, 
+                    {association: "productimages", include:[{association: "images"}]}]
+        }).then((results)=>{
+            fProducts = results;
+        })
+        res.render('./user/index', {productos: products, fProducts:fProducts});
     },
-    login: (req, res) =>{
-        return res.render('./user/login');
+    login: async (req, res) =>{
+        let fProducts;
+         await db.Products.findAll({
+            order:[
+                ['id_product', 'DESC']
+            ],
+            limit: 3,
+            include: [{association: "productEntries", include:[{association: "categories"}]}, 
+                    {association: "productimages", include:[{association: "images"}]}]
+        }).then((results)=>{
+            fProducts = results;
+        })
+        return res.render('./user/login', {fProducts:fProducts});
     },
     processLogin: (req, res) => {
         let errors = validationResult(req);
@@ -50,16 +72,38 @@ const indexController = {
         });
         
     },
-    profile: (req, res) => {
-        return res.render('./user/profile', {user: req.session.userLogged});
+    profile: async (req, res) => {
+        let fProducts;
+         await db.Products.findAll({
+            order:[
+                ['id_product', 'DESC']
+            ],
+            limit: 3,
+            include: [{association: "productEntries", include:[{association: "categories"}]}, 
+                    {association: "productimages", include:[{association: "images"}]}]
+        }).then((results)=>{
+            fProducts = results;
+        })
+        return res.render('./user/profile', {user: req.session.userLogged, fProducts:fProducts});
     },
     logout: (req, res) => {
         res.clearCookie('usuario');
         req.session.destroy();
         return res.redirect('/');
     },
-    register: (req, res) =>{
-        res.render('./user/register');
+    register: async (req, res) =>{
+        let fProducts;
+         await db.Products.findAll({
+            order:[
+                ['id_product', 'DESC']
+            ],
+            limit: 3,
+            include: [{association: "productEntries", include:[{association: "categories"}]}, 
+                    {association: "productimages", include:[{association: "images"}]}]
+        }).then((results)=>{
+            fProducts = results;
+        })
+        res.render('./user/register', {fProducts:fProducts});
     },
     processRegister: (req, res) => {
         let errors = validationResult(req);
@@ -211,9 +255,63 @@ const indexController = {
             }
         })
     },
-    cart:  (req, res) =>{
-        res.render('./user/productCart');
-    }
+    cart: async (req, res) =>{
+
+        let fProducts;
+         await db.Products.findAll({
+            order:[
+                ['id_product', 'DESC']
+            ],
+            limit: 3,
+            include: [{association: "productEntries", include:[{association: "categories"}]}, 
+                    {association: "productimages", include:[{association: "images"}]}]
+        }).then((results)=>{
+            fProducts = results;
+        })
+
+        let product;
+         await db.Products.findAll({
+            order:[
+                ['id_product', 'DESC']
+            ],
+            limit: 2,
+            include: [{association: "productEntries", include:[{association: "categories"}]}, 
+                    {association: "productimages", include:[{association: "images"}]}]
+        }).then((results)=>{
+            product = results;
+        })
+
+        let allProduct;
+        await db.ProductEntries.findAll({
+            where: {id_product: req.params.idProd},
+            include:[
+                {model: db.Categories, as:'categories', atributes:['name_category']}, 
+                {model: db.Sizes, as:'sizes', atributes: ['size']},
+                {model: db.Brands, as:'brands', atributes: ['name_brand']},
+                {model: db.Colors, as:'colors', atributes: ['color']},
+                {model: db.Products, as:'products', atributes: ['name_product', 'description'], 
+                include:[{model: db.ProductImages, as:'productimages', atributes:['id_image', 'id_product'],
+                include:[{model: db.Images, as:'images', atributes:['name_img']}]}]}
+            ] 
+        })
+        .then((resultado)=>{
+            let prod_img = resultado[0].products.productimages;
+            allProduct = {
+                name_product: resultado[0].products.name_product,
+                description: resultado[0].products.description,
+                category: resultado[0].categories.name_category,
+                color: resultado[0].colors.color,
+                size: resultado[0].sizes.size,
+                brand: resultado[0].brands.name_brand,
+                image: prod_img[0].images.name_img,
+                price: resultado[0].price,
+                stock: resultado[0].stock,
+                id_product: resultado[0].id_product
+            };
+        })
+        return res.render('./user/productCart', {product: product, allProduct: allProduct, fProducts:fProducts});
+
+    },
 };
 
 module.exports = indexController;

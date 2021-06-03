@@ -37,6 +37,7 @@ router.get("/detalle/:idProd", productController.producto);
 
 router.get("/listado", productController.listado);
 
+
 //---------------EDITAR PRODUCTO--------------
 router.get("/editar/:idProd", productController.editar);
 router.put("/editar/:idProd", [upload.single('image'), validateProduct], productController.update);

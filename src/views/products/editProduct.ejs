@@ -6,6 +6,8 @@
         <title>Editar producto - TodoAviador</title>
    </head>
    <%- include('../partials/header') %>
+   <%- console.log(product) %>
+
    <main class='main-prod-edit'>
       
       <form action="/producto/editar/<%= product.id_product %>?_method=PUT" enctype="multipart/form-data" method="POST" class="edit-form">

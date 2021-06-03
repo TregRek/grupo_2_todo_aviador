@@ -93,16 +93,16 @@
                 <div class="filtro-mejor-calificado">
                     <h4>Productos mejor calificados</h4>
                     <ul>
-                        <% for(let i = 0; i < productos.length; i++){ %>                            
+                        <% for(let i = (product.length-4); i < product.length; i++){ %>                            
                             
                         <li>
                             <div class="fmc-imagen">
-                                <a href="/producto/detalle/<%= productos[i].id_product %>">
-                                    <img src="/images/<%= productos[i].productimages[0].images.name_img %>" alt="<%= productos[i].name_product %>">
+                                <a href="/producto/detalle/<%= product[i].id_product %>">
+                                    <img src="/images/<%= product[i].productimages[0].images.name_img %>" alt="<%= product[i].name_product %>">
                                 </a>
                             </div>
                             <div class="fmc-descripcion">
-                                <a href="/producto/detalle/<%= productos[i].id_product %>"><%= productos[i].name_product %></a>
+                                <a href="/producto/detalle/<%= product[i].id_product %>"><%= product[i].name_product %></a>
                                 <span>
                                     <i class="fas fa-star"></i>
                                     <i class="fas fa-star"></i>
@@ -111,7 +111,7 @@
                                     <i class="fas fa-star"></i>
                                 </span>
                                 <p>
-                                    <%= productos[i].productEntries[0].price %>
+                                    <%= product[i].productEntries[0].price %>
                                 </p>
                             </div>
                         </li>
@@ -180,7 +180,7 @@
                 </div>
 
                 <ul>
-                    <% productos.forEach( prod =>{ %>
+                    <% product.forEach( prod =>{ %>
                     
                     <li>
                         <div class="prod-int-img-producto">
@@ -207,7 +207,7 @@
                             <i class="fas fa-star"></i>
                         </div>
                         <div class="prod-int-btns">
-                            <a href="/cart">
+                            <a href="/cart/<%= prod.id_product %>">
                                 <button>Agregar al carrito</button>
                             </a>
                             <a href="/producto/detalle/<%= prod.id_product %>">
@@ -362,185 +362,7 @@
                         </div>
                     </li>
 
-                    <li>
-                        <div class="prod-int-img-producto">
-                                    
-                            <img src="/images/Defecto.jpg" alt="" class="img1">
-                        
-                            <img src="/images/Defecto2.jpg" alt="" class="img2">
-                        
-                        </div>
-                        <div class="prod-int-categorias">
-                            <a href="/producto/listado">cat para el avi</a>
-                            , 
-                            <a href="/producto/listado"> cat para la ropa</a>
-                        </div>
-                        <div class="prod-int-titulo">
-                            <h2>Nombre del producto</h2>
-                        </div>
-                        <div class="prod-int-precio">
-                            <span>S/20.00</span>
-                        </div>
-                        <div class="prod-int-rating">
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                        </div>
-                        <div class="prod-int-btns">
-                            <a href="/cart">
-                                <button>Agregar al carrito</button>
-                            </a>
-                            <a href="/producto/detalle/0001">
-                                <button>Vista rapida</button>
-                            </a>
-                        </div>
-                    </li>
-
-                    <li>
-                        <div class="prod-int-img-producto">
-                                    
-                            <img src="/images/Defecto.jpg" alt="" class="img1">
-                        
-                            <img src="/images/Defecto2.jpg" alt="" class="img2">
-                        
-                        </div>
-                        <div class="prod-int-categorias">
-                            <a href="/producto/listado">cat para el avi</a>
-                            , 
-                            <a href="/producto/listado"> cat para la ropa</a>
-                        </div>
-                        <div class="prod-int-titulo">
-                            <h2>Nombre del producto</h2>
-                        </div>
-                        <div class="prod-int-precio">
-                            <span>S/20.00</span>
-                        </div>
-                        <div class="prod-int-rating">
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                        </div>
-                        <div class="prod-int-btns">
-                            <a href="/cart">
-                                <button>Agregar al carrito</button>
-                            </a>
-                            <a href="/producto/detalle/0001">
-                                <button>Vista rapida</button>
-                            </a>
-                        </div>
-                    </li>
-
-                    <li>
-                        <div class="prod-int-img-producto">
-                                    
-                            <img src="/images/Defecto.jpg" alt="" class="img1">
-                        
-                            <img src="/images/Defecto2.jpg" alt="" class="img2">
-                        
-                        </div>
-                        <div class="prod-int-categorias">
-                            <a href="/producto/listado">cat para el avi</a>
-                            , 
-                            <a href="/producto/listado"> cat para la ropa</a>
-                        </div>
-                        <div class="prod-int-titulo">
-                            <h2>Nombre del producto</h2>
-                        </div>
-                        <div class="prod-int-precio">
-                            <span>S/20.00</span>
-                        </div>
-                        <div class="prod-int-rating">
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                        </div>
-                        <div class="prod-int-btns">
-                            <a href="/cart">
-                                <button>Agregar al carrito</button>
-                            </a>
-                            <a href="/producto/detalle/0001">
-                                <button>Vista rapida</button>
-                            </a>
-                        </div>
-                    </li>
-
-                    <li>
-                        <div class="prod-int-img-producto">
-                                    
-                            <img src="/images/Defecto.jpg" alt="" class="img1">
-                        
-                            <img src="/images/Defecto2.jpg" alt="" class="img2">
-                        
-                        </div>
-                        <div class="prod-int-categorias">
-                            <a href="/producto/listado">cat para el avi</a>
-                            , 
-                            <a href="/producto/listado"> cat para la ropa</a>
-                        </div>
-                        <div class="prod-int-titulo">
-                            <h2>Nombre del producto</h2>
-                        </div>
-                        <div class="prod-int-precio">
-                            <span>S/20.00</span>
-                        </div>
-                        <div class="prod-int-rating">
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                        </div>
-                        <div class="prod-int-btns">
-                            <a href="/cart">
-                                <button>Agregar al carrito</button>
-                            </a>
-                            <a href="/producto/detalle/0001">
-                                <button>Vista rapida</button>
-                            </a>
-                        </div>
-                    </li>
-
-                    <li>
-                        <div class="prod-int-img-producto">
-                                    
-                            <img src="/images/Defecto.jpg" alt="" class="img1">
-                        
-                            <img src="/images/Defecto2.jpg" alt="" class="img2">
-                        
-                        </div>
-                        <div class="prod-int-categorias">
-                            <a href="/producto/listado">cat para el avi</a>
-                            , 
-                            <a href="/producto/listado"> cat para la ropa</a>
-                        </div>
-                        <div class="prod-int-titulo">
-                            <h2>Nombre del producto</h2>
-                        </div>
-                        <div class="prod-int-precio">
-                            <span>S/20.00</span>
-                        </div>
-                        <div class="prod-int-rating">
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                        </div>
-                        <div class="prod-int-btns">
-                            <a href="/cart">
-                                <button>Agregar al carrito</button>
-                            </a>
-                            <a href="/producto/detalle/0001">
-                                <button>Vista rapida</button>
-                            </a>
-                        </div>
-                    </li>
+                    
                 </ul>
 
                 <div class="list-header-list-pag">
@@ -575,6 +397,7 @@
         </div>
         
     </main>
+    <%- console.log(fProducts)%>
 
     <%- include("../partials/footer") %>
 

@@ -17,6 +17,10 @@ window.addEventListener("load", ()=>{
 
         
         //VALIDANDO CAMPO USUARIO
+        if(!validExtentions.includes(campoImagen.value.substr(campoImagen.value.length - 4)) && campoImagen.value != ""){
+            erroresInfoPersonal.push(`La extensiones permitidas son ${validExtentions.join(', ')}`);
+        }
+        //VALIDAONDO CAMPO USUARIO
         if(campoUsuario === ""){
             erroresInfoPersonal.push("Debe registrar un nombre de usuario");
         } else if (campoUsuario.length < 3){
@@ -80,27 +84,7 @@ window.addEventListener("load", ()=>{
             erroresInfoPassword.push('La contraseña debe tener al menos 8 caracteres');
         }else if(campoNewPassword !== campoConfirmPassword){
             erroresInfoPassword.push("Las contraseñas deben ser iguales");
-        }
-
-
-
-        // if(campoNewPassword.values === undefined ){
-        //     erroresInfoPassword.push("Por favor ingrese tu nueva contraseña ");
-        // } else if (campoNewPassword.value.length < 8){
-        //     erroresInfoPassword.push('La contraseña debe tener al menos 8 caracteres');
-        // }
-
-        // //VALIDANDO CAMPO DE CONFIRM PASSWORD 
-        // if(campoConfirmPassword.values === undefined){
-        //     erroresInfoPassword.push("Por favor repite la nueva contraseña ");
-        // } else if (campoConfirmPassword.value.length < 8){
-        //     erroresInfoPassword.push('La contraseña debe tener al menos 8 caracteres');
-        // }
-
-        // //VALIDANDO CAMPOS DE NUEVAS CONTRASEÑAS SEAN IGUALES
-        // if(campoNewPassword !== campoConfirmPassword){
-        //     erroresInfoPassword.push("Las contraseñas deben ser iguales");
-        // }
+        }   
 
         console.log(erroresInfoPassword);
         //IMPRIMIR LOS ERRORES INFORMACION DE LA CONTRASEÑA

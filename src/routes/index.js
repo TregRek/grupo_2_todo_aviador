@@ -84,7 +84,9 @@ router.post("/login", validateLogin, indexController.processLogin);
 router.get("/register", guestMiddleware ,indexController.register);
 router.post("/register", [upload.single('image'), validateRegister], indexController.processRegister);
 //---------------CARRITO DE USUARIO--------------
-router.get("/cart", indexController.cart);
+
+
+router.get("/cart/:idProd", indexController.cart);
 //---------------PERFIL DE USUARIO--------------
 router.get("/profile", authMiddleware, indexController.profile);
 router.put("/editPassword/", validateEditPass, indexController.editPassword);

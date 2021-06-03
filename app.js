@@ -5,6 +5,7 @@ const session = require('express-session');
 const cookies = require('cookie-parser');
 const methodOverride =  require('method-override'); // Pasar poder usar los métodos PUT y DELETE
 const userLoggedMiddleware = require('./src/middlewares/userLoggedMiddleware');
+const error404 = require('./src/middlewares/error404');
 //Aqui llamamos al router de las páginas de usuarios
 var indexRouter = require('./src/routes/index');
 //Aqui llamamos al router de las páginas de productos
@@ -31,6 +32,4 @@ app.use('/', indexRouter);
 app.use('/producto', productRouter);
 app.use('/api/users', apiUsersRouter);
 app.use('/api/products', apiProductsRouter);
-app.use(function error404Middleware (req,res,next) {
-	res.status(404).render('./user/404');
-});
+app.use(error404);

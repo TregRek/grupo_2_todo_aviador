@@ -7,8 +7,10 @@
     <link rel="stylesheet" href="/css/cart_styles.css">
     <title>Todo aviador Perú | Carrito</title>
 </head>
+    <%- console.log(fProducts)%>
 
     <%- include("../partials/header") %>
+    <%- console.log(fProducts)%>
 
     <main>
         <header>
@@ -23,7 +25,7 @@
                             <span>></span>
                         </li>
                         <li class="carrito">
-                            <a href="/productCart">
+                            <a href="/cart">
                             </a>
                             <span>Carrito</span>
                         </li>
@@ -51,30 +53,30 @@
                                     <a href="">x</a>
                                 </td>
                                 <td class="producto-imagen">
-                                    <img src="/images/defecto.jpg" alt="">
+                                    <img src="/images/<%= allProduct.image %>" alt="">
                                 </td>
                                 <td class="producto-nombre" data-title="Producto">
                                     
-                                    <a href="">Producsdasdasdasdasdasdasdasdasdasdasdto</a>
+                                    <a href=""><%= allProduct.name_product %></a>
                                 </td>
                                 <td class="producto-precio" data-title="Precio">
                                     
-                                    <span>S/79.99</span>
+                                    <span >S/ <span id="precio"><%= allProduct.price %></span></span>
                                 </td>
                                 <td class="producto-cantidad" data-title="Cantidad">
                                     <div class="contador">
-                                        <a href="">-</a>
-                                        <input type="number" name="" id="">
-                                        <a href="">+</a>
+                                        <a href="" id="menos">-</a>
+                                        <input type="number" name="num_prod" id="num_prod" min="1" max="50" value="1">
+                                        <a href="" id="mas">+</a>
                                     </div>
                                     
                                 </td>
                                 <td class="producto-subtotal" data-title="Sub-total">
                                     
-                                    <span>S/79.99</span>
+                                    <span>S/ <span id="subtotal"><%= allProduct.price %></span></span>
                                 </td>
                             </tr>
-                        
+
                             <tr>
                                 <td class="producto-remover">
                                     <a href="">x</a>
@@ -135,24 +137,25 @@
                         </thead>
                         <tbody>
                             <tr>
+                                <% product.forEach( prod =>{ %>
+
                                 <td>
                                     <div class="prod-int-img-producto">
                                         
-                                            <img src="/images/Defecto.jpg" alt="" class="img1">
+                                            <img src="/images/<%= prod.productimages[0].images.name_img %>" alt="" class="img1">
                                         
-                                            <img src="/images/Defecto2.jpg" alt="" class="img2">
+                                            <img src="/images/<%= prod.productimages[0].images.name_img %>" alt="" class="img2">
                                         
                                     </div>
                                     <div class="prod-int-categorias">
-                                        <a href="">cat para el avi</a>
-                                        , 
-                                        <a href=""> cat para la ropa</a>
+                                        <a href=""><%= prod.productEntries[0].categories.name_category %></a>
+                                        
                                     </div>
                                     <div class="prod-int-titulo">
-                                        <h2>Nombre del producto</h2>
+                                        <h2><%= prod.name_product %></h2>
                                     </div>
                                     <div class="prod-int-precio">
-                                        <span>S/20.00</span>
+                                        <span> S/ <%= prod.productEntries[0].price %></span>
                                     </div>
                                     <div class="prod-int-rating">
                                         <i class="fas fa-star"></i>
@@ -162,47 +165,17 @@
                                         <i class="fas fa-star"></i>
                                     </div>
                                     <div class="prod-int-btns">
-                                        <a href="">
+                                        <a href="/cart/<%= prod.id_product %>">
                                             <button>Agregar al carrito</button>
                                         </a>
-                                        <a href="">
+                                        <a href="/producto/detalle/<%= prod.id_product %>">
                                             <button>Vista rapida</button>
                                         </a>
                                     </div>
                                     
                                 </td>
-                                <td>
-                                    <div class="prod-int-img-producto">
-                                        <img src="/images/Defecto.jpg" alt="" class="img1">    
-                                        <img src="/images/Defecto2.jpg" alt="" class="img2">
-                                    </div>
-                                    <div class="prod-int-categorias">
-                                        <a href="">cat para el avi</a>
-                                        , 
-                                        <a href=""> cat para la ropa</a>
-                                    </div>
-                                    <div class="prod-int-titulo">
-                                        <h2>Nombre del producto</h2>
-                                    </div>
-                                    <div class="prod-int-precio">
-                                        <span>S/20.00</span>
-                                    </div>
-                                    <div class="prod-int-rating">
-                                        <i class="fas fa-star"></i>
-                                        <i class="fas fa-star"></i>
-                                        <i class="fas fa-star"></i>
-                                        <i class="fas fa-star"></i>
-                                        <i class="fas fa-star"></i>
-                                    </div>
-                                    <div class="prod-int-btns">
-                                        <a href="">
-                                            <button>Agregar al carrito</button>
-                                        </a>
-                                        <a href="">
-                                            <button>Vista rapida</button>
-                                        </a>
-                                    </div>
-                                </td>
+                                <% })%>
+                                
                             </tr>
                         </tbody>
                     </table>
@@ -240,6 +213,8 @@
             </div>
             
         </div>
+
+        <script src="/js/carrito.js"></script>
         
     </main>
 
